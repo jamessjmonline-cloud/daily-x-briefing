@@ -1,494 +1,576 @@
 {
-  "all": [
+  "generated_at": "2026-07-05T14:37:18.178059-07:00",
+  "since": "2026-07-04",
+  "posts": [
     {
-      "id": "trend-1",
-      "author": "X Trending",
-      "bio": "Trending in Canada",
-      "text": "Trending topic: FIFA — Trending in Canada",
-      "created_at": "",
-      "likes": 2000,
-      "views": 200000,
-      "url": "https://x.com/search?q=FIFA&src=typed_query&f=top",
-      "has_media": false,
-      "score": 20000
+      "id": "2073436700865331383",
+      "author": "sage1411",
+      "bio": "All posts are opinions. Harry’s wife’s lawyer says I can say opinions and not get sued.",
+      "text": "My brother posts this every year in the family chat on the 4th. Still hilarious.",
+      "created_at": "Sat Jul 04 16:00:06 +0000 2026",
+      "likes": 90438,
+      "retweets": 13433,
+      "replies": 750,
+      "views": 5344522,
+      "url": "https://x.com/sage1411/status/2073436700865331383",
+      "has_media": true,
+      "media_posters": [
+        "https://pbs.twimg.com/amplify_video_thumb/2073179298702213120/img/3GTXqxrqLb62MVgo.jpg"
+      ],
+      "card": null,
+      "section_hint": "viral",
+      "score": 133918.97723759612,
+      "headline": "Viral breakout: My brother posts this every year in the family chat on the 4th. Still hilarious.",
+      "why": "It has enough social velocity to potentially jump from X into broader conversation. The post includes media, so it is more likely to travel beyond the original audience. Current signal: 90.4K likes, 5.3M views."
     },
     {
-      "id": "trend-2",
-      "author": "X Trending",
-      "bio": "Trending in Canada",
-      "text": "Trending topic: Norway — Trending in Canada",
-      "created_at": "",
-      "likes": 1900,
-      "views": 190000,
-      "url": "https://x.com/search?q=Norway&src=typed_query&f=top",
-      "has_media": false,
-      "score": 19000
+      "id": "2073839009344762235",
+      "author": "GuntherEagleman",
+      "bio": "David J. Freeman | Political Commentator | Commentary, Opinion & Satire",
+      "text": "LOL!!! “Nah bro I have the Trump card, I win.” Trump card always wins!",
+      "created_at": "Sun Jul 05 18:38:44 +0000 2026",
+      "likes": 35121,
+      "retweets": 5195,
+      "replies": 1029,
+      "views": 3759722,
+      "url": "https://x.com/GuntherEagleman/status/2073839009344762235",
+      "has_media": true,
+      "media_posters": [
+        "https://pbs.twimg.com/amplify_video_thumb/2073838956014157824/img/93773iCfjf3WdJ_B.jpg"
+      ],
+      "card": null,
+      "section_hint": "viral",
+      "score": 54407.78896229555,
+      "headline": "Viral breakout: LOL!!! “Nah bro I have the Trump card, I win.” Trump card always wins!",
+      "why": "It has enough social velocity to potentially jump from X into broader conversation. The post includes media, so it is more likely to travel beyond the original audience. Current signal: 35.1K likes, 3.8M views."
     },
     {
-      "id": "trend-3",
-      "author": "X Trending",
-      "bio": "Politics · Trending",
-      "text": "Trending topic: America — Politics · Trending",
-      "created_at": "",
-      "likes": 1800,
-      "views": 180000,
-      "url": "https://x.com/search?q=America&src=typed_query&f=top",
-      "has_media": false,
-      "score": 18000
+      "id": "2073708333438050547",
+      "author": "europemaxxed",
+      "bio": "If I'm an advocate for anything, it's to move",
+      "text": "Paris regardless of the outcome of Morocco vs France:",
+      "created_at": "Sun Jul 05 09:59:28 +0000 2026",
+      "likes": 37087,
+      "retweets": 1725,
+      "replies": 66,
+      "views": 1017731,
+      "url": "https://x.com/europemaxxed/status/2073708333438050547",
+      "has_media": true,
+      "media_posters": [
+        "https://pbs.twimg.com/amplify_video_thumb/2073708267939753984/img/xOA8xNQNuOaSmJa_.jpg"
+      ],
+      "card": null,
+      "section_hint": "viral",
+      "score": 43895.90835750499,
+      "headline": "Viral breakout: Paris regardless of the outcome of Morocco vs France:",
+      "why": "It has enough social velocity to potentially jump from X into broader conversation. The post includes media, so it is more likely to travel beyond the original audience. Current signal: 37.1K likes, 1.0M views."
     },
     {
-      "id": "trend-4",
-      "author": "X Trending",
-      "bio": "Trending in Canada",
-      "text": "Trending topic: Odegaard — Trending in Canada",
-      "created_at": "",
-      "likes": 1700,
-      "views": 170000,
-      "url": "https://x.com/search?q=Odegaard&src=typed_query&f=top",
+      "id": "2073805024237433099",
+      "author": "kirawontmiss",
+      "bio": "a self-proclaimed free thinker •    • Sponsored by @rainbetcom",
+      "text": "I’m not hating hard enough. This is a different level of hatred 😭",
+      "created_at": "Sun Jul 05 16:23:41 +0000 2026",
+      "likes": 33678,
+      "retweets": 2046,
+      "replies": 300,
+      "views": 1798073,
+      "url": "https://x.com/kirawontmiss/status/2073805024237433099",
       "has_media": false,
-      "score": 17000
+      "media_posters": [],
+      "card": null,
+      "section_hint": "viral",
+      "score": 41979.701890304575,
+      "headline": "Viral breakout: I’m not hating hard enough. This is a different level of hatred 😭",
+      "why": "It has enough social velocity to potentially jump from X into broader conversation. Current signal: 33.7K likes, 1.8M views."
     },
     {
-      "id": "trend-5",
-      "author": "X Trending",
-      "bio": "Entertainment industry · Trending",
-      "text": "Trending topic: Happy 4th of July — Entertainment industry · Trending",
-      "created_at": "",
-      "likes": 1600,
-      "views": 160000,
-      "url": "https://x.com/search?q=Happy+4th+of+July&src=typed_query&f=top",
-      "has_media": false,
-      "score": 16000
+      "id": "2073537336764457125",
+      "author": "joeroganhq",
+      "bio": "The #1 Joe Rogan Experience Podcast News Source *Fan run account",
+      "text": "Another reason why women live longer than men.",
+      "created_at": "Sat Jul 04 22:40:00 +0000 2026",
+      "likes": 26343,
+      "retweets": 1255,
+      "replies": 919,
+      "views": 4746158,
+      "url": "https://x.com/joeroganhq/status/2073537336764457125",
+      "has_media": true,
+      "media_posters": [
+        "https://pbs.twimg.com/amplify_video_thumb/2073435711005495296/img/Fd8asvzm6pagWWme.jpg"
+      ],
+      "card": null,
+      "section_hint": "viral",
+      "score": 33615.08557083158,
+      "headline": "Viral breakout: Another reason why women live longer than men.",
+      "why": "It has enough social velocity to potentially jump from X into broader conversation. The post includes media, so it is more likely to travel beyond the original audience. Current signal: 26.3K likes, 4.7M views."
     },
     {
-      "id": "trend-6",
-      "author": "X Trending",
-      "bio": "Trending in Canada",
-      "text": "Trending topic: Morocco — Trending in Canada",
-      "created_at": "",
-      "likes": 1500,
-      "views": 150000,
-      "url": "https://x.com/search?q=Morocco&src=typed_query&f=top",
-      "has_media": false,
-      "score": 15000
+      "id": "2073638561501626411",
+      "author": "BAestheticMan",
+      "bio": "Build a body. Refine your style.\nBecome an Aesthetic Gentleman.",
+      "text": "If you continue to eat this way you’ll be layering pounds on your body.",
+      "created_at": "Sun Jul 05 05:22:14 +0000 2026",
+      "likes": 6175,
+      "retweets": 526,
+      "replies": 434,
+      "views": 2432042,
+      "url": "https://x.com/BAestheticMan/status/2073638561501626411",
+      "has_media": true,
+      "media_posters": [
+        "https://pbs.twimg.com/amplify_video_thumb/2073638344207278080/img/wN_g2vWTgjtGoQrw.jpg"
+      ],
+      "card": null,
+      "section_hint": "viral",
+      "score": 10217.492812314817,
+      "headline": "Viral breakout: If you continue to eat this way you’ll be layering pounds on your body.",
+      "why": "It has enough social velocity to potentially jump from X into broader conversation. The post includes media, so it is more likely to travel beyond the original audience. Current signal: 6.2K likes, 2.4M views."
     },
     {
-      "id": "trend-7",
-      "author": "X Trending",
-      "bio": "Trending in Canada",
-      "text": "Trending topic: Davies — Trending in Canada",
-      "created_at": "",
-      "likes": 1400,
-      "views": 140000,
-      "url": "https://x.com/search?q=Davies&src=typed_query&f=top",
-      "has_media": false,
-      "score": 14000
+      "id": "2073501877753323772",
+      "author": "ammaar",
+      "bio": "Lead Product + Design @GoogleAIStudio // Exploring AI and sharing everything I learn // My views • 🇵🇰 🇺🇸",
+      "text": "I used Fable 5 to port Command &amp; Conquer: Generals Zero Hour to the iPhone and iPad! This is the actual 2003 engine compiled for ARM64 natively, no emulator. Campaign, skirmish, Generals Challenge all work with touch controls built for an RTS. Open sourcing it all below!",
+      "created_at": "Sat Jul 04 20:19:06 +0000 2026",
+      "likes": 6498,
+      "retweets": 371,
+      "replies": 369,
+      "views": 1336553,
+      "url": "https://x.com/ammaar/status/2073501877753323772",
+      "has_media": true,
+      "media_posters": [
+        "https://pbs.twimg.com/amplify_video_thumb/2073499866047598592/img/I31ebNqESaocQiHP.jpg"
+      ],
+      "card": null,
+      "section_hint": "viral",
+      "score": 9880.496627497467,
+      "headline": "Viral breakout: I used Fable 5 to port Command &amp; Conquer: Generals Zero Hour to the iPhone and iPad!",
+      "why": "It has enough social velocity to potentially jump from X into broader conversation. The post includes media, so it is more likely to travel beyond the original audience. Current signal: 6.5K likes, 1.3M views."
     },
     {
-      "id": "trend-8",
-      "author": "X Trending",
-      "bio": "Trending in Canada",
-      "text": "Trending topic: Belgium — Trending in Canada",
-      "created_at": "",
-      "likes": 1300,
-      "views": 130000,
-      "url": "https://x.com/search?q=Belgium&src=typed_query&f=top",
-      "has_media": false,
-      "score": 13000
+      "id": "2073744687202976139",
+      "author": "LaTwitchance",
+      "bio": "Partnered with @EmpireDrop",
+      "text": "😂 IL PERCE UN MUR POUR FAIRE PASSER LA CLIM DANS LA PIÈCE D’À CÔTÉ Grâce à un accessoire imprimé en 3D, il a réussi à refroidir deux pièces avec une seule climatisation, une astuce qui impressionne les internautes. ❄️🏠",
+      "created_at": "Sun Jul 05 12:23:56 +0000 2026",
+      "likes": 6529,
+      "retweets": 544,
+      "replies": 63,
+      "views": 1019523,
+      "url": "https://x.com/LaTwitchance/status/2073744687202976139",
+      "has_media": true,
+      "media_posters": [
+        "https://pbs.twimg.com/amplify_video_thumb/2073744388803411968/img/gp_hHEfGK-D3xaMu.jpg"
+      ],
+      "card": null,
+      "section_hint": "viral",
+      "score": 9789.099363424784,
+      "headline": "Viral breakout: 😂 IL PERCE UN MUR POUR FAIRE PASSER LA CLIM DANS LA PIÈCE D’À CÔTÉ Grâce à un accessoire imprimé…",
+      "why": "It has enough social velocity to potentially jump from X into broader conversation. The post includes media, so it is more likely to travel beyond the original audience. Current signal: 6.5K likes, 1.0M views."
     },
     {
-      "id": "trend-9",
-      "author": "X Trending",
-      "bio": "Trending in Canada",
-      "text": "Trending topic: Paraguay — Trending in Canada",
-      "created_at": "",
-      "likes": 1200,
-      "views": 120000,
-      "url": "https://x.com/search?q=Paraguay&src=typed_query&f=top",
-      "has_media": false,
-      "score": 12000
+      "id": "2073769554573160474",
+      "author": "usmntonly",
+      "bio": "Independent coverage of everything you need to see and know in American and U.S. men’s soccer — with a focus on the USMNT 🇺🇸 | Part of @MenInBlazers",
+      "text": "Mexico fans outside the England hotel in the middle of the night 😭",
+      "created_at": "Sun Jul 05 14:02:45 +0000 2026",
+      "likes": 5803,
+      "retweets": 319,
+      "replies": 268,
+      "views": 694329,
+      "url": "https://x.com/usmntonly/status/2073769554573160474",
+      "has_media": true,
+      "media_posters": [
+        "https://pbs.twimg.com/amplify_video_thumb/2073672457890701312/img/fa_Z82CH1AwyhdJr.jpg"
+      ],
+      "card": null,
+      "section_hint": "viral",
+      "score": 8756.391482568994,
+      "headline": "Viral breakout: Mexico fans outside the England hotel in the middle of the night 😭",
+      "why": "It has enough social velocity to potentially jump from X into broader conversation. The post includes media, so it is more likely to travel beyond the original audience. Current signal: 5.8K likes, 694.3K views."
     },
     {
-      "id": "trend-10",
-      "author": "X Trending",
-      "bio": "Business & finance · Trending",
-      "text": "Trending topic: $ANSEM — Business & finance · Trending",
-      "created_at": "",
-      "likes": 1100,
-      "views": 110000,
-      "url": "https://x.com/search?q=%24ANSEM&src=typed_query&f=top",
-      "has_media": false,
-      "score": 11000
+      "id": "2073850139588878589",
+      "author": "Wimbledon",
+      "bio": "Official Account of The Championships, Wimbledon.",
+      "text": "Absolute grass court cinema! 🎦 This ridiculous point between Alejandro Davidovich Fokina &amp; Felix Auger-Aliassime is the Play of the Day presented by @Barclays",
+      "created_at": "Sun Jul 05 19:22:58 +0000 2026",
+      "likes": 3193,
+      "retweets": 545,
+      "replies": 40,
+      "views": 838555,
+      "url": "https://x.com/Wimbledon/status/2073850139588878589",
+      "has_media": true,
+      "media_posters": [
+        "https://pbs.twimg.com/amplify_video_thumb/2073849242167234560/img/qeCQS7UPXDbC9cJs.jpg"
+      ],
+      "card": null,
+      "section_hint": "viral",
+      "score": 6388.883017683316,
+      "headline": "Viral breakout: Absolute grass court cinema!",
+      "why": "It has enough social velocity to potentially jump from X into broader conversation. The post includes media, so it is more likely to travel beyond the original audience. Current signal: 3.2K likes, 838.6K views."
     },
     {
-      "id": "trend-11",
-      "author": "X Trending",
-      "bio": "Trending in Canada",
-      "text": "Trending topic: Freezies — Trending in Canada",
-      "created_at": "",
-      "likes": 1000,
-      "views": 100000,
-      "url": "https://x.com/search?q=Freezies&src=typed_query&f=top",
-      "has_media": false,
-      "score": 10000
+      "id": "2073704784398528599",
+      "author": "aleabitoreddit",
+      "bio": "Only on X, don’t trust fake accs\n\nAI/Semi Supply Chains\n\nNFA DYOR, no paid promos; may trade/hold names disc, views my own. Sharing free AI chokepoint research",
+      "text": "Leaked Anthropic docs show plans to secure 1.4GW capacity from Australia, amounting to ~$21.6B. Recently $IREN, $SHAZ, and other Neoclouds have been building sovereign DCs in Australia. Guess like a lot of things are stating to make more sense connection wise? (disclosure: no open positions in any of the above).",
+      "created_at": "Sun Jul 05 09:45:22 +0000 2026",
+      "likes": 2316,
+      "retweets": 150,
+      "replies": 242,
+      "views": 871768,
+      "url": "https://x.com/aleabitoreddit/status/2073704784398528599",
+      "has_media": true,
+      "media_posters": [
+        "https://pbs.twimg.com/media/HMdHgeqbAAARA1T.jpg",
+        "https://pbs.twimg.com/media/HMdHgeqbEAAzBF-.jpg"
+      ],
+      "card": null,
+      "section_hint": "viral",
+      "score": 4735.100355374273,
+      "headline": "Viral breakout: Leaked Anthropic docs show plans to secure 1.4GW capacity from Australia, amounting to ~$21.6B.",
+      "why": "It has enough social velocity to potentially jump from X into broader conversation. The post includes media, so it is more likely to travel beyond the original audience. Current signal: 2.3K likes, 871.8K views."
     },
     {
-      "id": "trend-12",
-      "author": "X Trending",
-      "bio": "Trending in Canada",
-      "text": "Trending topic: Martinelli — Trending in Canada",
-      "created_at": "",
-      "likes": 900,
-      "views": 90000,
-      "url": "https://x.com/search?q=Martinelli&src=typed_query&f=top",
-      "has_media": false,
-      "score": 9000
+      "id": "2073787623554920946",
+      "author": "Tablesalt13",
+      "bio": "Professional red-piller. \n\nI've ratioed the Prime Minister of Canada. \n\nSponsor a post: https://t.co/zwpD6EnyNQ",
+      "text": "‼️BREAKING REPORTS of a machete attack in Victoria! 25 friends gathered at Beacon Hill Park in Victoria beach around 9 p.m.on July 3rd ...for \"a relaxed evening\" and were attacked by a group \"of around 10 people\" with A MACHETE! 2 hospitalized. Src: Victoria Buzz",
+      "created_at": "Sun Jul 05 15:14:33 +0000 2026",
+      "likes": 1426,
+      "retweets": 568,
+      "replies": 197,
+      "views": 66914,
+      "url": "https://x.com/Tablesalt13/status/2073787623554920946",
+      "has_media": true,
+      "media_posters": [
+        "https://pbs.twimg.com/media/HMeSAivWgAAjg6s.jpg"
+      ],
+      "card": null,
+      "section_hint": "viral",
+      "score": 4730.380870574325,
+      "headline": "Viral breakout: ‼️BREAKING REPORTS of a machete attack in Victoria!",
+      "why": "It has enough social velocity to potentially jump from X into broader conversation. The post includes media, so it is more likely to travel beyond the original audience. Current signal: 1.4K likes, 66.9K views."
     },
     {
-      "id": "trend-13",
-      "author": "X Trending",
-      "bio": "Sports · Trending",
-      "text": "Trending topic: Sheamus — Sports · Trending",
-      "created_at": "",
-      "likes": 800,
-      "views": 80000,
-      "url": "https://x.com/search?q=Sheamus&src=typed_query&f=top",
-      "has_media": false,
-      "score": 8000
+      "id": "2073465770923692460",
+      "author": "denir0x",
+      "bio": "Caballero Super Elegante || @casaweb3",
+      "text": "🚨 CLAUDE AHORA PUEDE HABLAR CON TU PROPIA VOZ. EN TODOS LOS IDIOMAS. GRATIS un desarrollador subio a Github un repo llamado jamiepine/voicebox te clona el tono exacto con un par de segundos de audio funciona directo en tu pc asi que tus datos son cien por ciento privados puedes armar contenido en japones arabe o polaco sin mover la boca guárdalo para cuando lo necesites",
+      "created_at": "Sat Jul 04 17:55:37 +0000 2026",
+      "likes": 2275,
+      "retweets": 343,
+      "replies": 33,
+      "views": 185301,
+      "url": "https://x.com/denir0x/status/2073465770923692460",
+      "has_media": true,
+      "media_posters": [
+        "https://pbs.twimg.com/amplify_video_thumb/2073465448989949952/img/qFXWdueKgrcd3Y3A.jpg"
+      ],
+      "card": null,
+      "section_hint": "viral",
+      "score": 4686.970026691943,
+      "headline": "Viral breakout: 🚨 CLAUDE AHORA PUEDE HABLAR CON TU PROPIA VOZ.",
+      "why": "It has enough social velocity to potentially jump from X into broader conversation. The post includes media, so it is more likely to travel beyond the original audience. Current signal: 2.3K likes, 185.3K views."
     },
     {
-      "id": "trend-14",
-      "author": "X Trending",
-      "bio": "Trending in Canada",
-      "text": "Trending topic: #BRANOR — Trending in Canada",
-      "created_at": "",
-      "likes": 700,
-      "views": 70000,
-      "url": "https://x.com/search?q=%23BRANOR&src=typed_query&f=top",
+      "id": "2073839250202632566",
+      "author": "Hunter_Eagleman",
+      "bio": "America First - @GuntherEagleman’s Twin Brother - 30 year LEO -  Retired Homicide Detective - Let’s do this!",
+      "text": "😂😂😂😂",
+      "created_at": "Sun Jul 05 18:39:41 +0000 2026",
+      "likes": 2196,
+      "retweets": 306,
+      "replies": 58,
+      "views": 181986,
+      "url": "https://x.com/Hunter_Eagleman/status/2073839250202632566",
       "has_media": false,
-      "score": 7000
-    },
-    {
-      "id": "trend-15",
-      "author": "X Trending",
-      "bio": "Trending in Canada",
-      "text": "Trending topic: Cunha — Trending in Canada",
-      "created_at": "",
-      "likes": 600,
-      "views": 60000,
-      "url": "https://x.com/search?q=Cunha&src=typed_query&f=top",
-      "has_media": false,
-      "score": 6000
-    },
-    {
-      "id": "trend-16",
-      "author": "X Trending",
-      "bio": "Trending in Canada",
-      "text": "Trending topic: Happy 250th — Trending in Canada",
-      "created_at": "",
-      "likes": 500,
-      "views": 50000,
-      "url": "https://x.com/search?q=Happy+250th&src=typed_query&f=top",
-      "has_media": false,
-      "score": 5000
-    },
-    {
-      "id": "trend-17",
-      "author": "X Trending",
-      "bio": "Trending in Canada",
-      "text": "Trending topic: #BritishGP — Trending in Canada",
-      "created_at": "",
-      "likes": 400,
-      "views": 40000,
-      "url": "https://x.com/search?q=%23BritishGP&src=typed_query&f=top",
-      "has_media": false,
-      "score": 4000
-    },
-    {
-      "id": "trend-18",
-      "author": "X Trending",
-      "bio": "Trending in Canada",
-      "text": "Trending topic: Bayern — Trending in Canada",
-      "created_at": "",
-      "likes": 300,
-      "views": 30000,
-      "url": "https://x.com/search?q=Bayern&src=typed_query&f=top",
-      "has_media": false,
-      "score": 3000
-    },
-    {
-      "id": "trend-19",
-      "author": "X Trending",
-      "bio": "Trending in Canada",
-      "text": "Trending topic: Wright — Trending in Canada",
-      "created_at": "",
-      "likes": 200,
-      "views": 20000,
-      "url": "https://x.com/search?q=Wright&src=typed_query&f=top",
-      "has_media": false,
-      "score": 2000
-    },
-    {
-      "id": "trend-20",
-      "author": "X Trending",
-      "bio": "Trending in Canada",
-      "text": "Trending topic: SPLC — Trending in Canada",
-      "created_at": "",
-      "likes": 100,
-      "views": 10000,
-      "url": "https://x.com/search?q=SPLC&src=typed_query&f=top",
-      "has_media": false,
-      "score": 1000
+      "media_posters": [],
+      "card": null,
+      "section_hint": "viral",
+      "score": 4545.010091460676,
+      "headline": "Viral breakout: 😂😂😂😂",
+      "why": "It has enough social velocity to potentially jump from X into broader conversation. Current signal: 2.2K likes, 182.0K views."
     }
   ],
-  "finance": [
+  "trends": [
     {
-      "id": "trend-1",
-      "author": "X Trending",
-      "bio": "Trending in Canada",
-      "text": "Trending topic: FIFA — Trending in Canada",
-      "created_at": "",
-      "likes": 2000,
-      "views": 200000,
-      "url": "https://x.com/search?q=FIFA&src=typed_query&f=top",
-      "has_media": false,
-      "score": 20000
+      "rank": 1,
+      "topic": "FIFA",
+      "category": "Trending in Canada",
+      "url": "https://x.com/search?q=FIFA&src=typed_query&f=top"
     },
     {
-      "id": "trend-2",
-      "author": "X Trending",
-      "bio": "Trending in Canada",
-      "text": "Trending topic: Norway — Trending in Canada",
-      "created_at": "",
-      "likes": 1900,
-      "views": 190000,
-      "url": "https://x.com/search?q=Norway&src=typed_query&f=top",
-      "has_media": false,
-      "score": 19000
+      "rank": 2,
+      "topic": "Norway",
+      "category": "Trending in Canada",
+      "url": "https://x.com/search?q=Norway&src=typed_query&f=top"
     },
     {
-      "id": "trend-10",
-      "author": "X Trending",
-      "bio": "Business & finance · Trending",
-      "text": "Trending topic: $ANSEM — Business & finance · Trending",
-      "created_at": "",
-      "likes": 1100,
-      "views": 110000,
-      "url": "https://x.com/search?q=%24ANSEM&src=typed_query&f=top",
-      "has_media": false,
-      "score": 11000
+      "rank": 3,
+      "topic": "Vini",
+      "category": "Trending in Canada",
+      "url": "https://x.com/search?q=Vini&src=typed_query&f=top"
+    },
+    {
+      "rank": 4,
+      "topic": "Odegaard",
+      "category": "Trending in Canada",
+      "url": "https://x.com/search?q=Odegaard&src=typed_query&f=top"
+    },
+    {
+      "rank": 5,
+      "topic": "America",
+      "category": "Politics · Trending",
+      "url": "https://x.com/search?q=America&src=typed_query&f=top"
+    },
+    {
+      "rank": 6,
+      "topic": "Happy 4th of July",
+      "category": "Entertainment industry · Trending",
+      "url": "https://x.com/search?q=Happy+4th+of+July&src=typed_query&f=top"
+    },
+    {
+      "rank": 7,
+      "topic": "Morocco",
+      "category": "Trending in Canada",
+      "url": "https://x.com/search?q=Morocco&src=typed_query&f=top"
+    },
+    {
+      "rank": 8,
+      "topic": "Davies",
+      "category": "Trending in Canada",
+      "url": "https://x.com/search?q=Davies&src=typed_query&f=top"
+    },
+    {
+      "rank": 9,
+      "topic": "Belgium",
+      "category": "Trending in Canada",
+      "url": "https://x.com/search?q=Belgium&src=typed_query&f=top"
+    },
+    {
+      "rank": 10,
+      "topic": "Freezies",
+      "category": "Trending in Canada",
+      "url": "https://x.com/search?q=Freezies&src=typed_query&f=top"
+    },
+    {
+      "rank": 11,
+      "topic": "Nyland",
+      "category": "Trending in Canada",
+      "url": "https://x.com/search?q=Nyland&src=typed_query&f=top"
+    },
+    {
+      "rank": 12,
+      "topic": "$ANSEM",
+      "category": "Business & finance · Trending",
+      "url": "https://x.com/search?q=%24ANSEM&src=typed_query&f=top"
+    },
+    {
+      "rank": 13,
+      "topic": "#BRANOR",
+      "category": "Trending in Canada",
+      "url": "https://x.com/search?q=%23BRANOR&src=typed_query&f=top"
+    },
+    {
+      "rank": 14,
+      "topic": "Cunha",
+      "category": "Trending in Canada",
+      "url": "https://x.com/search?q=Cunha&src=typed_query&f=top"
+    },
+    {
+      "rank": 15,
+      "topic": "Martinelli",
+      "category": "Trending in Canada",
+      "url": "https://x.com/search?q=Martinelli&src=typed_query&f=top"
+    },
+    {
+      "rank": 16,
+      "topic": "Corruption",
+      "category": "Trending in Canada",
+      "url": "https://x.com/search?q=Corruption&src=typed_query&f=top"
+    },
+    {
+      "rank": 17,
+      "topic": "Sheamus",
+      "category": "Sports · Trending",
+      "url": "https://x.com/search?q=Sheamus&src=typed_query&f=top"
+    },
+    {
+      "rank": 18,
+      "topic": "#BritishGP",
+      "category": "Trending in Canada",
+      "url": "https://x.com/search?q=%23BritishGP&src=typed_query&f=top"
+    },
+    {
+      "rank": 19,
+      "topic": "Bayern",
+      "category": "Trending in Canada",
+      "url": "https://x.com/search?q=Bayern&src=typed_query&f=top"
+    },
+    {
+      "rank": 20,
+      "topic": "Happy 250th",
+      "category": "Trending in Canada",
+      "url": "https://x.com/search?q=Happy+250th&src=typed_query&f=top"
     }
   ],
-  "business": [
-    {
-      "id": "trend-1",
-      "author": "X Trending",
-      "bio": "Trending in Canada",
-      "text": "Trending topic: FIFA — Trending in Canada",
-      "created_at": "",
-      "likes": 2000,
-      "views": 200000,
-      "url": "https://x.com/search?q=FIFA&src=typed_query&f=top",
-      "has_media": false,
-      "score": 20000
-    },
-    {
-      "id": "trend-2",
-      "author": "X Trending",
-      "bio": "Trending in Canada",
-      "text": "Trending topic: Norway — Trending in Canada",
-      "created_at": "",
-      "likes": 1900,
-      "views": 190000,
-      "url": "https://x.com/search?q=Norway&src=typed_query&f=top",
-      "has_media": false,
-      "score": 19000
-    },
-    {
-      "id": "trend-10",
-      "author": "X Trending",
-      "bio": "Business & finance · Trending",
-      "text": "Trending topic: $ANSEM — Business & finance · Trending",
-      "created_at": "",
-      "likes": 1100,
-      "views": 110000,
-      "url": "https://x.com/search?q=%24ANSEM&src=typed_query&f=top",
-      "has_media": false,
-      "score": 11000
-    }
+  "errors": [
+    "viral search degraded: ok: false error: code: COMMAND_EXEC message: >- HTTP 429: SearchTimeline fetch failed — rate-limited by Twitter (session quota); retry after cooldown (typically 15-30 min) exitCode: 1",
+    "finance search degraded: ok: false error: code: COMMAND_EXEC message: >- HTTP 429: SearchTimeline fetch failed — rate-limited by Twitter (session quota); retry after cooldown (typically 15-30 min) exitCode: 1",
+    "business search degraded: ok: false error: code: COMMAND_EXEC message: >- HTTP 429: SearchTimeline fetch failed — rate-limited by Twitter (session quota); retry after cooldown (typically 15-30 min) exitCode: 1",
+    "entertainment search degraded: ok: false error: code: COMMAND_EXEC message: >- HTTP 429: SearchTimeline fetch failed — rate-limited by Twitter (session quota); retry after cooldown (typically 15-30 min) exitCode: 1",
+    "sports search degraded: ok: false error: code: COMMAND_EXEC message: >- HTTP 429: SearchTimeline fetch failed — rate-limited by Twitter (session quota); retry after cooldown (typically 15-30 min) exitCode: 1"
   ],
-  "entertainment": [
+  "sections": [
     {
-      "id": "trend-1",
-      "author": "X Trending",
-      "bio": "Trending in Canada",
-      "text": "Trending topic: FIFA — Trending in Canada",
-      "created_at": "",
-      "likes": 2000,
-      "views": 200000,
-      "url": "https://x.com/search?q=FIFA&src=typed_query&f=top",
-      "has_media": false,
-      "score": 20000
+      "key": "finance",
+      "title": "Finance",
+      "deck": "Markets, stocks, crypto, macro, and investing chatter.",
+      "queries": [
+        "stocks OR markets OR investing OR \"Wall Street\" lang:en min_faves:300",
+        "crypto OR bitcoin OR ethereum OR Fed OR \"interest rates\" lang:en min_faves:300"
+      ],
+      "keywords": [
+        "stock",
+        "market",
+        "invest",
+        "wall street",
+        "crypto",
+        "bitcoin",
+        "ethereum",
+        "fed",
+        "rate",
+        "yield",
+        "nasdaq",
+        "s&p",
+        "dollar",
+        "$"
+      ],
+      "items": [
+        {
+          "id": "2073704784398528599",
+          "author": "aleabitoreddit",
+          "bio": "Only on X, don’t trust fake accs\n\nAI/Semi Supply Chains\n\nNFA DYOR, no paid promos; may trade/hold names disc, views my own. Sharing free AI chokepoint research",
+          "text": "Leaked Anthropic docs show plans to secure 1.4GW capacity from Australia, amounting to ~$21.6B. Recently $IREN, $SHAZ, and other Neoclouds have been building sovereign DCs in Australia. Guess like a lot of things are stating to make more sense connection wise? (disclosure: no open positions in any of the above).",
+          "created_at": "Sun Jul 05 09:45:22 +0000 2026",
+          "likes": 2316,
+          "retweets": 150,
+          "replies": 242,
+          "views": 871768,
+          "url": "https://x.com/aleabitoreddit/status/2073704784398528599",
+          "has_media": true,
+          "media_posters": [
+            "https://pbs.twimg.com/media/HMdHgeqbAAARA1T.jpg",
+            "https://pbs.twimg.com/media/HMdHgeqbEAAzBF-.jpg"
+          ],
+          "card": null,
+          "section_hint": "viral",
+          "score": 4735.100355374273,
+          "headline": "Markets watch: Leaked Anthropic docs show plans to secure 1.4GW capacity from Australia, amounting to ~$21.6B.",
+          "why": "It can signal what market participants are emotionally pricing in before formal analysis catches up. The post includes media, so it is more likely to travel beyond the original audience. Current signal: 2.3K likes, 871.8K views."
+        }
+      ]
     },
     {
-      "id": "trend-2",
-      "author": "X Trending",
-      "bio": "Trending in Canada",
-      "text": "Trending topic: Norway — Trending in Canada",
-      "created_at": "",
-      "likes": 1900,
-      "views": 190000,
-      "url": "https://x.com/search?q=Norway&src=typed_query&f=top",
-      "has_media": false,
-      "score": 19000
+      "key": "business",
+      "title": "Business",
+      "deck": "Companies, CEOs, startups, deals, earnings, and operator narratives.",
+      "queries": [
+        "business OR startup OR founder OR CEO OR SaaS lang:en min_faves:300",
+        "earnings OR acquisition OR IPO OR revenue OR company lang:en min_faves:300"
+      ],
+      "keywords": [
+        "business",
+        "startup",
+        "founder",
+        "ceo",
+        "company",
+        "earnings",
+        "retail",
+        "saas",
+        "acquisition",
+        "ipo",
+        "revenue",
+        "customer"
+      ],
+      "items": []
     },
     {
-      "id": "trend-3",
-      "author": "X Trending",
-      "bio": "Politics · Trending",
-      "text": "Trending topic: America — Politics · Trending",
-      "created_at": "",
-      "likes": 1800,
-      "views": 180000,
-      "url": "https://x.com/search?q=America&src=typed_query&f=top",
-      "has_media": false,
-      "score": 18000
-    }
-  ],
-  "sports": [
-    {
-      "id": "trend-1",
-      "author": "X Trending",
-      "bio": "Trending in Canada",
-      "text": "Trending topic: FIFA — Trending in Canada",
-      "created_at": "",
-      "likes": 2000,
-      "views": 200000,
-      "url": "https://x.com/search?q=FIFA&src=typed_query&f=top",
-      "has_media": false,
-      "score": 20000
+      "key": "entertainment",
+      "title": "Entertainment",
+      "deck": "Movies, music, celebrities, streaming, creators, and culture moments.",
+      "queries": [
+        "movie OR music OR celebrity OR Hollywood OR Netflix lang:en min_faves:800",
+        "trailer OR album OR actor OR streaming OR boxoffice lang:en min_faves:800"
+      ],
+      "keywords": [
+        "movie",
+        "music",
+        "celebrity",
+        "hollywood",
+        "netflix",
+        "streaming",
+        "box office",
+        "boxoffice",
+        "trailer",
+        "actor",
+        "album",
+        "film",
+        "song",
+        "artist"
+      ],
+      "items": []
     },
     {
-      "id": "trend-2",
-      "author": "X Trending",
-      "bio": "Trending in Canada",
-      "text": "Trending topic: Norway — Trending in Canada",
-      "created_at": "",
-      "likes": 1900,
-      "views": 190000,
-      "url": "https://x.com/search?q=Norway&src=typed_query&f=top",
-      "has_media": false,
-      "score": 19000
-    },
-    {
-      "id": "trend-13",
-      "author": "X Trending",
-      "bio": "Sports · Trending",
-      "text": "Trending topic: Sheamus — Sports · Trending",
-      "created_at": "",
-      "likes": 800,
-      "views": 80000,
-      "url": "https://x.com/search?q=Sheamus&src=typed_query&f=top",
-      "has_media": false,
-      "score": 8000
-    }
-  ],
-  "viral": [
-    {
-      "id": "trend-1",
-      "author": "X Trending",
-      "bio": "Trending in Canada",
-      "text": "Trending topic: FIFA — Trending in Canada",
-      "created_at": "",
-      "likes": 2000,
-      "views": 200000,
-      "url": "https://x.com/search?q=FIFA&src=typed_query&f=top",
-      "has_media": false,
-      "score": 20000
-    },
-    {
-      "id": "trend-2",
-      "author": "X Trending",
-      "bio": "Trending in Canada",
-      "text": "Trending topic: Norway — Trending in Canada",
-      "created_at": "",
-      "likes": 1900,
-      "views": 190000,
-      "url": "https://x.com/search?q=Norway&src=typed_query&f=top",
-      "has_media": false,
-      "score": 19000
-    },
-    {
-      "id": "trend-3",
-      "author": "X Trending",
-      "bio": "Politics · Trending",
-      "text": "Trending topic: America — Politics · Trending",
-      "created_at": "",
-      "likes": 1800,
-      "views": 180000,
-      "url": "https://x.com/search?q=America&src=typed_query&f=top",
-      "has_media": false,
-      "score": 18000
-    },
-    {
-      "id": "trend-4",
-      "author": "X Trending",
-      "bio": "Trending in Canada",
-      "text": "Trending topic: Odegaard — Trending in Canada",
-      "created_at": "",
-      "likes": 1700,
-      "views": 170000,
-      "url": "https://x.com/search?q=Odegaard&src=typed_query&f=top",
-      "has_media": false,
-      "score": 17000
-    },
-    {
-      "id": "trend-5",
-      "author": "X Trending",
-      "bio": "Entertainment industry · Trending",
-      "text": "Trending topic: Happy 4th of July — Entertainment industry · Trending",
-      "created_at": "",
-      "likes": 1600,
-      "views": 160000,
-      "url": "https://x.com/search?q=Happy+4th+of+July&src=typed_query&f=top",
-      "has_media": false,
-      "score": 16000
-    },
-    {
-      "id": "trend-6",
-      "author": "X Trending",
-      "bio": "Trending in Canada",
-      "text": "Trending topic: Morocco — Trending in Canada",
-      "created_at": "",
-      "likes": 1500,
-      "views": 150000,
-      "url": "https://x.com/search?q=Morocco&src=typed_query&f=top",
-      "has_media": false,
-      "score": 15000
-    },
-    {
-      "id": "trend-7",
-      "author": "X Trending",
-      "bio": "Trending in Canada",
-      "text": "Trending topic: Davies — Trending in Canada",
-      "created_at": "",
-      "likes": 1400,
-      "views": 140000,
-      "url": "https://x.com/search?q=Davies&src=typed_query&f=top",
-      "has_media": false,
-      "score": 14000
-    },
-    {
-      "id": "trend-8",
-      "author": "X Trending",
-      "bio": "Trending in Canada",
-      "text": "Trending topic: Belgium — Trending in Canada",
-      "created_at": "",
-      "likes": 1300,
-      "views": 130000,
-      "url": "https://x.com/search?q=Belgium&src=typed_query&f=top",
-      "has_media": false,
-      "score": 13000
+      "key": "sports",
+      "title": "Sports",
+      "deck": "Games, clips, athletes, controversies, and fan conversation.",
+      "queries": [
+        "sports OR NBA OR NFL OR MLB OR soccer OR football lang:en min_faves:800",
+        "UFC OR Formula1 OR tennis OR WorldCup OR \"World Cup\" lang:en min_faves:800"
+      ],
+      "keywords": [
+        "sports",
+        "nba",
+        "nfl",
+        "mlb",
+        "soccer",
+        "football",
+        "ufc",
+        "formula",
+        "f1",
+        "tennis",
+        "world cup",
+        "goal",
+        "player",
+        "team",
+        "coach"
+      ],
+      "items": [
+        {
+          "id": "2073769554573160474",
+          "author": "usmntonly",
+          "bio": "Independent coverage of everything you need to see and know in American and U.S. men’s soccer — with a focus on the USMNT 🇺🇸 | Part of @MenInBlazers",
+          "text": "Mexico fans outside the England hotel in the middle of the night 😭",
+          "created_at": "Sun Jul 05 14:02:45 +0000 2026",
+          "likes": 5803,
+          "retweets": 319,
+          "replies": 268,
+          "views": 694329,
+          "url": "https://x.com/usmntonly/status/2073769554573160474",
+          "has_media": true,
+          "media_posters": [
+            "https://pbs.twimg.com/amplify_video_thumb/2073672457890701312/img/fa_Z82CH1AwyhdJr.jpg"
+          ],
+          "card": null,
+          "section_hint": "viral",
+          "score": 8756.391482568994,
+          "headline": "Sports X is reacting to: Mexico fans outside the England hotel in the middle of the night 😭",
+          "why": "Sports clips and takes often become the day’s mainstream debate once fan emotion compounds. The post includes media, so it is more likely to travel beyond the original audience. Current signal: 5.8K likes, 694.3K views."
+        }
+      ]
     }
   ]
 }
