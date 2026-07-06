@@ -3,276 +3,189 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Morning X Briefing — July 5, 2026</title>
-  <meta name="description" content="Useful morning briefing from viral X posts and trend watchlist." />
+  <title>The X Wire — Sunday, July 5, 2026</title>
+  <meta name="description" content="A stark daily wire of real viral X posts, velocity-ranked." />
   <style>
-    :root { --bg:#f7f2e9; --paper:#fffaf2; --ink:#15120e; --muted:#6e6559; --line:#e2d6c5; --accent:#c75f2a; --blue:#1d3d5c; --green:#617a45; --dark:#15120e; }
+    :root { --ink:#111214; --body:#3c3d42; --faint:#6f7075; --rule:#e4e4e6; --red:#c8102e; }
     * { box-sizing:border-box; }
-    body { margin:0; background:linear-gradient(180deg,#fbf6ee,var(--bg)); color:var(--ink); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
-    a { color:var(--blue); text-decoration:none; } a:hover { text-decoration:underline; }
-    .wrap { width:min(1060px, calc(100% - 32px)); margin:0 auto; }
-    header { padding:44px 0 18px; }
-    .hero { border:1px solid var(--line); border-radius:28px; padding:30px; background:rgba(255,250,242,.82); box-shadow:0 24px 80px rgba(70,45,20,.08); }
-    .kicker,.eyebrow { color:var(--accent); text-transform:uppercase; letter-spacing:.18em; font-weight:850; font-size:12px; }
-    h1 { font-family: Georgia, "Times New Roman", serif; font-size:clamp(42px,6vw,72px); line-height:.95; letter-spacing:-.055em; margin:12px 0 14px; max-width:850px; }
-    .intro { color:#50483f; line-height:1.65; max-width:760px; font-size:17px; }
-    .pills, nav { display:flex; flex-wrap:wrap; gap:9px; margin-top:20px; }
-    .pill, nav a, .quality { border:1px solid var(--line); border-radius:999px; padding:8px 12px; background:rgba(255,255,255,.48); color:var(--muted); font-size:13px; }
-    nav { margin:18px 0 22px; } nav a { color:var(--ink); }
-    .grid-top { display:grid; grid-template-columns:1.1fr .9fr; gap:16px; margin:20px 0; }
-    .panel { border:1px solid var(--line); border-radius:24px; padding:24px; background:rgba(255,250,242,.74); }
-    .panel.dark { background:var(--dark); color:#fff7ea; border-color:#2b241d; } .panel.dark a { color:#ffd29d; } .panel.dark .eyebrow { color:#f0ad78; }
-    h2 { font-family: Georgia, "Times New Roman", serif; font-size:clamp(26px,3.5vw,42px); line-height:1.04; letter-spacing:-.035em; margin:6px 0 10px; }
-    .quick ul { padding-left:22px; margin:14px 0 0; } .quick li { margin:10px 0; line-height:1.5; }
-    .brief-card { display:grid; grid-template-columns:34px 1fr auto; gap:14px; border:1px solid var(--line); background:rgba(255,255,255,.56); border-radius:20px; padding:16px; margin:12px 0; }
-    .panel.dark .brief-card { background:#211c17; border-color:#40362d; }
-    .num { width:30px; height:30px; border-radius:50%; background:var(--ink); color:#fffaf2; display:grid; place-items:center; font-weight:800; }
-    .panel.dark .num { background:#fff0d8; color:#15120e; }
-    .meta { display:flex; flex-wrap:wrap; gap:8px; color:var(--muted); font-size:13px; align-items:center; } .panel.dark .meta { color:#d7c7b4; }
-    .meta strong { color:var(--ink); } .panel.dark .meta strong { color:#fff7ea; }
-    h3 { margin:8px 0; font-size:18px; line-height:1.25; letter-spacing:-.015em; }
-    .excerpt { color:#3f372f; line-height:1.5; margin:0 0 8px; } .panel.dark .excerpt { color:#f2e8dc; }
-    .why { color:#5b5148; line-height:1.5; margin:0 0 10px; } .panel.dark .why { color:#dacabb; }
-    .source { font-weight:800; font-size:14px; }
-    .thumb img { width:128px; height:96px; object-fit:cover; border-radius:14px; border:1px solid rgba(255,255,255,.18); }
-    .section { border:1px solid var(--line); border-radius:26px; background:rgba(255,250,242,.74); margin:18px 0; overflow:hidden; }
-    .section-head { display:flex; justify-content:space-between; gap:18px; align-items:start; padding:24px 24px 8px; }
-    .section-head p { color:var(--muted); line-height:1.55; max-width:720px; margin:0; }
-    .stack { padding:8px 18px 18px; }
-    .empty { border:1px dashed var(--line); border-radius:18px; color:var(--muted); padding:18px; line-height:1.55; }
-    .trends { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; }
-    .trend { border:1px solid var(--line); border-radius:16px; padding:13px; background:rgba(255,255,255,.46); display:block; }
-    .trend span { color:var(--accent); font-weight:850; font-size:12px; } .trend strong { display:block; color:var(--ink); margin:3px 0; } .trend em { color:var(--muted); font-size:12px; font-style:normal; }
-    .debug { margin-top:14px; color:var(--muted); font-size:13px; }
-    footer { text-align:center; color:var(--muted); font-size:13px; padding:28px 0 54px; }
-    @media (max-width:820px) { .grid-top { grid-template-columns:1fr; } .brief-card { grid-template-columns:30px 1fr; } .thumb { display:none; } .section-head { display:block; } .trends { grid-template-columns:1fr; } }
-  </style>
+    body { margin:0; background:#ffffff; color:var(--ink);
+      font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; }
+    a { color:var(--red); text-decoration:none; font-weight:650; }
+    a:hover { text-decoration:underline; }
+    .wrap { max-width:700px; margin:0 auto; padding:44px 22px 70px; }
+    .masthead { border-bottom:3px solid var(--ink); padding-bottom:10px;
+      display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:6px; }
+    .masthead h1 { margin:0; font-size:15px; font-weight:800; letter-spacing:.26em; text-transform:uppercase; }
+    .masthead time { font-size:12px; color:var(--faint); letter-spacing:.08em; }
+    .runinfo { margin:10px 0 0; font-size:12px; color:var(--faint); letter-spacing:.04em; }
+    .item { padding:22px 0; border-bottom:1px solid var(--rule); }
+    .item .k { font-size:11px; font-weight:800; letter-spacing:.2em; color:var(--red); text-transform:uppercase; }
+    .item h2 { margin:6px 0; font-size:24px; line-height:1.2; font-weight:750; letter-spacing:-.02em; text-wrap:balance; }
+    .lede h2 { font-size:34px; }
+    .item p { margin:0 0 4px; font-size:15px; line-height:1.6; color:var(--body); max-width:62ch; }
+    .item .quote { color:var(--faint); font-size:14px; }
+    .item .src { margin-top:8px; font-size:13px; color:var(--faint); font-variant-numeric:tabular-nums; }
+    .item .src b { color:var(--ink); font-weight:650; }
+    .kicker { margin:34px 0 4px; font-size:12px; font-weight:800; letter-spacing:.22em;
+      text-transform:uppercase; border-bottom:3px solid var(--ink); padding-bottom:8px; }
+    .brief-row { display:flex; gap:10px; padding:12px 0; border-bottom:1px solid var(--rule);
+      font-size:15px; line-height:1.5; }
+    .brief-row .t { color:var(--red); font-weight:800; white-space:nowrap; font-variant-numeric:tabular-nums; }
+    .empty { padding:12px 0; border-bottom:1px solid var(--rule); color:var(--faint); font-size:14px; }
+    details.notes { margin-top:30px; font-size:12px; color:var(--faint); }
+    details.notes li { margin:4px 0; }
+    footer { margin-top:44px; padding-top:12px; border-top:3px solid var(--ink);
+      font-size:12px; color:var(--faint); display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px; }
+</style>
 </head>
 <body>
   <div class="wrap">
-    <header>
-      <div class="hero">
-        <div class="kicker">Morning X Briefing · July 5, 2026</div>
-        <h1>What’s worth knowing before the day gets loud.</h1>
-        <p class="intro">A clean morning scan of real viral X posts across finance, business, entertainment, and sports. When post search is degraded, the page says so instead of padding sections with fake signals.</p>
-        <div class="pills"><span class="pill">Generated 2:37 PM PDT</span><span class="pill">14 real posts collected</span><span class="pill">Status: Partial post search</span><span class="pill">Source: Agent-Reach / OpenCLI X</span></div>
-      </div>
-      <nav><a href="#finance">Finance</a><a href="#business">Business</a><a href="#entertainment">Entertainment</a><a href="#sports">Sports</a><a href="#viral">Overall Viral</a><a href="#watchlist">Trend Watchlist</a></nav>
-    </header>
-
-    <div class="grid-top">
-      <section class="panel quick">
-        <p class="eyebrow">5-minute read</p>
-        <h2>Today’s quick read</h2>
-        <p>Some real posts were collected, but at least one X search was rate-limited or degraded.</p>
-        <ul><li>Top viral post: @sage1411 is driving the strongest engagement with “My brother posts this every year in the family chat on the 4th. Still hilarious.”.</li><li>Finance: Markets watch: Leaked Anthropic docs show plans to secure 1.4GW capacity from Australia, amounting to ~$21.6B.</li><li>Business: no strong real-post signal found in the latest collection window.</li><li>Entertainment: no strong real-post signal found in the latest collection window.</li><li>Sports: Sports X is reacting to: Mexico fans outside the England hotel in the middle of the night 😭</li><li>Data quality note: one or more X searches were rate-limited or degraded, so empty sections are intentional rather than padded.</li></ul>
-        <details class='debug'><summary>Collection notes</summary><ul><li>viral search degraded: ok: false error: code: COMMAND_EXEC message: &gt;- HTTP 429: SearchTimeline fetch failed — rate-limited by Twitter (session quota); retry after cooldown (typically 15-30 min) exitCode: 1</li><li>finance search degraded: ok: false error: code: COMMAND_EXEC message: &gt;- HTTP 429: SearchTimeline fetch failed — rate-limited by Twitter (session quota); retry after cooldown (typically 15-30 min) exitCode: 1</li><li>business search degraded: ok: false error: code: COMMAND_EXEC message: &gt;- HTTP 429: SearchTimeline fetch failed — rate-limited by Twitter (session quota); retry after cooldown (typically 15-30 min) exitCode: 1</li><li>entertainment search degraded: ok: false error: code: COMMAND_EXEC message: &gt;- HTTP 429: SearchTimeline fetch failed — rate-limited by Twitter (session quota); retry after cooldown (typically 15-30 min) exitCode: 1</li><li>sports search degraded: ok: false error: code: COMMAND_EXEC message: &gt;- HTTP 429: SearchTimeline fetch failed — rate-limited by Twitter (session quota); retry after cooldown (typically 15-30 min) exitCode: 1</li></ul></details>
-      </section>
-      <section class="panel" id="watchlist">
-        <p class="eyebrow">Trend watchlist</p>
-        <h2>Topics to check manually</h2>
-        <p class="intro">These are X trending topics, not posts. Use them as leads when search is rate-limited.</p>
-        <div class="trends">
-    <a class="trend" href="https://x.com/search?q=FIFA&amp;src=typed_query&amp;f=top" target="_blank" rel="noopener noreferrer">
-      <span>#1</span>
-      <strong>FIFA</strong>
-      <em>Trending in Canada</em>
-    </a>
-    
-    <a class="trend" href="https://x.com/search?q=Norway&amp;src=typed_query&amp;f=top" target="_blank" rel="noopener noreferrer">
-      <span>#2</span>
-      <strong>Norway</strong>
-      <em>Trending in Canada</em>
-    </a>
-    
-    <a class="trend" href="https://x.com/search?q=Vini&amp;src=typed_query&amp;f=top" target="_blank" rel="noopener noreferrer">
-      <span>#3</span>
-      <strong>Vini</strong>
-      <em>Trending in Canada</em>
-    </a>
-    
-    <a class="trend" href="https://x.com/search?q=Odegaard&amp;src=typed_query&amp;f=top" target="_blank" rel="noopener noreferrer">
-      <span>#4</span>
-      <strong>Odegaard</strong>
-      <em>Trending in Canada</em>
-    </a>
-    
-    <a class="trend" href="https://x.com/search?q=America&amp;src=typed_query&amp;f=top" target="_blank" rel="noopener noreferrer">
-      <span>#5</span>
-      <strong>America</strong>
-      <em>Politics · Trending</em>
-    </a>
-    
-    <a class="trend" href="https://x.com/search?q=Happy+4th+of+July&amp;src=typed_query&amp;f=top" target="_blank" rel="noopener noreferrer">
-      <span>#6</span>
-      <strong>Happy 4th of July</strong>
-      <em>Entertainment industry · Trending</em>
-    </a>
-    
-    <a class="trend" href="https://x.com/search?q=Morocco&amp;src=typed_query&amp;f=top" target="_blank" rel="noopener noreferrer">
-      <span>#7</span>
-      <strong>Morocco</strong>
-      <em>Trending in Canada</em>
-    </a>
-    
-    <a class="trend" href="https://x.com/search?q=Davies&amp;src=typed_query&amp;f=top" target="_blank" rel="noopener noreferrer">
-      <span>#8</span>
-      <strong>Davies</strong>
-      <em>Trending in Canada</em>
-    </a>
-    
-    <a class="trend" href="https://x.com/search?q=Belgium&amp;src=typed_query&amp;f=top" target="_blank" rel="noopener noreferrer">
-      <span>#9</span>
-      <strong>Belgium</strong>
-      <em>Trending in Canada</em>
-    </a>
-    
-    <a class="trend" href="https://x.com/search?q=Freezies&amp;src=typed_query&amp;f=top" target="_blank" rel="noopener noreferrer">
-      <span>#10</span>
-      <strong>Freezies</strong>
-      <em>Trending in Canada</em>
-    </a>
-    
-    <a class="trend" href="https://x.com/search?q=Nyland&amp;src=typed_query&amp;f=top" target="_blank" rel="noopener noreferrer">
-      <span>#11</span>
-      <strong>Nyland</strong>
-      <em>Trending in Canada</em>
-    </a>
-    
-    <a class="trend" href="https://x.com/search?q=%24ANSEM&amp;src=typed_query&amp;f=top" target="_blank" rel="noopener noreferrer">
-      <span>#12</span>
-      <strong>$ANSEM</strong>
-      <em>Business &amp; finance · Trending</em>
-    </a>
-    </div>
-      </section>
-    </div>
-
-    <section id="viral" class="panel dark">
-      <p class="eyebrow">Overall viral</p>
-      <h2>The posts with the most breakout potential</h2>
-      <p class="why">Open-topic signals first — useful for spotting stories that may cross from X into broader conversation.</p>
-      
-    <article class="brief-card">
-      <div class="num">1</div>
-      <div class="brief-copy">
-        <div class="meta"><strong>@sage1411</strong><span>90.4K likes · 5.3M views · 13.4K reposts</span><span>media</span></div>
-        <h3>Viral breakout: My brother posts this every year in the family chat on the 4th. Still hilarious.</h3>
-        <p class="excerpt">My brother posts this every year in the family chat on the 4th. Still hilarious.</p>
-        <p class="why"><strong>Why it matters:</strong> It has enough social velocity to potentially jump from X into broader conversation. The post includes media, so it is more likely to travel beyond the original audience. Current signal: 90.4K likes, 5.3M views.</p>
-        <a class="source" href="https://x.com/sage1411/status/2073436700865331383" target="_blank" rel="noopener noreferrer">Open original post →</a>
-      </div>
-      <a class="thumb" href="https://x.com/sage1411/status/2073436700865331383" target="_blank" rel="noopener noreferrer"><img src="https://pbs.twimg.com/amplify_video_thumb/2073179298702213120/img/3GTXqxrqLb62MVgo.jpg" alt="Post media preview" loading="lazy"></a>
-    </article>
-    
-    <article class="brief-card">
-      <div class="num">2</div>
-      <div class="brief-copy">
-        <div class="meta"><strong>@GuntherEagleman</strong><span>35.1K likes · 3.8M views · 5.2K reposts</span><span>media</span></div>
-        <h3>Viral breakout: LOL!!! “Nah bro I have the Trump card, I win.” Trump card always wins!</h3>
-        <p class="excerpt">LOL!!! “Nah bro I have the Trump card, I win.” Trump card always wins!</p>
-        <p class="why"><strong>Why it matters:</strong> It has enough social velocity to potentially jump from X into broader conversation. The post includes media, so it is more likely to travel beyond the original audience. Current signal: 35.1K likes, 3.8M views.</p>
-        <a class="source" href="https://x.com/GuntherEagleman/status/2073839009344762235" target="_blank" rel="noopener noreferrer">Open original post →</a>
-      </div>
-      <a class="thumb" href="https://x.com/GuntherEagleman/status/2073839009344762235" target="_blank" rel="noopener noreferrer"><img src="https://pbs.twimg.com/amplify_video_thumb/2073838956014157824/img/93773iCfjf3WdJ_B.jpg" alt="Post media preview" loading="lazy"></a>
-    </article>
-    
-    <article class="brief-card">
-      <div class="num">3</div>
-      <div class="brief-copy">
-        <div class="meta"><strong>@europemaxxed</strong><span>37.1K likes · 1.0M views · 1.7K reposts</span><span>media</span></div>
-        <h3>Viral breakout: Paris regardless of the outcome of Morocco vs France:</h3>
-        <p class="excerpt">Paris regardless of the outcome of Morocco vs France:</p>
-        <p class="why"><strong>Why it matters:</strong> It has enough social velocity to potentially jump from X into broader conversation. The post includes media, so it is more likely to travel beyond the original audience. Current signal: 37.1K likes, 1.0M views.</p>
-        <a class="source" href="https://x.com/europemaxxed/status/2073708333438050547" target="_blank" rel="noopener noreferrer">Open original post →</a>
-      </div>
-      <a class="thumb" href="https://x.com/europemaxxed/status/2073708333438050547" target="_blank" rel="noopener noreferrer"><img src="https://pbs.twimg.com/amplify_video_thumb/2073708267939753984/img/xOA8xNQNuOaSmJa_.jpg" alt="Post media preview" loading="lazy"></a>
-    </article>
-    
-    <article class="brief-card">
-      <div class="num">4</div>
-      <div class="brief-copy">
-        <div class="meta"><strong>@kirawontmiss</strong><span>33.7K likes · 1.8M views · 2.0K reposts</span></div>
-        <h3>Viral breakout: I’m not hating hard enough. This is a different level of hatred 😭</h3>
-        <p class="excerpt">I’m not hating hard enough. This is a different level of hatred 😭</p>
-        <p class="why"><strong>Why it matters:</strong> It has enough social velocity to potentially jump from X into broader conversation. Current signal: 33.7K likes, 1.8M views.</p>
-        <a class="source" href="https://x.com/kirawontmiss/status/2073805024237433099" target="_blank" rel="noopener noreferrer">Open original post →</a>
-      </div>
-      
-    </article>
-    
-    <article class="brief-card">
-      <div class="num">5</div>
-      <div class="brief-copy">
-        <div class="meta"><strong>@joeroganhq</strong><span>26.3K likes · 4.7M views · 1.3K reposts</span><span>media</span></div>
-        <h3>Viral breakout: Another reason why women live longer than men.</h3>
-        <p class="excerpt">Another reason why women live longer than men.</p>
-        <p class="why"><strong>Why it matters:</strong> It has enough social velocity to potentially jump from X into broader conversation. The post includes media, so it is more likely to travel beyond the original audience. Current signal: 26.3K likes, 4.7M views.</p>
-        <a class="source" href="https://x.com/joeroganhq/status/2073537336764457125" target="_blank" rel="noopener noreferrer">Open original post →</a>
-      </div>
-      <a class="thumb" href="https://x.com/joeroganhq/status/2073537336764457125" target="_blank" rel="noopener noreferrer"><img src="https://pbs.twimg.com/amplify_video_thumb/2073435711005495296/img/Fd8asvzm6pagWWme.jpg" alt="Post media preview" loading="lazy"></a>
-    </article>
-    
-    </section>
+    <div class="masthead"><h1>The X Wire</h1><time>Sunday, July 5, 2026 · 9:22 PM PDT</time></div>
+    <p class="runinfo">16 stories · full collection · auto-templated · real posts only, never padded</p>
 
     
-            <section id="finance" class="section">
-              <div class="section-head">
-                <div><p class="eyebrow">Finance</p><h2>Finance: Markets watch: Leaked Anthropic docs show plans to secure 1.4GW capacity from Australia, amounting to ~$21.6B.</h2><p>Markets, stocks, crypto, macro, and investing chatter.</p></div>
-                <span class="quality">Real posts</span>
-              </div>
-              <div class="stack">
-    <article class="brief-card">
-      <div class="num">1</div>
-      <div class="brief-copy">
-        <div class="meta"><strong>@aleabitoreddit</strong><span>2.3K likes · 871.8K views · 150 reposts</span><span>media</span></div>
-        <h3>Markets watch: Leaked Anthropic docs show plans to secure 1.4GW capacity from Australia, amounting to ~$21.6B.</h3>
-        <p class="excerpt">Leaked Anthropic docs show plans to secure 1.4GW capacity from Australia, amounting to ~$21.6B. Recently $IREN, $SHAZ, and other Neoclouds have been building sovereign DCs in Australia. Guess like a lot of things are st…</p>
-        <p class="why"><strong>Why it matters:</strong> It can signal what market participants are emotionally pricing in before formal analysis catches up. The post includes media, so it is more likely to travel beyond the original audience. Current signal: 2.3K likes, 871.8K views.</p>
-        <a class="source" href="https://x.com/aleabitoreddit/status/2073704784398528599" target="_blank" rel="noopener noreferrer">Open original post →</a>
-      </div>
+    <div class="item lede">
+      <span class="k">Top story · ▲ 223.2K likes/hr</span>
+      <h2>Well well well 😂</h2>
       
-    </article>
+      <p>Enough social velocity to jump from X into everyday conversation. Gaining ~223.2K likes/hr right now.</p>
+      <div class="src">Source: <b>@ErlingHaaland</b> · 1.2M likes · 18.7M views ·
+        <a href="https://x.com/ErlingHaaland/status/2073901686410608901" target="_blank" rel="noopener noreferrer">open post</a></div>
     </div>
-            </section>
-            
-            <section id="business" class="section">
-              <div class="section-head">
-                <div><p class="eyebrow">Business</p><h2>Business: no reliable signal yet</h2><p>Companies, CEOs, startups, deals, earnings, and operator narratives.</p></div>
-                <span class="quality">No strong signal</span>
-              </div>
-              <div class="stack"><div class="empty"><strong>No padded filler.</strong><br>X did not return a clean real-post signal for this section. Check the trend watchlist below, or wait for the next run.</div></div>
-            </section>
-            
-            <section id="entertainment" class="section">
-              <div class="section-head">
-                <div><p class="eyebrow">Entertainment</p><h2>Entertainment: no reliable signal yet</h2><p>Movies, music, celebrities, streaming, creators, and culture moments.</p></div>
-                <span class="quality">No strong signal</span>
-              </div>
-              <div class="stack"><div class="empty"><strong>No padded filler.</strong><br>X did not return a clean real-post signal for this section. Check the trend watchlist below, or wait for the next run.</div></div>
-            </section>
-            
-            <section id="sports" class="section">
-              <div class="section-head">
-                <div><p class="eyebrow">Sports</p><h2>Sports: Sports X is reacting to: Mexico fans outside the England hotel in the middle of the night 😭</h2><p>Games, clips, athletes, controversies, and fan conversation.</p></div>
-                <span class="quality">Real posts</span>
-              </div>
-              <div class="stack">
-    <article class="brief-card">
-      <div class="num">1</div>
-      <div class="brief-copy">
-        <div class="meta"><strong>@usmntonly</strong><span>5.8K likes · 694.3K views · 319 reposts</span><span>media</span></div>
-        <h3>Sports X is reacting to: Mexico fans outside the England hotel in the middle of the night 😭</h3>
-        <p class="excerpt">Mexico fans outside the England hotel in the middle of the night 😭</p>
-        <p class="why"><strong>Why it matters:</strong> Sports clips and takes often become the day’s mainstream debate once fan emotion compounds. The post includes media, so it is more likely to travel beyond the original audience. Current signal: 5.8K likes, 694.3K views.</p>
-        <a class="source" href="https://x.com/usmntonly/status/2073769554573160474" target="_blank" rel="noopener noreferrer">Open original post →</a>
-      </div>
+    <div class="item">
+      <span class="k">Viral · ▲ 13.3K likes/hr</span>
+      <h2>—¿Esa rubia cuántos años tiene? —25. —Uh, justito. ¿Cómo se llama? —Erling Haaland.</h2>
       
-    </article>
+      <p>Enough social velocity to jump from X into everyday conversation. Gaining ~13.3K likes/hr right now.</p>
+      <div class="src">Source: <b>@federodr</b> · 88.8K likes · 1.1M views ·
+        <a href="https://x.com/federodr/status/2073884902722879803" target="_blank" rel="noopener noreferrer">open post</a></div>
     </div>
-            </section>
-            
-    <footer>Updated daily by Hermes Agent. Real posts and trends are clearly separated.</footer>
+    <div class="item">
+      <span class="k">Worldwide Trending · ▲ 11.8K likes/hr</span>
+      <h2>🚨⚠️ Belgium coach Rudi Garcia: “I didn’t know that at the World Cup as at FIFA the 5th…</h2>
+      
+      <p>Enough social velocity to jump from X into everyday conversation. Gaining ~11.8K likes/hr right now.</p>
+      <div class="src">Source: <b>@FabrizioRomano</b> · 88.0K likes · 4.5M views ·
+        <a href="https://x.com/FabrizioRomano/status/2073872906874925112" target="_blank" rel="noopener noreferrer">open post</a></div>
+    </div>
+    
+    <div class="kicker">USA Trending</div>
+    <div class="item">
+      <span class="k">USA Trending · ▲ 7.5K likes/hr</span>
+      <h2>Maradona si hubiera existido la pausa de hidratacion en el mundial de México 86.</h2>
+      
+      <p>Enough social velocity to jump from X into everyday conversation. Gaining ~7.5K likes/hr right now.</p>
+      <div class="src">Source: <b>@elconde_nad0</b> · 26.3K likes · 1.1M views ·
+        <a href="https://x.com/elconde_nad0/status/2073896090751955427" target="_blank" rel="noopener noreferrer">open post</a></div>
+    </div>
+    <div class="item">
+      <span class="k">USA Trending · ▲ 5.0K likes/hr</span>
+      <h2>LOL!!! “Nah bro I have the Trump card, I win.” Trump card always wins!</h2>
+      
+      <p>Enough social velocity to jump from X into everyday conversation. Gaining ~5.0K likes/hr right now.</p>
+      <div class="src">Source: <b>@GuntherEagleman</b> · 67.7K likes · 13.1M views ·
+        <a href="https://x.com/GuntherEagleman/status/2073839009344762235" target="_blank" rel="noopener noreferrer">open post</a></div>
+    </div>
+    <div class="item">
+      <span class="k">USA Trending · ▲ 4.5K likes/hr</span>
+      <h2>How USA will play against Belgium now that they have Donald Trump&#x27;s presidential red ca…</h2>
+      
+      <p>Enough social velocity to jump from X into everyday conversation. Gaining ~4.5K likes/hr right now.</p>
+      <div class="src">Source: <b>@TrollFootball</b> · 43.3K likes · 2.5M views ·
+        <a href="https://x.com/TrollFootball/status/2073841433967243494" target="_blank" rel="noopener noreferrer">open post</a></div>
+    </div>
+    <div class="kicker">Worldwide Trending</div>
+    <div class="item">
+      <span class="k">Worldwide Trending · ▲ 8.2K likes/hr</span>
+      <h2>England team trying to leave Mexico if they win tonight</h2>
+      
+      <p>Enough social velocity to jump from X into everyday conversation. Gaining ~8.2K likes/hr right now.</p>
+      <div class="src">Source: <b>@10blended</b> · 97.8K likes · 3.2M views ·
+        <a href="https://x.com/10blended/status/2073786052498567422" target="_blank" rel="noopener noreferrer">open post</a></div>
+    </div>
+    <div class="item">
+      <span class="k">Worldwide Trending · ▲ 6.7K likes/hr</span>
+      <h2>Paris after the France vs Morocco match regardless of who wins</h2>
+      
+      <p>Enough social velocity to jump from X into everyday conversation. Gaining ~6.7K likes/hr right now.</p>
+      <div class="src">Source: <b>@tastefullysaucy</b> · 192.4K likes · 5.7M views ·
+        <a href="https://x.com/tastefullysaucy/status/2073548940654285226" target="_blank" rel="noopener noreferrer">open post</a></div>
+    </div>
+    <div class="item">
+      <span class="k">Worldwide Trending · ▲ 3.5K likes/hr</span>
+      <h2>Brazil letting Neymar take the penalty</h2>
+      
+      <p>Enough social velocity to jump from X into everyday conversation. Gaining ~3.5K likes/hr right now.</p>
+      <div class="src">Source: <b>@advitwake</b> · 22.1K likes · 319.8K views ·
+        <a href="https://x.com/advitwake/status/2073890738656690623" target="_blank" rel="noopener noreferrer">open post</a></div>
+    </div>
+    <div class="kicker">Tech &amp; AI</div>
+    <div class="item">
+      <span class="k">Tech &amp; AI · ▲ 5.7K likes/hr</span>
+      <h2>USMNT fans seeing that Folarin Balogun can play against Belgium</h2>
+      
+      <p>Tech X is amplifying this — expect it in tomorrow&#x27;s newsletters if it holds. Gaining ~5.7K likes/hr right now.</p>
+      <div class="src">Source: <b>@tosinmm_</b> · 63.8K likes · 5.2M views ·
+        <a href="https://x.com/tosinmm_/status/2073816213738668335" target="_blank" rel="noopener noreferrer">open post</a></div>
+    </div>
+    <div class="item">
+      <span class="k">Tech &amp; AI · ▲ 3.2K likes/hr</span>
+      <h2>THIS IS SATANIC ✡️🇮🇱 An Israeli soldier throws a stun grenade into a car carrying a Pal…</h2>
+      
+      <p>Tech X is amplifying this — expect it in tomorrow&#x27;s newsletters if it holds. Gaining ~3.2K likes/hr right now.</p>
+      <div class="src">Source: <b>@Parodyjeffx</b> · 25.1K likes · 594.8K views ·
+        <a href="https://x.com/Parodyjeffx/status/2073866526071885846" target="_blank" rel="noopener noreferrer">open post</a></div>
+    </div>
+    <div class="item">
+      <span class="k">Tech &amp; AI · ▲ 2.6K likes/hr</span>
+      <h2>ハーランド、全部AIじゃないかってくらいウソみたいなゴールでスーパーストライカーすぎる。ブラジル敗退も納得。</h2>
+      
+      <p>Tech X is amplifying this — expect it in tomorrow&#x27;s newsletters if it holds. Gaining ~2.6K likes/hr right now.</p>
+      <div class="src">Source: <b>@ZanEngineer</b> · 10.6K likes · 2.6M views ·
+        <a href="https://x.com/ZanEngineer/status/2073924328215973974" target="_blank" rel="noopener noreferrer">open post</a></div>
+    </div>
+    <div class="kicker">Finance</div>
+    <div class="item">
+      <span class="k">Finance · ▲ 2.0K likes/hr</span>
+      <h2>I AM THE 🐐 - I JUST GUESSED CORRECT SCORE. $50K USD —&amp;gt; $7.234M USD (DO NOT GAMBLE YO…</h2>
+      
+      <p>A signal of what traders are emotionally pricing in before the desks react. Gaining ~2.0K likes/hr right now.</p>
+      <div class="src">Source: <b>@Trainwreckstv</b> · 4.1K likes · 303.7K views ·
+        <a href="https://x.com/Trainwreckstv/status/2073967833827188816" target="_blank" rel="noopener noreferrer">open post</a></div>
+    </div>
+    <div class="kicker">Sports</div>
+    <div class="item">
+      <span class="k">Sports · ▲ 10.9K likes/hr</span>
+      <h2>The vikings. 🚣‍♂️🥁 Beautiful to see, fantastic team making history and fantastic fan ba…</h2>
+      
+      <p>Fan emotion is compounding — this is heading for the mainstream debate cycle. Gaining ~10.9K likes/hr right now.</p>
+      <div class="src">Source: <b>@FabrizioRomano</b> · 61.2K likes · 2.0M views ·
+        <a href="https://x.com/FabrizioRomano/status/2073901189666578553" target="_blank" rel="noopener noreferrer">open post</a></div>
+    </div>
+    <div class="item">
+      <span class="k">Sports · ▲ 8.3K likes/hr</span>
+      <h2>One of the best post-match interviews you will EVER see! Rest up, Harry :)</h2>
+      
+      <p>Fan emotion is compounding — this is heading for the mainstream debate cycle. Gaining ~8.3K likes/hr right now.</p>
+      <div class="src">Source: <b>@BBCSport</b> · 16.7K likes · 1.2M views ·
+        <a href="https://x.com/BBCSport/status/2073972257999757655" target="_blank" rel="noopener noreferrer">open post</a></div>
+    </div>
+    <div class="item">
+      <span class="k">Sports · ▲ 4.6K likes/hr</span>
+      <h2>Hitler couldn’t burn down Paris but this game might</h2>
+      
+      <p>Fan emotion is compounding — this is heading for the mainstream debate cycle. Gaining ~4.6K likes/hr right now.</p>
+      <div class="src">Source: <b>@TrueSlazac</b> · 132.3K likes · 2.5M views ·
+        <a href="https://x.com/TrueSlazac/status/2073549485708353933" target="_blank" rel="noopener noreferrer">open post</a></div>
+    </div>
+    
+    <div class="kicker">In brief</div><div class="brief-row"><span class="t">TREND</span><span>Rising, no post captured — worth a look: <a href="https://x.com/search?q=Norway&src=typed_query&f=top" target="_blank" rel="noopener noreferrer">Norway</a> · <a href="https://x.com/search?q=%23MEXENG&src=typed_query&f=top" target="_blank" rel="noopener noreferrer">#MEXENG</a> · <a href="https://x.com/search?q=Pickford&src=typed_query&f=top" target="_blank" rel="noopener noreferrer">Pickford</a> · <a href="https://x.com/search?q=Tuchel&src=typed_query&f=top" target="_blank" rel="noopener noreferrer">Tuchel</a> · <a href="https://x.com/search?q=Quansah&src=typed_query&f=top" target="_blank" rel="noopener noreferrer">Quansah</a></span></div>
+    <details class="notes"><summary>Collection notes</summary><ul><li>ANTHROPIC_API_KEY not set; using rule-based fallback</li></ul></details>
+
+    <footer>
+      <span><a href="archive/2026-07-04.html">← 2026-07-04</a></span>
+      <span>Generated on demand via agent-reach</span>
+    </footer>
   </div>
 </body>
 </html>

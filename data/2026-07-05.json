@@ -1,576 +1,1724 @@
 {
-  "generated_at": "2026-07-05T14:37:18.178059-07:00",
-  "since": "2026-07-04",
+  "generated_at": "2026-07-05T21:22:01.137326-07:00",
+  "stories": [
+    {
+      "headline": "Well well well 😂",
+      "why": "Enough social velocity to jump from X into everyday conversation. Gaining ~223.2K likes/hr right now.",
+      "topic": "viral",
+      "primary_id": "2073901686410608901",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "—¿Esa rubia cuántos años tiene? —25. —Uh, justito. ¿Cómo se llama? —Erling Haaland.",
+      "why": "Enough social velocity to jump from X into everyday conversation. Gaining ~13.3K likes/hr right now.",
+      "topic": "viral",
+      "primary_id": "2073884902722879803",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "The US is the last host country standing...",
+      "why": "Enough social velocity to jump from X into everyday conversation. Gaining ~11.0K likes/hr right now.",
+      "topic": "viral",
+      "primary_id": "2073970726927818765",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "The vikings. 🚣‍♂️🥁 Beautiful to see, fantastic team making history and fantastic fan ba…",
+      "why": "Fan emotion is compounding — this is heading for the mainstream debate cycle. Gaining ~10.9K likes/hr right now.",
+      "topic": "sports",
+      "primary_id": "2073901189666578553",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "🚨⚠️ Belgium coach Rudi Garcia: “I didn’t know that at the World Cup as at FIFA the 5th…",
+      "why": "Enough social velocity to jump from X into everyday conversation. Gaining ~11.8K likes/hr right now.",
+      "topic": "worldwide",
+      "primary_id": "2073872906874925112",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "La hermana de Haaland se parece más a Haaland que el propio Haaland.",
+      "why": "Enough social velocity to jump from X into everyday conversation. Gaining ~10.0K likes/hr right now.",
+      "topic": "viral",
+      "primary_id": "2073893870736183754",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "mínimo",
+      "why": "Enough social velocity to jump from X into everyday conversation. Gaining ~9.3K likes/hr right now.",
+      "topic": "viral",
+      "primary_id": "2073895509614645519",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "One of the best post-match interviews you will EVER see! Rest up, Harry :)",
+      "why": "Fan emotion is compounding — this is heading for the mainstream debate cycle. Gaining ~8.3K likes/hr right now.",
+      "topic": "sports",
+      "primary_id": "2073972257999757655",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "England team trying to leave Mexico if they win tonight",
+      "why": "Enough social velocity to jump from X into everyday conversation. Gaining ~8.2K likes/hr right now.",
+      "topic": "worldwide",
+      "primary_id": "2073786052498567422",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "Su capacidad para no inmutarse ante ataques físicos descarados debe ser estudiada",
+      "why": "Enough social velocity to jump from X into everyday conversation. Gaining ~7.9K likes/hr right now.",
+      "topic": "viral",
+      "primary_id": "2073920169353867674",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "Maradona si hubiera existido la pausa de hidratacion en el mundial de México 86.",
+      "why": "Enough social velocity to jump from X into everyday conversation. Gaining ~7.5K likes/hr right now.",
+      "topic": "usa",
+      "primary_id": "2073896090751955427",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "Paris after the France vs Morocco match regardless of who wins",
+      "why": "Enough social velocity to jump from X into everyday conversation. Gaining ~6.7K likes/hr right now.",
+      "topic": "worldwide",
+      "primary_id": "2073548940654285226",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "Cada vez me sorprendo mas de la fuerza con la que se sacudió la tierra en Venezuela, va…",
+      "why": "Enough social velocity to jump from X into everyday conversation. Gaining ~5.9K likes/hr right now.",
+      "topic": "viral",
+      "primary_id": "2073850377137467402",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "USMNT fans seeing that Folarin Balogun can play against Belgium",
+      "why": "Tech X is amplifying this — expect it in tomorrow's newsletters if it holds. Gaining ~5.7K likes/hr right now.",
+      "topic": "tech",
+      "primary_id": "2073816213738668335",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "LOL!!! “Nah bro I have the Trump card, I win.” Trump card always wins!",
+      "why": "Enough social velocity to jump from X into everyday conversation. Gaining ~5.0K likes/hr right now.",
+      "topic": "usa",
+      "primary_id": "2073839009344762235",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "All the feels for Memo Ochoa Thank you for the memories 🇲🇽",
+      "why": "Enough social velocity to jump from X into everyday conversation. Gaining ~4.8K likes/hr right now.",
+      "topic": "viral",
+      "primary_id": "2073967598832898067",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "Hitler couldn’t burn down Paris but this game might",
+      "why": "Fan emotion is compounding — this is heading for the mainstream debate cycle. Gaining ~4.6K likes/hr right now.",
+      "topic": "sports",
+      "primary_id": "2073549485708353933",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "How USA will play against Belgium now that they have Donald Trump's presidential red ca…",
+      "why": "Enough social velocity to jump from X into everyday conversation. Gaining ~4.5K likes/hr right now.",
+      "topic": "usa",
+      "primary_id": "2073841433967243494",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "Haaland has just unlocked the full aura of the Viking row🥶😭😭",
+      "why": "Enough social velocity to jump from X into everyday conversation. Gaining ~3.8K likes/hr right now.",
+      "topic": "viral",
+      "primary_id": "2073894763560915411",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "I’m not hating hard enough. This is a different level of hatred 😭",
+      "why": "Enough social velocity to jump from X into everyday conversation. Gaining ~3.7K likes/hr right now.",
+      "topic": "viral",
+      "primary_id": "2073805024237433099",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "If only Mexicans put this kinda effort into getting rid of cartels",
+      "why": "Enough social velocity to jump from X into everyday conversation. Gaining ~3.6K likes/hr right now.",
+      "topic": "viral",
+      "primary_id": "2073757145703543166",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "Brazil letting Neymar take the penalty",
+      "why": "Enough social velocity to jump from X into everyday conversation. Gaining ~3.5K likes/hr right now.",
+      "topic": "worldwide",
+      "primary_id": "2073890738656690623",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "es un tipaso muy divertido haaland se asusta con su propio reflejo",
+      "why": "Enough social velocity to jump from X into everyday conversation. Gaining ~3.5K likes/hr right now.",
+      "topic": "viral",
+      "primary_id": "2073892513597825202",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "My brother posts this every year in the family chat on the 4th. Still hilarious.",
+      "why": "Enough social velocity to jump from X into everyday conversation. Gaining ~3.8K likes/hr right now.",
+      "topic": "viral",
+      "primary_id": "2073436700865331383",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "We need a bit more shame. People used to avoid certain self-interested behaviors to avo…",
+      "why": "Enough social velocity to jump from X into everyday conversation. Gaining ~3.2K likes/hr right now.",
+      "topic": "usa",
+      "primary_id": "2073971236615729389",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "THIS IS SATANIC ✡️🇮🇱 An Israeli soldier throws a stun grenade into a car carrying a Pal…",
+      "why": "Tech X is amplifying this — expect it in tomorrow's newsletters if it holds. Gaining ~3.2K likes/hr right now.",
+      "topic": "tech",
+      "primary_id": "2073866526071885846",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "Good luck to England tonight 😶‍🌫️",
+      "why": "Enough social velocity to jump from X into everyday conversation. Gaining ~2.9K likes/hr right now.",
+      "topic": "worldwide",
+      "primary_id": "2073664733224530379",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "His ability to be unrattled by blatant physical attacks needs to be studied",
+      "why": "Enough social velocity to jump from X into everyday conversation. Gaining ~2.8K likes/hr right now.",
+      "topic": "viral",
+      "primary_id": "2073397034569130210",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "An the academy award goes to",
+      "why": "Enough social velocity to jump from X into everyday conversation. Gaining ~2.8K likes/hr right now.",
+      "topic": "viral",
+      "primary_id": "2073814994924548200",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "I’M CRYING 😂😂",
+      "why": "Enough social velocity to jump from X into everyday conversation. Gaining ~2.8K likes/hr right now.",
+      "topic": "viral",
+      "primary_id": "2073863464565518421",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "Paris regardless of the outcome of Morocco vs France:",
+      "why": "Enough social velocity to jump from X into everyday conversation. Gaining ~2.8K likes/hr right now.",
+      "topic": "worldwide",
+      "primary_id": "2073708333438050547",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "This Angle of Erling Haaland goal is insane…..",
+      "why": "Fan emotion is compounding — this is heading for the mainstream debate cycle. Gaining ~2.7K likes/hr right now.",
+      "topic": "sports",
+      "primary_id": "2073893276155891801",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "ハーランド、全部AIじゃないかってくらいウソみたいなゴールでスーパーストライカーすぎる。ブラジル敗退も納得。",
+      "why": "Tech X is amplifying this — expect it in tomorrow's newsletters if it holds. Gaining ~2.6K likes/hr right now.",
+      "topic": "tech",
+      "primary_id": "2073924328215973974",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "BREAKING: FIFA announces Monday night’s referee:",
+      "why": "Enough social velocity to jump from X into everyday conversation. Gaining ~2.6K likes/hr right now.",
+      "topic": "worldwide",
+      "primary_id": "2073879359753187739",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "Tel Aviv born Miriam Adelson spends hundreds of millions of dollars buying U.S. politic…",
+      "why": "Enough social velocity to jump from X into everyday conversation. Gaining ~2.7K likes/hr right now.",
+      "topic": "usa",
+      "primary_id": "2073785472803918139",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "USA vs Belgium tomorrow",
+      "why": "Enough social velocity to jump from X into everyday conversation. Gaining ~2.3K likes/hr right now.",
+      "topic": "usa",
+      "primary_id": "2073918338250784946",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "Estoy llorando con este edit del Inglaterra-México",
+      "why": "Enough social velocity to jump from X into everyday conversation. Gaining ~2.2K likes/hr right now.",
+      "topic": "viral",
+      "primary_id": "2073703183776428318",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "Trump winning us the World Cup:",
+      "why": "Enough social velocity to jump from X into everyday conversation. Gaining ~2.1K likes/hr right now.",
+      "topic": "usa",
+      "primary_id": "2073862866013499594",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "I AM THE 🐐 - I JUST GUESSED CORRECT SCORE. $50K USD —&gt; $7.234M USD (DO NOT GAMBLE YO…",
+      "why": "A signal of what traders are emotionally pricing in before the desks react. Gaining ~2.0K likes/hr right now.",
+      "topic": "finance",
+      "primary_id": "2073967833827188816",
+      "related_ids": [],
+      "drop": false
+    },
+    {
+      "headline": "🇳🇴",
+      "why": "Enough social velocity to jump from X into everyday conversation. Gaining ~1.9K likes/hr right now.",
+      "topic": "viral",
+      "primary_id": "2073912492070416517",
+      "related_ids": [],
+      "drop": false
+    }
+  ],
+  "top3_ids": [
+    "2073901686410608901",
+    "2073884902722879803",
+    "2073872906874925112"
+  ],
+  "quick_read": [
+    "@ErlingHaaland: Well well well 😂",
+    "@federodr: —¿Esa rubia cuántos años tiene? —25. —Uh, justito. ¿Cómo se llama? —Erling Haaland.",
+    "@FabrizioRomano: 🚨⚠️ Belgium coach Rudi Garcia: “I didn’t know that at the World Cup as at FIFA the 5th of July is actually the",
+    "@BleacherReport: The US is the last host country standing..."
+  ],
+  "enriched": false,
+  "trends": [
+    {
+      "rank": 1,
+      "topic": "England",
+      "category": "Trending in Canada"
+    },
+    {
+      "rank": 2,
+      "topic": "Norway",
+      "category": "Trending in Canada"
+    },
+    {
+      "rank": 3,
+      "topic": "#MEXENG",
+      "category": "Trending in Canada"
+    },
+    {
+      "rank": 4,
+      "topic": "Pickford",
+      "category": "Trending in Canada"
+    },
+    {
+      "rank": 5,
+      "topic": "Tuchel",
+      "category": "Trending in Canada"
+    },
+    {
+      "rank": 6,
+      "topic": "Quansah",
+      "category": "Trending in Canada"
+    },
+    {
+      "rank": 7,
+      "topic": "America",
+      "category": "Trending in Canada"
+    },
+    {
+      "rank": 8,
+      "topic": "Jimenez",
+      "category": "Trending in Canada"
+    },
+    {
+      "rank": 9,
+      "topic": "#ThreeLions",
+      "category": "Trending in Canada"
+    },
+    {
+      "rank": 10,
+      "topic": "$ANSEM",
+      "category": "Business & finance · Trending"
+    },
+    {
+      "rank": 11,
+      "topic": "Gordon",
+      "category": "Trending in Canada"
+    },
+    {
+      "rank": 12,
+      "topic": "Zach",
+      "category": "Love Island USA · Trending"
+    },
+    {
+      "rank": 13,
+      "topic": "Gabriel",
+      "category": "Trending in Canada"
+    },
+    {
+      "rank": 14,
+      "topic": "4th of July",
+      "category": "Entertainment industry · Trending"
+    },
+    {
+      "rank": 15,
+      "topic": "Mexique",
+      "category": "Trending in Canada"
+    },
+    {
+      "rank": 16,
+      "topic": "Freezies",
+      "category": "Trending in Canada"
+    },
+    {
+      "rank": 17,
+      "topic": "#loveislandusa",
+      "category": "Love Island USA · Trending"
+    },
+    {
+      "rank": 18,
+      "topic": "Morocco",
+      "category": "Trending in Canada"
+    },
+    {
+      "rank": 19,
+      "topic": "Quinones",
+      "category": "Trending in Canada"
+    },
+    {
+      "rank": 20,
+      "topic": "Davies",
+      "category": "Trending in Canada"
+    }
+  ],
+  "errors": [
+    "ANTHROPIC_API_KEY not set; using rule-based fallback"
+  ],
   "posts": [
+    {
+      "id": "2073785472803918139",
+      "author": "RepThomasMassie",
+      "author_name": "Thomas Massie",
+      "text": "Tel Aviv born Miriam Adelson spends hundreds of millions of dollars buying U.S. politicians using Chinese gambling money, then gets the red carpet treatment at our Nation’s 250th birthday celebration, while others suffer in the heat.",
+      "created_iso": "2026-07-05T15:06:00+00:00",
+      "likes": 35798,
+      "retweets": 5941,
+      "replies": 1515,
+      "views": 889939,
+      "url": "https://x.com/RepThomasMassie/status/2073785472803918139",
+      "has_media": false,
+      "media_thumb": "",
+      "lang": "en",
+      "is_retweet": false,
+      "sources": [
+        "search:entertainment"
+      ],
+      "topic_hint": "entertainment",
+      "first_seen": "2026-07-05T21:22:01.137326-07:00",
+      "history": [
+        [
+          "2026-07-05T21:22:01.137326-07:00",
+          35798,
+          889939
+        ]
+      ],
+      "velocity": 2698.277453494492,
+      "score": 2698.277453494492
+    },
+    {
+      "id": "2073866526071885846",
+      "author": "Parodyjeffx",
+      "author_name": "Parody Jeff",
+      "text": "THIS IS SATANIC ✡️🇮🇱 An Israeli soldier throws a stun grenade into a car carrying a Palestinian family, trapping them inside to absorb the blast. Reports confirm one of the children inside is now permanently blinded for life.",
+      "created_iso": "2026-07-05T20:28:05+00:00",
+      "likes": 25051,
+      "retweets": 13154,
+      "replies": 1165,
+      "views": 594754,
+      "url": "https://x.com/Parodyjeffx/status/2073866526071885846",
+      "has_media": true,
+      "media_thumb": "",
+      "lang": "en",
+      "is_retweet": false,
+      "sources": [
+        "feed:for-you"
+      ],
+      "first_seen": "2026-07-05T17:49:41.554773-07:00",
+      "history": [
+        [
+          "2026-07-05T17:49:41.554773-07:00",
+          25051,
+          594754
+        ]
+      ],
+      "velocity": 3171.443398451395,
+      "score": 3647.1599082191037
+    },
+    {
+      "id": "2073901189666578553",
+      "author": "FabrizioRomano",
+      "author_name": "Fabrizio Romano",
+      "text": "The vikings. 🚣‍♂️🥁 Beautiful to see, fantastic team making history and fantastic fan base. 🔊🇳🇴 @Majorleaguemadd 🎥🔝",
+      "created_iso": "2026-07-05T22:45:49+00:00",
+      "likes": 61174,
+      "retweets": 7621,
+      "replies": 1258,
+      "views": 2011156,
+      "url": "https://x.com/FabrizioRomano/status/2073901189666578553",
+      "has_media": true,
+      "media_thumb": "",
+      "lang": "en",
+      "is_retweet": false,
+      "sources": [
+        "feed:for-you"
+      ],
+      "first_seen": "2026-07-05T17:49:41.554773-07:00",
+      "history": [
+        [
+          "2026-07-05T17:49:41.554773-07:00",
+          61174,
+          2011156
+        ]
+      ],
+      "velocity": 10917.355778465218,
+      "score": 12554.959145235
+    },
+    {
+      "id": "2073814994924548200",
+      "author": "Hawkesbay69",
+      "author_name": "KJW",
+      "text": "An the academy award goes to",
+      "created_iso": "2026-07-05T17:03:19+00:00",
+      "likes": 12813,
+      "retweets": 2182,
+      "replies": 505,
+      "views": 620732,
+      "url": "https://x.com/Hawkesbay69/status/2073814994924548200",
+      "has_media": true,
+      "media_thumb": "",
+      "lang": "en",
+      "is_retweet": false,
+      "sources": [
+        "feed:for-you"
+      ],
+      "first_seen": "2026-07-05T17:48:44.759813-07:00",
+      "history": [
+        [
+          "2026-07-05T17:48:44.759813-07:00",
+          2781,
+          100677
+        ],
+        [
+          "2026-07-05T18:28:10.803572-07:00",
+          4583,
+          192775
+        ],
+        [
+          "2026-07-05T21:22:01.137326-07:00",
+          12813,
+          620732
+        ]
+      ],
+      "velocity": 2822.2987297233235,
+      "score": 3245.643539181822
+    },
+    {
+      "id": "2073805024237433099",
+      "author": "kirawontmiss",
+      "author_name": "kirawontmiss",
+      "text": "I’m not hating hard enough. This is a different level of hatred 😭",
+      "created_iso": "Sun Jul 05 16:23:41 +0000 2026",
+      "likes": 45586,
+      "retweets": 2870,
+      "replies": 344,
+      "views": 2543624,
+      "url": "https://x.com/kirawontmiss/status/2073805024237433099",
+      "has_media": false,
+      "media_thumb": "",
+      "lang": "",
+      "is_retweet": false,
+      "sources": [
+        "feed:for-you",
+        "legacy"
+      ],
+      "first_seen": "2026-07-05T14:37:18.178059-07:00",
+      "history": [
+        [
+          "2026-07-05T14:37:18.178059-07:00",
+          33678,
+          1798073
+        ],
+        [
+          "2026-07-05T17:48:44.759813-07:00",
+          45586,
+          2543624
+        ]
+      ],
+      "velocity": 3732.0763407331074,
+      "score": 4291.8877918430735
+    },
+    {
+      "id": "2073918338250784946",
+      "author": "dogeofficialceo",
+      "author_name": "Sir Doge of the Coin ⚔️",
+      "text": "USA vs Belgium tomorrow",
+      "created_iso": "2026-07-05T23:53:58+00:00",
+      "likes": 10078,
+      "retweets": 1020,
+      "replies": 85,
+      "views": 718204,
+      "url": "https://x.com/dogeofficialceo/status/2073918338250784946",
+      "has_media": true,
+      "media_thumb": "",
+      "lang": "en",
+      "is_retweet": false,
+      "sources": [
+        "feed:for-you"
+      ],
+      "first_seen": "2026-07-05T21:11:18.660098-07:00",
+      "history": [
+        [
+          "2026-07-05T21:11:18.660098-07:00",
+          10078,
+          718204
+        ]
+      ],
+      "velocity": 2255.8285280166365,
+      "score": 2594.202807219132
+    },
+    {
+      "id": "2073890738656690623",
+      "author": "advitwake",
+      "author_name": "Advit 🇪🇸🇦🇷🇲🇽",
+      "text": "Brazil letting Neymar take the penalty",
+      "created_iso": "2026-07-05T22:04:17+00:00",
+      "likes": 22078,
+      "retweets": 1633,
+      "replies": 26,
+      "views": 319789,
+      "url": "https://x.com/advitwake/status/2073890738656690623",
+      "has_media": true,
+      "media_thumb": "",
+      "lang": "en",
+      "is_retweet": false,
+      "sources": [
+        "feed:for-you"
+      ],
+      "first_seen": "2026-07-05T17:54:53.377144-07:00",
+      "history": [
+        [
+          "2026-07-05T17:54:53.377144-07:00",
+          22078,
+          319789
+        ]
+      ],
+      "velocity": 3506.897211958766,
+      "score": 4032.9317937525807
+    },
+    {
+      "id": "2073548940654285226",
+      "author": "tastefullysaucy",
+      "author_name": "inqilāb",
+      "text": "Paris after the France vs Morocco match regardless of who wins",
+      "created_iso": "2026-07-04T23:26:06+00:00",
+      "likes": 192422,
+      "retweets": 14176,
+      "replies": 224,
+      "views": 5661838,
+      "url": "https://x.com/tastefullysaucy/status/2073548940654285226",
+      "has_media": true,
+      "media_thumb": "",
+      "lang": "en",
+      "is_retweet": false,
+      "sources": [
+        "feed:for-you"
+      ],
+      "first_seen": "2026-07-05T17:48:44.759813-07:00",
+      "history": [
+        [
+          "2026-07-05T17:48:44.759813-07:00",
+          192422,
+          5661838
+        ]
+      ],
+      "velocity": 6650.840446130142,
+      "score": 7648.466513049662
+    },
+    {
+      "id": "2073970726927818765",
+      "author": "BleacherReport",
+      "author_name": "Bleacher Report",
+      "text": "The US is the last host country standing...",
+      "created_iso": "2026-07-06T03:22:08+00:00",
+      "likes": 21984,
+      "retweets": 1227,
+      "replies": 348,
+      "views": 454469,
+      "url": "https://x.com/BleacherReport/status/2073970726927818765",
+      "has_media": true,
+      "media_thumb": "https://pbs.twimg.com/media/HMg5YnfXQAEP1Po.jpg",
+      "lang": "en",
+      "is_retweet": false,
+      "sources": [
+        "feed:following"
+      ],
+      "first_seen": "2026-07-05T21:11:18.660098-07:00",
+      "history": [
+        [
+          "2026-07-05T21:11:18.660098-07:00",
+          21984,
+          454469
+        ]
+      ],
+      "velocity": 10992.0,
+      "score": 12640.8
+    },
+    {
+      "id": "2073786052498567422",
+      "author": "10blended",
+      "author_name": "✍️ 🇦🇱",
+      "text": "England team trying to leave Mexico if they win tonight",
+      "created_iso": "2026-07-05T15:08:18+00:00",
+      "likes": 97800,
+      "retweets": 5602,
+      "replies": 350,
+      "views": 3186209,
+      "url": "https://x.com/10blended/status/2073786052498567422",
+      "has_media": true,
+      "media_thumb": "",
+      "lang": "en",
+      "is_retweet": false,
+      "sources": [
+        "feed:for-you"
+      ],
+      "first_seen": "2026-07-05T17:48:44.759813-07:00",
+      "history": [
+        [
+          "2026-07-05T17:48:44.759813-07:00",
+          70137,
+          2297612
+        ],
+        [
+          "2026-07-05T17:54:53.377144-07:00",
+          70720,
+          2316816
+        ],
+        [
+          "2026-07-05T18:28:10.803572-07:00",
+          73394,
+          2416403
+        ],
+        [
+          "2026-07-05T21:11:18.660098-07:00",
+          97800,
+          3186209
+        ]
+      ],
+      "velocity": 8193.814139063426,
+      "score": 9422.88625992294
+    },
+    {
+      "id": "2073703183776428318",
+      "author": "KaisVCF",
+      "author_name": "Darío🦇🇪🇸",
+      "text": "Estoy llorando con este edit del Inglaterra-México",
+      "created_iso": "2026-07-05T09:39:01+00:00",
+      "likes": 41570,
+      "retweets": 2519,
+      "replies": 91,
+      "views": 1020487,
+      "url": "https://x.com/KaisVCF/status/2073703183776428318",
+      "has_media": true,
+      "media_thumb": "",
+      "lang": "es",
+      "is_retweet": false,
+      "sources": [
+        "feed:for-you"
+      ],
+      "first_seen": "2026-07-05T21:22:01.137326-07:00",
+      "history": [
+        [
+          "2026-07-05T21:22:01.137326-07:00",
+          41570,
+          1020487
+        ]
+      ],
+      "velocity": 2221.010611420255,
+      "score": 2554.162203133293
+    },
+    {
+      "id": "2073884902722879803",
+      "author": "federodr",
+      "author_name": "Fede Rodríguez",
+      "text": "—¿Esa rubia cuántos años tiene? —25. —Uh, justito. ¿Cómo se llama? —Erling Haaland.",
+      "created_iso": "2026-07-05T21:41:06+00:00",
+      "likes": 88767,
+      "retweets": 6365,
+      "replies": 151,
+      "views": 1107946,
+      "url": "https://x.com/federodr/status/2073884902722879803",
+      "has_media": true,
+      "media_thumb": "https://pbs.twimg.com/media/HMfrU2dXUAANloF.jpg",
+      "lang": "es",
+      "is_retweet": false,
+      "sources": [
+        "feed:for-you"
+      ],
+      "first_seen": "2026-07-05T17:49:41.554773-07:00",
+      "history": [
+        [
+          "2026-07-05T17:49:41.554773-07:00",
+          88767,
+          1107946
+        ]
+      ],
+      "velocity": 13284.53027181858,
+      "score": 15277.209812591365
+    },
+    {
+      "id": "2073901686410608901",
+      "author": "ErlingHaaland",
+      "author_name": "Erling Haaland",
+      "text": "Well well well 😂",
+      "created_iso": "2026-07-05T22:47:47+00:00",
+      "likes": 1243543,
+      "retweets": 95331,
+      "replies": 32772,
+      "views": 18686795,
+      "url": "https://x.com/ErlingHaaland/status/2073901686410608901",
+      "has_media": true,
+      "media_thumb": "https://pbs.twimg.com/media/HMf6lUpWMAAbbXN.jpg",
+      "lang": "en",
+      "is_retweet": true,
+      "sources": [
+        "feed:for-you"
+      ],
+      "first_seen": "2026-07-05T17:48:44.759813-07:00",
+      "history": [
+        [
+          "2026-07-05T17:48:44.759813-07:00",
+          1096874,
+          14853149
+        ],
+        [
+          "2026-07-05T17:54:53.377144-07:00",
+          1122087,
+          15505447
+        ],
+        [
+          "2026-07-05T18:28:10.803572-07:00",
+          1243543,
+          18686795
+        ]
+      ],
+      "velocity": 223160.87688215912,
+      "score": 256635.00841448296
+    },
     {
       "id": "2073436700865331383",
       "author": "sage1411",
-      "bio": "All posts are opinions. Harry’s wife’s lawyer says I can say opinions and not get sued.",
+      "author_name": "sage1411",
       "text": "My brother posts this every year in the family chat on the 4th. Still hilarious.",
-      "created_at": "Sat Jul 04 16:00:06 +0000 2026",
+      "created_iso": "Sat Jul 04 16:00:06 +0000 2026",
       "likes": 90438,
       "retweets": 13433,
       "replies": 750,
       "views": 5344522,
       "url": "https://x.com/sage1411/status/2073436700865331383",
       "has_media": true,
-      "media_posters": [
-        "https://pbs.twimg.com/amplify_video_thumb/2073179298702213120/img/3GTXqxrqLb62MVgo.jpg"
+      "media_thumb": "https://pbs.twimg.com/amplify_video_thumb/2073179298702213120/img/3GTXqxrqLb62MVgo.jpg",
+      "lang": "",
+      "is_retweet": false,
+      "sources": [
+        "legacy"
       ],
-      "card": null,
-      "section_hint": "viral",
-      "score": 133918.97723759612,
-      "headline": "Viral breakout: My brother posts this every year in the family chat on the 4th. Still hilarious.",
-      "why": "It has enough social velocity to potentially jump from X into broader conversation. The post includes media, so it is more likely to travel beyond the original audience. Current signal: 90.4K likes, 5.3M views."
+      "first_seen": "2026-07-05T14:37:18.178059-07:00",
+      "history": [
+        [
+          "2026-07-05T14:37:18.178059-07:00",
+          90438,
+          5344522
+        ]
+      ],
+      "velocity": 3768.25,
+      "score": 3768.25
     },
     {
-      "id": "2073839009344762235",
-      "author": "GuntherEagleman",
-      "bio": "David J. Freeman | Political Commentator | Commentary, Opinion & Satire",
-      "text": "LOL!!! “Nah bro I have the Trump card, I win.” Trump card always wins!",
-      "created_at": "Sun Jul 05 18:38:44 +0000 2026",
-      "likes": 35121,
-      "retweets": 5195,
-      "replies": 1029,
-      "views": 3759722,
-      "url": "https://x.com/GuntherEagleman/status/2073839009344762235",
+      "id": "2073924328215973974",
+      "author": "ZanEngineer",
+      "author_name": "お侍さん",
+      "text": "ハーランド、全部AIじゃないかってくらいウソみたいなゴールでスーパーストライカーすぎる。ブラジル敗退も納得。",
+      "created_iso": "2026-07-06T00:17:46+00:00",
+      "likes": 10619,
+      "retweets": 813,
+      "replies": 263,
+      "views": 2594222,
+      "url": "https://x.com/ZanEngineer/status/2073924328215973974",
       "has_media": true,
-      "media_posters": [
-        "https://pbs.twimg.com/amplify_video_thumb/2073838956014157824/img/93773iCfjf3WdJ_B.jpg"
+      "media_thumb": "",
+      "lang": "ja",
+      "is_retweet": false,
+      "sources": [
+        "feed:for-you"
       ],
-      "card": null,
-      "section_hint": "viral",
-      "score": 54407.78896229555,
-      "headline": "Viral breakout: LOL!!! “Nah bro I have the Trump card, I win.” Trump card always wins!",
-      "why": "It has enough social velocity to potentially jump from X into broader conversation. The post includes media, so it is more likely to travel beyond the original audience. Current signal: 35.1K likes, 3.8M views."
+      "first_seen": "2026-07-05T21:11:18.660098-07:00",
+      "history": [
+        [
+          "2026-07-05T21:11:18.660098-07:00",
+          10619,
+          2594222
+        ]
+      ],
+      "velocity": 2608.532363062757,
+      "score": 2999.8122175221706
+    },
+    {
+      "id": "2073862866013499594",
+      "author": "jarvis_best",
+      "author_name": "Jarvis",
+      "text": "Trump winning us the World Cup:",
+      "created_iso": "2026-07-05T20:13:32+00:00",
+      "likes": 17169,
+      "retweets": 1414,
+      "replies": 99,
+      "views": 1117179,
+      "url": "https://x.com/jarvis_best/status/2073862866013499594",
+      "has_media": true,
+      "media_thumb": "",
+      "lang": "en",
+      "is_retweet": false,
+      "sources": [
+        "feed:for-you"
+      ],
+      "first_seen": "2026-07-05T17:49:41.554773-07:00",
+      "history": [
+        [
+          "2026-07-05T17:49:41.554773-07:00",
+          17169,
+          1117179
+        ]
+      ],
+      "velocity": 2108.8440547572877,
+      "score": 2425.1706629708806
+    },
+    {
+      "id": "2073967833827188816",
+      "author": "Trainwreckstv",
+      "author_name": "Trainwreck",
+      "text": "I AM THE 🐐 - I JUST GUESSED CORRECT SCORE. $50K USD —&gt; $7.234M USD (DO NOT GAMBLE YOU WILL LOSE)",
+      "created_iso": "2026-07-06T03:10:38+00:00",
+      "likes": 4057,
+      "retweets": 152,
+      "replies": 636,
+      "views": 303733,
+      "url": "https://x.com/Trainwreckstv/status/2073967833827188816",
+      "has_media": true,
+      "media_thumb": "https://pbs.twimg.com/media/HMg2wPVboAAwSvR.jpg",
+      "lang": "en",
+      "is_retweet": false,
+      "sources": [
+        "feed:for-you"
+      ],
+      "first_seen": "2026-07-05T21:22:01.137326-07:00",
+      "history": [
+        [
+          "2026-07-05T21:22:01.137326-07:00",
+          4057,
+          303733
+        ]
+      ],
+      "velocity": 2028.5,
+      "score": 2332.7749999999996
+    },
+    {
+      "id": "2073920169353867674",
+      "author": "PropositoyVida",
+      "author_name": "Vive con Propósito.",
+      "text": "Su capacidad para no inmutarse ante ataques físicos descarados debe ser estudiada",
+      "created_iso": "2026-07-06T00:01:14+00:00",
+      "likes": 7376,
+      "retweets": 379,
+      "replies": 76,
+      "views": 441185,
+      "url": "https://x.com/PropositoyVida/status/2073920169353867674",
+      "has_media": true,
+      "media_thumb": "",
+      "lang": "es",
+      "is_retweet": false,
+      "sources": [
+        "feed:for-you"
+      ],
+      "first_seen": "2026-07-05T17:48:44.759813-07:00",
+      "history": [
+        [
+          "2026-07-05T17:48:44.759813-07:00",
+          2183,
+          107610
+        ],
+        [
+          "2026-07-05T17:54:53.377144-07:00",
+          2996,
+          160458
+        ],
+        [
+          "2026-07-05T18:28:10.803572-07:00",
+          7376,
+          441185
+        ]
+      ],
+      "velocity": 7901.290890706641,
+      "score": 9086.484524312636
     },
     {
       "id": "2073708333438050547",
       "author": "europemaxxed",
-      "bio": "If I'm an advocate for anything, it's to move",
+      "author_name": "europemaxxed",
       "text": "Paris regardless of the outcome of Morocco vs France:",
-      "created_at": "Sun Jul 05 09:59:28 +0000 2026",
-      "likes": 37087,
-      "retweets": 1725,
-      "replies": 66,
-      "views": 1017731,
+      "created_iso": "Sun Jul 05 09:59:28 +0000 2026",
+      "likes": 45934,
+      "retweets": 2181,
+      "replies": 82,
+      "views": 1257349,
       "url": "https://x.com/europemaxxed/status/2073708333438050547",
       "has_media": true,
-      "media_posters": [
-        "https://pbs.twimg.com/amplify_video_thumb/2073708267939753984/img/xOA8xNQNuOaSmJa_.jpg"
+      "media_thumb": "",
+      "lang": "",
+      "is_retweet": false,
+      "sources": [
+        "feed:for-you",
+        "legacy"
       ],
-      "card": null,
-      "section_hint": "viral",
-      "score": 43895.90835750499,
-      "headline": "Viral breakout: Paris regardless of the outcome of Morocco vs France:",
-      "why": "It has enough social velocity to potentially jump from X into broader conversation. The post includes media, so it is more likely to travel beyond the original audience. Current signal: 37.1K likes, 1.0M views."
+      "first_seen": "2026-07-05T14:37:18.178059-07:00",
+      "history": [
+        [
+          "2026-07-05T14:37:18.178059-07:00",
+          37087,
+          1017731
+        ],
+        [
+          "2026-07-05T17:49:41.554773-07:00",
+          45934,
+          1257349
+        ]
+      ],
+      "velocity": 2759.088678217766,
+      "score": 3172.9519799504305
     },
     {
-      "id": "2073805024237433099",
-      "author": "kirawontmiss",
-      "bio": "a self-proclaimed free thinker •    • Sponsored by @rainbetcom",
-      "text": "I’m not hating hard enough. This is a different level of hatred 😭",
-      "created_at": "Sun Jul 05 16:23:41 +0000 2026",
-      "likes": 33678,
-      "retweets": 2046,
-      "replies": 300,
-      "views": 1798073,
-      "url": "https://x.com/kirawontmiss/status/2073805024237433099",
+      "id": "2073549485708353933",
+      "author": "TrueSlazac",
+      "author_name": "Slazac 🇪🇺🇺🇦🇹🇼🌐",
+      "text": "Hitler couldn’t burn down Paris but this game might",
+      "created_iso": "2026-07-04T23:28:16+00:00",
+      "likes": 132262,
+      "retweets": 7255,
+      "replies": 354,
+      "views": 2479918,
+      "url": "https://x.com/TrueSlazac/status/2073549485708353933",
+      "has_media": true,
+      "media_thumb": "https://pbs.twimg.com/media/HMa6RIYWcAAjxvl.jpg",
+      "lang": "en",
+      "is_retweet": false,
+      "sources": [
+        "feed:for-you"
+      ],
+      "first_seen": "2026-07-05T17:49:41.554773-07:00",
+      "history": [
+        [
+          "2026-07-05T17:49:41.554773-07:00",
+          132262,
+          2479918
+        ]
+      ],
+      "velocity": 4577.1936691401315,
+      "score": 5263.772719511151
+    },
+    {
+      "id": "2073892513597825202",
+      "author": "flanchota",
+      "author_name": "cartonero",
+      "text": "es un tipaso muy divertido haaland se asusta con su propio reflejo",
+      "created_iso": "2026-07-05T22:11:20+00:00",
+      "likes": 21543,
+      "retweets": 1276,
+      "replies": 175,
+      "views": 1730519,
+      "url": "https://x.com/flanchota/status/2073892513597825202",
+      "has_media": true,
+      "media_thumb": "",
+      "lang": "es",
+      "is_retweet": false,
+      "sources": [
+        "feed:for-you"
+      ],
+      "first_seen": "2026-07-05T21:22:01.137326-07:00",
+      "history": [
+        [
+          "2026-07-05T21:22:01.137326-07:00",
+          21543,
+          1730519
+        ]
+      ],
+      "velocity": 3486.9979382456336,
+      "score": 4010.0476289824783
+    },
+    {
+      "id": "2073850377137467402",
+      "author": "Javierito321",
+      "author_name": "Javierhalamadrid",
+      "text": "Cada vez me sorprendo mas de la fuerza con la que se sacudió la tierra en Venezuela, van apareciendo mas videos:",
+      "created_iso": "2026-07-05T19:23:54+00:00",
+      "likes": 52482,
+      "retweets": 3871,
+      "replies": 287,
+      "views": 3281579,
+      "url": "https://x.com/Javierito321/status/2073850377137467402",
+      "has_media": true,
+      "media_thumb": "",
+      "lang": "es",
+      "is_retweet": false,
+      "sources": [
+        "feed:for-you"
+      ],
+      "first_seen": "2026-07-05T21:11:18.660098-07:00",
+      "history": [
+        [
+          "2026-07-05T21:11:18.660098-07:00",
+          52482,
+          3281579
+        ]
+      ],
+      "velocity": 5851.717298202692,
+      "score": 6729.474892933095
+    },
+    {
+      "id": "2073816213738668335",
+      "author": "tosinmm_",
+      "author_name": ".",
+      "text": "USMNT fans seeing that Folarin Balogun can play against Belgium",
+      "created_iso": "2026-07-05T17:08:09+00:00",
+      "likes": 63798,
+      "retweets": 9821,
+      "replies": 264,
+      "views": 5238051,
+      "url": "https://x.com/tosinmm_/status/2073816213738668335",
+      "has_media": true,
+      "media_thumb": "",
+      "lang": "en",
+      "is_retweet": false,
+      "sources": [
+        "feed:for-you"
+      ],
+      "first_seen": "2026-07-05T17:55:31.051695-07:00",
+      "history": [
+        [
+          "2026-07-05T17:55:31.051695-07:00",
+          63798,
+          5238051
+        ]
+      ],
+      "velocity": 5680.451620654451,
+      "score": 6532.519363752618
+    },
+    {
+      "id": "2073895509614645519",
+      "author": "lwnzi",
+      "author_name": "bruno",
+      "text": "mínimo",
+      "created_iso": "2026-07-05T22:23:15+00:00",
+      "likes": 55621,
+      "retweets": 7311,
+      "replies": 332,
+      "views": 917495,
+      "url": "https://x.com/lwnzi/status/2073895509614645519",
+      "has_media": true,
+      "media_thumb": "",
+      "lang": "es",
+      "is_retweet": false,
+      "sources": [
+        "feed:for-you"
+      ],
+      "first_seen": "2026-07-05T18:28:10.803572-07:00",
+      "history": [
+        [
+          "2026-07-05T18:28:10.803572-07:00",
+          55621,
+          917495
+        ]
+      ],
+      "velocity": 9301.975406342346,
+      "score": 10697.271717293697
+    },
+    {
+      "id": "2073893870736183754",
+      "author": "MadridismoreaI",
+      "author_name": "Real Madrid Fans 🤍",
+      "text": "La hermana de Haaland se parece más a Haaland que el propio Haaland.",
+      "created_iso": "2026-07-05T22:16:44+00:00",
+      "likes": 34329,
+      "retweets": 1913,
+      "replies": 508,
+      "views": 3657226,
+      "url": "https://x.com/MadridismoreaI/status/2073893870736183754",
+      "has_media": true,
+      "media_thumb": "",
+      "lang": "es",
+      "is_retweet": false,
+      "sources": [
+        "feed:for-you"
+      ],
+      "first_seen": "2026-07-05T18:28:10.803572-07:00",
+      "history": [
+        [
+          "2026-07-05T18:28:10.803572-07:00",
+          7128,
+          679675
+        ],
+        [
+          "2026-07-05T21:11:18.660098-07:00",
+          34329,
+          3657226
+        ]
+      ],
+      "velocity": 10004.601082972598,
+      "score": 11505.291245418488
+    },
+    {
+      "id": "2073664733224530379",
+      "author": "FPLOlympian",
+      "author_name": "FPL Olympian",
+      "text": "Good luck to England tonight 😶‍🌫️",
+      "created_iso": "2026-07-05T07:06:13+00:00",
+      "likes": 61156,
+      "retweets": 2546,
+      "replies": 793,
+      "views": 7193644,
+      "url": "https://x.com/FPLOlympian/status/2073664733224530379",
+      "has_media": true,
+      "media_thumb": "https://pbs.twimg.com/media/HMcjFVbboAAWOWt.jpg",
+      "lang": "en",
+      "is_retweet": false,
+      "sources": [
+        "feed:for-you"
+      ],
+      "first_seen": "2026-07-05T17:55:31.051695-07:00",
+      "history": [
+        [
+          "2026-07-05T17:55:31.051695-07:00",
+          61156,
+          7193644
+        ]
+      ],
+      "velocity": 2876.1196247321473,
+      "score": 3307.537568441969
+    },
+    {
+      "id": "2073893276155891801",
+      "author": "Priceless_MCI",
+      "author_name": "⚡️🇧🇼",
+      "text": "This Angle of Erling Haaland goal is insane…..",
+      "created_iso": "2026-07-05T22:14:22+00:00",
+      "likes": 19524,
+      "retweets": 1739,
+      "replies": 139,
+      "views": 411556,
+      "url": "https://x.com/Priceless_MCI/status/2073893276155891801",
+      "has_media": true,
+      "media_thumb": "",
+      "lang": "en",
+      "is_retweet": false,
+      "sources": [
+        "feed:for-you"
+      ],
+      "first_seen": "2026-07-05T17:49:41.554773-07:00",
+      "history": [
+        [
+          "2026-07-05T17:49:41.554773-07:00",
+          17765,
+          363346
+        ],
+        [
+          "2026-07-05T18:28:10.803572-07:00",
+          19524,
+          411556
+        ]
+      ],
+      "velocity": 2742.190448574528,
+      "score": 3153.519015860707
+    },
+    {
+      "id": "2073839009344762235",
+      "author": "GuntherEagleman",
+      "author_name": "GuntherEagleman",
+      "text": "LOL!!! “Nah bro I have the Trump card, I win.” Trump card always wins!",
+      "created_iso": "Sun Jul 05 18:38:44 +0000 2026",
+      "likes": 67721,
+      "retweets": 10238,
+      "replies": 2301,
+      "views": 13084989,
+      "url": "https://x.com/GuntherEagleman/status/2073839009344762235",
+      "has_media": true,
+      "media_thumb": "",
+      "lang": "",
+      "is_retweet": false,
+      "sources": [
+        "feed:for-you",
+        "legacy"
+      ],
+      "first_seen": "2026-07-05T14:37:18.178059-07:00",
+      "history": [
+        [
+          "2026-07-05T14:37:18.178059-07:00",
+          35121,
+          3759722
+        ],
+        [
+          "2026-07-05T17:48:44.759813-07:00",
+          57418,
+          9454819
+        ],
+        [
+          "2026-07-05T18:28:10.803572-07:00",
+          60351,
+          10240677
+        ],
+        [
+          "2026-07-05T21:11:18.660098-07:00",
+          67721,
+          13084989
+        ]
+      ],
+      "velocity": 4964.365777583966,
+      "score": 5709.02064422156
+    },
+    {
+      "id": "2073863464565518421",
+      "author": "HaterReport",
+      "author_name": "Hater Report",
+      "text": "I’M CRYING 😂😂",
+      "created_iso": "2026-07-05T20:15:55+00:00",
+      "likes": 21310,
+      "retweets": 2663,
+      "replies": 283,
+      "views": 1735324,
+      "url": "https://x.com/HaterReport/status/2073863464565518421",
+      "has_media": true,
+      "media_thumb": "",
+      "lang": "en",
+      "is_retweet": false,
+      "sources": [
+        "feed:for-you"
+      ],
+      "first_seen": "2026-07-05T17:48:44.759813-07:00",
+      "history": [
+        [
+          "2026-07-05T17:48:44.759813-07:00",
+          19496,
+          1574173
+        ],
+        [
+          "2026-07-05T17:54:53.377144-07:00",
+          19852,
+          1604400
+        ],
+        [
+          "2026-07-05T18:28:10.803572-07:00",
+          21310,
+          1735324
+        ]
+      ],
+      "velocity": 2760.050390090862,
+      "score": 3174.0579486044912
+    },
+    {
+      "id": "2073841433967243494",
+      "author": "TrollFootball",
+      "author_name": "Troll Football",
+      "text": "How USA will play against Belgium now that they have Donald Trump's presidential red card immunity",
+      "created_iso": "2026-07-05T18:48:22+00:00",
+      "likes": 43316,
+      "retweets": 2937,
+      "replies": 519,
+      "views": 2546740,
+      "url": "https://x.com/TrollFootball/status/2073841433967243494",
+      "has_media": true,
+      "media_thumb": "",
+      "lang": "en",
+      "is_retweet": false,
+      "sources": [
+        "feed:for-you"
+      ],
+      "first_seen": "2026-07-05T17:55:31.051695-07:00",
+      "history": [
+        [
+          "2026-07-05T17:55:31.051695-07:00",
+          43316,
+          2546740
+        ]
+      ],
+      "velocity": 4530.549343030911,
+      "score": 5210.131744485547
+    },
+    {
+      "id": "2073896090751955427",
+      "author": "elconde_nad0",
+      "author_name": "El CondeNado",
+      "text": "Maradona si hubiera existido la pausa de hidratacion en el mundial de México 86.",
+      "created_iso": "2026-07-05T22:25:33+00:00",
+      "likes": 26318,
+      "retweets": 2558,
+      "replies": 142,
+      "views": 1084928,
+      "url": "https://x.com/elconde_nad0/status/2073896090751955427",
+      "has_media": true,
+      "media_thumb": "",
+      "lang": "es",
+      "is_retweet": false,
+      "sources": [
+        "feed:for-you"
+      ],
+      "first_seen": "2026-07-05T18:28:10.803572-07:00",
+      "history": [
+        [
+          "2026-07-05T18:28:10.803572-07:00",
+          5814,
+          211512
+        ],
+        [
+          "2026-07-05T21:11:18.660098-07:00",
+          26318,
+          1084928
+        ]
+      ],
+      "velocity": 7541.426440398152,
+      "score": 8672.640406457875
+    },
+    {
+      "id": "2073397034569130210",
+      "author": "MC_frnk",
+      "author_name": "Frnk",
+      "text": "His ability to be unrattled by blatant physical attacks needs to be studied",
+      "created_iso": "2026-07-04T13:22:29+00:00",
+      "likes": 110559,
+      "retweets": 3568,
+      "replies": 1390,
+      "views": 12057517,
+      "url": "https://x.com/MC_frnk/status/2073397034569130210",
+      "has_media": true,
+      "media_thumb": "",
+      "lang": "en",
+      "is_retweet": false,
+      "sources": [
+        "feed:for-you"
+      ],
+      "first_seen": "2026-07-05T21:11:18.660098-07:00",
+      "history": [
+        [
+          "2026-07-05T21:11:18.660098-07:00",
+          110559,
+          12057517
+        ]
+      ],
+      "velocity": 2835.40884666917,
+      "score": 3260.720173669545
+    },
+    {
+      "id": "2073879359753187739",
+      "author": "HollyBriden",
+      "author_name": "🫃🏼💉🇺🇦🇮🇷🇨🇺Hollaria Briden, Esq.",
+      "text": "BREAKING: FIFA announces Monday night’s referee:",
+      "created_iso": "2026-07-05T21:19:04+00:00",
+      "likes": 11727,
+      "retweets": 1207,
+      "replies": 147,
+      "views": 620345,
+      "url": "https://x.com/HollyBriden/status/2073879359753187739",
+      "has_media": true,
+      "media_thumb": "https://pbs.twimg.com/media/HMfmSaSbcAAnZ4w.jpg",
+      "lang": "en",
+      "is_retweet": false,
+      "sources": [
+        "feed:for-you"
+      ],
+      "first_seen": "2026-07-05T17:48:44.759813-07:00",
+      "history": [
+        [
+          "2026-07-05T17:48:44.759813-07:00",
+          2482,
+          79840
+        ],
+        [
+          "2026-07-05T18:28:10.803572-07:00",
+          4793,
+          210620
+        ],
+        [
+          "2026-07-05T21:22:01.137326-07:00",
+          11727,
+          620345
+        ]
+      ],
+      "velocity": 2600.892320204558,
+      "score": 2991.0261682352416
+    },
+    {
+      "id": "2073912492070416517",
+      "author": "TheRoyalSerf",
+      "author_name": "Serf",
+      "text": "🇳🇴",
+      "created_iso": "2026-07-05T23:30:44+00:00",
+      "likes": 8046,
+      "retweets": 522,
+      "replies": 20,
+      "views": 285443,
+      "url": "https://x.com/TheRoyalSerf/status/2073912492070416517",
+      "has_media": true,
+      "media_thumb": "",
+      "lang": "qme",
+      "is_retweet": false,
+      "sources": [
+        "feed:for-you"
+      ],
+      "first_seen": "2026-07-05T17:48:44.759813-07:00",
+      "history": [
+        [
+          "2026-07-05T17:48:44.759813-07:00",
+          1444,
+          34757
+        ],
+        [
+          "2026-07-05T21:22:01.137326-07:00",
+          8046,
+          285443
+        ]
+      ],
+      "velocity": 1857.338139317522,
+      "score": 2135.9388602151503
+    },
+    {
+      "id": "2073971236615729389",
+      "author": "PalmerLuckey",
+      "author_name": "Palmer Luckey",
+      "text": "We need a bit more shame. People used to avoid certain self-interested behaviors to avoid shame, private and public. Law and customs assumed this. Now, 38% of Stanford students claim to be disabled. 40% of young women (under 35) claim mental illness, and SSI disability payments have gone up 400% in a single generation. It isn't good for anyone, least of all people who are actually disabled, when everyone looks the other way as friends and family and peers con the system with a level of shamelessness no architect of our safety net ever imagined could be possible in America. When everyone is disabled, nobody is.",
+      "created_iso": "2026-07-06T03:24:09+00:00",
+      "likes": 5020,
+      "retweets": 463,
+      "replies": 388,
+      "views": 143476,
+      "url": "https://x.com/PalmerLuckey/status/2073971236615729389",
       "has_media": false,
-      "media_posters": [],
-      "card": null,
-      "section_hint": "viral",
-      "score": 41979.701890304575,
-      "headline": "Viral breakout: I’m not hating hard enough. This is a different level of hatred 😭",
-      "why": "It has enough social velocity to potentially jump from X into broader conversation. Current signal: 33.7K likes, 1.8M views."
-    },
-    {
-      "id": "2073537336764457125",
-      "author": "joeroganhq",
-      "bio": "The #1 Joe Rogan Experience Podcast News Source *Fan run account",
-      "text": "Another reason why women live longer than men.",
-      "created_at": "Sat Jul 04 22:40:00 +0000 2026",
-      "likes": 26343,
-      "retweets": 1255,
-      "replies": 919,
-      "views": 4746158,
-      "url": "https://x.com/joeroganhq/status/2073537336764457125",
-      "has_media": true,
-      "media_posters": [
-        "https://pbs.twimg.com/amplify_video_thumb/2073435711005495296/img/Fd8asvzm6pagWWme.jpg"
+      "media_thumb": "",
+      "lang": "en",
+      "is_retweet": true,
+      "sources": [
+        "feed:following"
       ],
-      "card": null,
-      "section_hint": "viral",
-      "score": 33615.08557083158,
-      "headline": "Viral breakout: Another reason why women live longer than men.",
-      "why": "It has enough social velocity to potentially jump from X into broader conversation. The post includes media, so it is more likely to travel beyond the original audience. Current signal: 26.3K likes, 4.7M views."
-    },
-    {
-      "id": "2073638561501626411",
-      "author": "BAestheticMan",
-      "bio": "Build a body. Refine your style.\nBecome an Aesthetic Gentleman.",
-      "text": "If you continue to eat this way you’ll be layering pounds on your body.",
-      "created_at": "Sun Jul 05 05:22:14 +0000 2026",
-      "likes": 6175,
-      "retweets": 526,
-      "replies": 434,
-      "views": 2432042,
-      "url": "https://x.com/BAestheticMan/status/2073638561501626411",
-      "has_media": true,
-      "media_posters": [
-        "https://pbs.twimg.com/amplify_video_thumb/2073638344207278080/img/wN_g2vWTgjtGoQrw.jpg"
+      "first_seen": "2026-07-05T21:11:18.660098-07:00",
+      "history": [
+        [
+          "2026-07-05T21:11:18.660098-07:00",
+          3403,
+          70984
+        ],
+        [
+          "2026-07-05T21:22:01.137326-07:00",
+          5020,
+          143476
+        ]
       ],
-      "card": null,
-      "section_hint": "viral",
-      "score": 10217.492812314817,
-      "headline": "Viral breakout: If you continue to eat this way you’ll be layering pounds on your body.",
-      "why": "It has enough social velocity to potentially jump from X into broader conversation. The post includes media, so it is more likely to travel beyond the original audience. Current signal: 6.2K likes, 2.4M views."
+      "velocity": 3234.0,
+      "score": 3719.1
     },
     {
-      "id": "2073501877753323772",
-      "author": "ammaar",
-      "bio": "Lead Product + Design @GoogleAIStudio // Exploring AI and sharing everything I learn // My views • 🇵🇰 🇺🇸",
-      "text": "I used Fable 5 to port Command &amp; Conquer: Generals Zero Hour to the iPhone and iPad! This is the actual 2003 engine compiled for ARM64 natively, no emulator. Campaign, skirmish, Generals Challenge all work with touch controls built for an RTS. Open sourcing it all below!",
-      "created_at": "Sat Jul 04 20:19:06 +0000 2026",
-      "likes": 6498,
-      "retweets": 371,
-      "replies": 369,
-      "views": 1336553,
-      "url": "https://x.com/ammaar/status/2073501877753323772",
+      "id": "2073894763560915411",
+      "author": "AbsoluteBruno",
+      "author_name": "AB⚕",
+      "text": "Haaland has just unlocked the full aura of the Viking row🥶😭😭",
+      "created_iso": "2026-07-05T22:20:17+00:00",
+      "likes": 22614,
+      "retweets": 1580,
+      "replies": 52,
+      "views": 835639,
+      "url": "https://x.com/AbsoluteBruno/status/2073894763560915411",
       "has_media": true,
-      "media_posters": [
-        "https://pbs.twimg.com/amplify_video_thumb/2073499866047598592/img/I31ebNqESaocQiHP.jpg"
+      "media_thumb": "",
+      "lang": "en",
+      "is_retweet": false,
+      "sources": [
+        "feed:for-you"
       ],
-      "card": null,
-      "section_hint": "viral",
-      "score": 9880.496627497467,
-      "headline": "Viral breakout: I used Fable 5 to port Command &amp; Conquer: Generals Zero Hour to the iPhone and iPad!",
-      "why": "It has enough social velocity to potentially jump from X into broader conversation. The post includes media, so it is more likely to travel beyond the original audience. Current signal: 6.5K likes, 1.3M views."
+      "first_seen": "2026-07-05T17:49:41.554773-07:00",
+      "history": [
+        [
+          "2026-07-05T17:49:41.554773-07:00",
+          22614,
+          835639
+        ]
+      ],
+      "velocity": 3750.916186034088,
+      "score": 4313.553613939201
     },
     {
-      "id": "2073744687202976139",
-      "author": "LaTwitchance",
-      "bio": "Partnered with @EmpireDrop",
-      "text": "😂 IL PERCE UN MUR POUR FAIRE PASSER LA CLIM DANS LA PIÈCE D’À CÔTÉ Grâce à un accessoire imprimé en 3D, il a réussi à refroidir deux pièces avec une seule climatisation, une astuce qui impressionne les internautes. ❄️🏠",
-      "created_at": "Sun Jul 05 12:23:56 +0000 2026",
-      "likes": 6529,
-      "retweets": 544,
-      "replies": 63,
-      "views": 1019523,
-      "url": "https://x.com/LaTwitchance/status/2073744687202976139",
+      "id": "2073872906874925112",
+      "author": "FabrizioRomano",
+      "author_name": "Fabrizio Romano",
+      "text": "🚨⚠️ Belgium coach Rudi Garcia: “I didn’t know that at the World Cup as at FIFA the 5th of July is actually the first of April. It’s April Fools”. “We’re not defending the national team or federation, we are defending football and integrity”.",
+      "created_iso": "2026-07-05T20:53:26+00:00",
+      "likes": 88041,
+      "retweets": 8419,
+      "replies": 1637,
+      "views": 4478250,
+      "url": "https://x.com/FabrizioRomano/status/2073872906874925112",
       "has_media": true,
-      "media_posters": [
-        "https://pbs.twimg.com/amplify_video_thumb/2073744388803411968/img/gp_hHEfGK-D3xaMu.jpg"
+      "media_thumb": "https://pbs.twimg.com/media/HMfgaltXkAA_DU4.jpg",
+      "lang": "en",
+      "is_retweet": false,
+      "sources": [
+        "search:sports"
       ],
-      "card": null,
-      "section_hint": "viral",
-      "score": 9789.099363424784,
-      "headline": "Viral breakout: 😂 IL PERCE UN MUR POUR FAIRE PASSER LA CLIM DANS LA PIÈCE D’À CÔTÉ Grâce à un accessoire imprimé…",
-      "why": "It has enough social velocity to potentially jump from X into broader conversation. The post includes media, so it is more likely to travel beyond the original audience. Current signal: 6.5K likes, 1.0M views."
+      "topic_hint": "sports",
+      "first_seen": "2026-07-05T21:22:01.137326-07:00",
+      "history": [
+        [
+          "2026-07-05T21:22:01.137326-07:00",
+          88041,
+          4478250
+        ]
+      ],
+      "velocity": 11775.812107554393,
+      "score": 11775.812107554393
     },
     {
-      "id": "2073769554573160474",
-      "author": "usmntonly",
-      "bio": "Independent coverage of everything you need to see and know in American and U.S. men’s soccer — with a focus on the USMNT 🇺🇸 | Part of @MenInBlazers",
-      "text": "Mexico fans outside the England hotel in the middle of the night 😭",
-      "created_at": "Sun Jul 05 14:02:45 +0000 2026",
-      "likes": 5803,
-      "retweets": 319,
-      "replies": 268,
-      "views": 694329,
-      "url": "https://x.com/usmntonly/status/2073769554573160474",
+      "id": "2073972257999757655",
+      "author": "BBCSport",
+      "author_name": "BBC Sport",
+      "text": "One of the best post-match interviews you will EVER see! Rest up, Harry :)",
+      "created_iso": "2026-07-06T03:28:13+00:00",
+      "likes": 16700,
+      "retweets": 1955,
+      "replies": 262,
+      "views": 1220460,
+      "url": "https://x.com/BBCSport/status/2073972257999757655",
       "has_media": true,
-      "media_posters": [
-        "https://pbs.twimg.com/amplify_video_thumb/2073672457890701312/img/fa_Z82CH1AwyhdJr.jpg"
+      "media_thumb": "",
+      "lang": "en",
+      "is_retweet": false,
+      "sources": [
+        "feed:for-you"
       ],
-      "card": null,
-      "section_hint": "viral",
-      "score": 8756.391482568994,
-      "headline": "Viral breakout: Mexico fans outside the England hotel in the middle of the night 😭",
-      "why": "It has enough social velocity to potentially jump from X into broader conversation. The post includes media, so it is more likely to travel beyond the original audience. Current signal: 5.8K likes, 694.3K views."
+      "first_seen": "2026-07-05T21:11:18.660098-07:00",
+      "history": [
+        [
+          "2026-07-05T21:11:18.660098-07:00",
+          16700,
+          1220460
+        ]
+      ],
+      "velocity": 8350.0,
+      "score": 9602.5
     },
     {
-      "id": "2073850139588878589",
-      "author": "Wimbledon",
-      "bio": "Official Account of The Championships, Wimbledon.",
-      "text": "Absolute grass court cinema! 🎦 This ridiculous point between Alejandro Davidovich Fokina &amp; Felix Auger-Aliassime is the Play of the Day presented by @Barclays",
-      "created_at": "Sun Jul 05 19:22:58 +0000 2026",
-      "likes": 3193,
-      "retweets": 545,
-      "replies": 40,
-      "views": 838555,
-      "url": "https://x.com/Wimbledon/status/2073850139588878589",
-      "has_media": true,
-      "media_posters": [
-        "https://pbs.twimg.com/amplify_video_thumb/2073849242167234560/img/qeCQS7UPXDbC9cJs.jpg"
-      ],
-      "card": null,
-      "section_hint": "viral",
-      "score": 6388.883017683316,
-      "headline": "Viral breakout: Absolute grass court cinema!",
-      "why": "It has enough social velocity to potentially jump from X into broader conversation. The post includes media, so it is more likely to travel beyond the original audience. Current signal: 3.2K likes, 838.6K views."
-    },
-    {
-      "id": "2073704784398528599",
-      "author": "aleabitoreddit",
-      "bio": "Only on X, don’t trust fake accs\n\nAI/Semi Supply Chains\n\nNFA DYOR, no paid promos; may trade/hold names disc, views my own. Sharing free AI chokepoint research",
-      "text": "Leaked Anthropic docs show plans to secure 1.4GW capacity from Australia, amounting to ~$21.6B. Recently $IREN, $SHAZ, and other Neoclouds have been building sovereign DCs in Australia. Guess like a lot of things are stating to make more sense connection wise? (disclosure: no open positions in any of the above).",
-      "created_at": "Sun Jul 05 09:45:22 +0000 2026",
-      "likes": 2316,
-      "retweets": 150,
-      "replies": 242,
-      "views": 871768,
-      "url": "https://x.com/aleabitoreddit/status/2073704784398528599",
-      "has_media": true,
-      "media_posters": [
-        "https://pbs.twimg.com/media/HMdHgeqbAAARA1T.jpg",
-        "https://pbs.twimg.com/media/HMdHgeqbEAAzBF-.jpg"
-      ],
-      "card": null,
-      "section_hint": "viral",
-      "score": 4735.100355374273,
-      "headline": "Viral breakout: Leaked Anthropic docs show plans to secure 1.4GW capacity from Australia, amounting to ~$21.6B.",
-      "why": "It has enough social velocity to potentially jump from X into broader conversation. The post includes media, so it is more likely to travel beyond the original audience. Current signal: 2.3K likes, 871.8K views."
-    },
-    {
-      "id": "2073787623554920946",
-      "author": "Tablesalt13",
-      "bio": "Professional red-piller. \n\nI've ratioed the Prime Minister of Canada. \n\nSponsor a post: https://t.co/zwpD6EnyNQ",
-      "text": "‼️BREAKING REPORTS of a machete attack in Victoria! 25 friends gathered at Beacon Hill Park in Victoria beach around 9 p.m.on July 3rd ...for \"a relaxed evening\" and were attacked by a group \"of around 10 people\" with A MACHETE! 2 hospitalized. Src: Victoria Buzz",
-      "created_at": "Sun Jul 05 15:14:33 +0000 2026",
-      "likes": 1426,
-      "retweets": 568,
-      "replies": 197,
-      "views": 66914,
-      "url": "https://x.com/Tablesalt13/status/2073787623554920946",
-      "has_media": true,
-      "media_posters": [
-        "https://pbs.twimg.com/media/HMeSAivWgAAjg6s.jpg"
-      ],
-      "card": null,
-      "section_hint": "viral",
-      "score": 4730.380870574325,
-      "headline": "Viral breakout: ‼️BREAKING REPORTS of a machete attack in Victoria!",
-      "why": "It has enough social velocity to potentially jump from X into broader conversation. The post includes media, so it is more likely to travel beyond the original audience. Current signal: 1.4K likes, 66.9K views."
-    },
-    {
-      "id": "2073465770923692460",
-      "author": "denir0x",
-      "bio": "Caballero Super Elegante || @casaweb3",
-      "text": "🚨 CLAUDE AHORA PUEDE HABLAR CON TU PROPIA VOZ. EN TODOS LOS IDIOMAS. GRATIS un desarrollador subio a Github un repo llamado jamiepine/voicebox te clona el tono exacto con un par de segundos de audio funciona directo en tu pc asi que tus datos son cien por ciento privados puedes armar contenido en japones arabe o polaco sin mover la boca guárdalo para cuando lo necesites",
-      "created_at": "Sat Jul 04 17:55:37 +0000 2026",
-      "likes": 2275,
-      "retweets": 343,
-      "replies": 33,
-      "views": 185301,
-      "url": "https://x.com/denir0x/status/2073465770923692460",
-      "has_media": true,
-      "media_posters": [
-        "https://pbs.twimg.com/amplify_video_thumb/2073465448989949952/img/qFXWdueKgrcd3Y3A.jpg"
-      ],
-      "card": null,
-      "section_hint": "viral",
-      "score": 4686.970026691943,
-      "headline": "Viral breakout: 🚨 CLAUDE AHORA PUEDE HABLAR CON TU PROPIA VOZ.",
-      "why": "It has enough social velocity to potentially jump from X into broader conversation. The post includes media, so it is more likely to travel beyond the original audience. Current signal: 2.3K likes, 185.3K views."
-    },
-    {
-      "id": "2073839250202632566",
-      "author": "Hunter_Eagleman",
-      "bio": "America First - @GuntherEagleman’s Twin Brother - 30 year LEO -  Retired Homicide Detective - Let’s do this!",
-      "text": "😂😂😂😂",
-      "created_at": "Sun Jul 05 18:39:41 +0000 2026",
-      "likes": 2196,
-      "retweets": 306,
-      "replies": 58,
-      "views": 181986,
-      "url": "https://x.com/Hunter_Eagleman/status/2073839250202632566",
+      "id": "2073757145703543166",
+      "author": "BowTiedPassport",
+      "author_name": "BowTiedPassport 🇺🇸 🇲🇽",
+      "text": "If only Mexicans put this kinda effort into getting rid of cartels",
+      "created_iso": "2026-07-05T13:13:26+00:00",
+      "likes": 54695,
+      "retweets": 3206,
+      "replies": 946,
+      "views": 1731996,
+      "url": "https://x.com/BowTiedPassport/status/2073757145703543166",
       "has_media": false,
-      "media_posters": [],
-      "card": null,
-      "section_hint": "viral",
-      "score": 4545.010091460676,
-      "headline": "Viral breakout: 😂😂😂😂",
-      "why": "It has enough social velocity to potentially jump from X into broader conversation. Current signal: 2.2K likes, 182.0K views."
-    }
-  ],
-  "trends": [
-    {
-      "rank": 1,
-      "topic": "FIFA",
-      "category": "Trending in Canada",
-      "url": "https://x.com/search?q=FIFA&src=typed_query&f=top"
-    },
-    {
-      "rank": 2,
-      "topic": "Norway",
-      "category": "Trending in Canada",
-      "url": "https://x.com/search?q=Norway&src=typed_query&f=top"
-    },
-    {
-      "rank": 3,
-      "topic": "Vini",
-      "category": "Trending in Canada",
-      "url": "https://x.com/search?q=Vini&src=typed_query&f=top"
-    },
-    {
-      "rank": 4,
-      "topic": "Odegaard",
-      "category": "Trending in Canada",
-      "url": "https://x.com/search?q=Odegaard&src=typed_query&f=top"
-    },
-    {
-      "rank": 5,
-      "topic": "America",
-      "category": "Politics · Trending",
-      "url": "https://x.com/search?q=America&src=typed_query&f=top"
-    },
-    {
-      "rank": 6,
-      "topic": "Happy 4th of July",
-      "category": "Entertainment industry · Trending",
-      "url": "https://x.com/search?q=Happy+4th+of+July&src=typed_query&f=top"
-    },
-    {
-      "rank": 7,
-      "topic": "Morocco",
-      "category": "Trending in Canada",
-      "url": "https://x.com/search?q=Morocco&src=typed_query&f=top"
-    },
-    {
-      "rank": 8,
-      "topic": "Davies",
-      "category": "Trending in Canada",
-      "url": "https://x.com/search?q=Davies&src=typed_query&f=top"
-    },
-    {
-      "rank": 9,
-      "topic": "Belgium",
-      "category": "Trending in Canada",
-      "url": "https://x.com/search?q=Belgium&src=typed_query&f=top"
-    },
-    {
-      "rank": 10,
-      "topic": "Freezies",
-      "category": "Trending in Canada",
-      "url": "https://x.com/search?q=Freezies&src=typed_query&f=top"
-    },
-    {
-      "rank": 11,
-      "topic": "Nyland",
-      "category": "Trending in Canada",
-      "url": "https://x.com/search?q=Nyland&src=typed_query&f=top"
-    },
-    {
-      "rank": 12,
-      "topic": "$ANSEM",
-      "category": "Business & finance · Trending",
-      "url": "https://x.com/search?q=%24ANSEM&src=typed_query&f=top"
-    },
-    {
-      "rank": 13,
-      "topic": "#BRANOR",
-      "category": "Trending in Canada",
-      "url": "https://x.com/search?q=%23BRANOR&src=typed_query&f=top"
-    },
-    {
-      "rank": 14,
-      "topic": "Cunha",
-      "category": "Trending in Canada",
-      "url": "https://x.com/search?q=Cunha&src=typed_query&f=top"
-    },
-    {
-      "rank": 15,
-      "topic": "Martinelli",
-      "category": "Trending in Canada",
-      "url": "https://x.com/search?q=Martinelli&src=typed_query&f=top"
-    },
-    {
-      "rank": 16,
-      "topic": "Corruption",
-      "category": "Trending in Canada",
-      "url": "https://x.com/search?q=Corruption&src=typed_query&f=top"
-    },
-    {
-      "rank": 17,
-      "topic": "Sheamus",
-      "category": "Sports · Trending",
-      "url": "https://x.com/search?q=Sheamus&src=typed_query&f=top"
-    },
-    {
-      "rank": 18,
-      "topic": "#BritishGP",
-      "category": "Trending in Canada",
-      "url": "https://x.com/search?q=%23BritishGP&src=typed_query&f=top"
-    },
-    {
-      "rank": 19,
-      "topic": "Bayern",
-      "category": "Trending in Canada",
-      "url": "https://x.com/search?q=Bayern&src=typed_query&f=top"
-    },
-    {
-      "rank": 20,
-      "topic": "Happy 250th",
-      "category": "Trending in Canada",
-      "url": "https://x.com/search?q=Happy+250th&src=typed_query&f=top"
-    }
-  ],
-  "errors": [
-    "viral search degraded: ok: false error: code: COMMAND_EXEC message: >- HTTP 429: SearchTimeline fetch failed — rate-limited by Twitter (session quota); retry after cooldown (typically 15-30 min) exitCode: 1",
-    "finance search degraded: ok: false error: code: COMMAND_EXEC message: >- HTTP 429: SearchTimeline fetch failed — rate-limited by Twitter (session quota); retry after cooldown (typically 15-30 min) exitCode: 1",
-    "business search degraded: ok: false error: code: COMMAND_EXEC message: >- HTTP 429: SearchTimeline fetch failed — rate-limited by Twitter (session quota); retry after cooldown (typically 15-30 min) exitCode: 1",
-    "entertainment search degraded: ok: false error: code: COMMAND_EXEC message: >- HTTP 429: SearchTimeline fetch failed — rate-limited by Twitter (session quota); retry after cooldown (typically 15-30 min) exitCode: 1",
-    "sports search degraded: ok: false error: code: COMMAND_EXEC message: >- HTTP 429: SearchTimeline fetch failed — rate-limited by Twitter (session quota); retry after cooldown (typically 15-30 min) exitCode: 1"
-  ],
-  "sections": [
-    {
-      "key": "finance",
-      "title": "Finance",
-      "deck": "Markets, stocks, crypto, macro, and investing chatter.",
-      "queries": [
-        "stocks OR markets OR investing OR \"Wall Street\" lang:en min_faves:300",
-        "crypto OR bitcoin OR ethereum OR Fed OR \"interest rates\" lang:en min_faves:300"
+      "media_thumb": "",
+      "lang": "en",
+      "is_retweet": false,
+      "sources": [
+        "feed:for-you"
       ],
-      "keywords": [
-        "stock",
-        "market",
-        "invest",
-        "wall street",
-        "crypto",
-        "bitcoin",
-        "ethereum",
-        "fed",
-        "rate",
-        "yield",
-        "nasdaq",
-        "s&p",
-        "dollar",
-        "$"
+      "first_seen": "2026-07-05T17:55:31.051695-07:00",
+      "history": [
+        [
+          "2026-07-05T17:55:31.051695-07:00",
+          54695,
+          1731996
+        ]
       ],
-      "items": [
-        {
-          "id": "2073704784398528599",
-          "author": "aleabitoreddit",
-          "bio": "Only on X, don’t trust fake accs\n\nAI/Semi Supply Chains\n\nNFA DYOR, no paid promos; may trade/hold names disc, views my own. Sharing free AI chokepoint research",
-          "text": "Leaked Anthropic docs show plans to secure 1.4GW capacity from Australia, amounting to ~$21.6B. Recently $IREN, $SHAZ, and other Neoclouds have been building sovereign DCs in Australia. Guess like a lot of things are stating to make more sense connection wise? (disclosure: no open positions in any of the above).",
-          "created_at": "Sun Jul 05 09:45:22 +0000 2026",
-          "likes": 2316,
-          "retweets": 150,
-          "replies": 242,
-          "views": 871768,
-          "url": "https://x.com/aleabitoreddit/status/2073704784398528599",
-          "has_media": true,
-          "media_posters": [
-            "https://pbs.twimg.com/media/HMdHgeqbAAARA1T.jpg",
-            "https://pbs.twimg.com/media/HMdHgeqbEAAzBF-.jpg"
-          ],
-          "card": null,
-          "section_hint": "viral",
-          "score": 4735.100355374273,
-          "headline": "Markets watch: Leaked Anthropic docs show plans to secure 1.4GW capacity from Australia, amounting to ~$21.6B.",
-          "why": "It can signal what market participants are emotionally pricing in before formal analysis catches up. The post includes media, so it is more likely to travel beyond the original audience. Current signal: 2.3K likes, 871.8K views."
-        }
-      ]
+      "velocity": 3611.8775382060935,
+      "score": 4153.659168937007
     },
     {
-      "key": "business",
-      "title": "Business",
-      "deck": "Companies, CEOs, startups, deals, earnings, and operator narratives.",
-      "queries": [
-        "business OR startup OR founder OR CEO OR SaaS lang:en min_faves:300",
-        "earnings OR acquisition OR IPO OR revenue OR company lang:en min_faves:300"
+      "id": "2073967598832898067",
+      "author": "barstoolsports",
+      "author_name": "Barstool Sports",
+      "text": "All the feels for Memo Ochoa Thank you for the memories 🇲🇽",
+      "created_iso": "2026-07-06T03:09:42+00:00",
+      "likes": 9627,
+      "retweets": 1004,
+      "replies": 89,
+      "views": 184216,
+      "url": "https://x.com/barstoolsports/status/2073967598832898067",
+      "has_media": true,
+      "media_thumb": "",
+      "lang": "en",
+      "is_retweet": false,
+      "sources": [
+        "feed:following"
       ],
-      "keywords": [
-        "business",
-        "startup",
-        "founder",
-        "ceo",
-        "company",
-        "earnings",
-        "retail",
-        "saas",
-        "acquisition",
-        "ipo",
-        "revenue",
-        "customer"
+      "first_seen": "2026-07-05T21:22:01.137326-07:00",
+      "history": [
+        [
+          "2026-07-05T21:22:01.137326-07:00",
+          9627,
+          184216
+        ]
       ],
-      "items": []
-    },
-    {
-      "key": "entertainment",
-      "title": "Entertainment",
-      "deck": "Movies, music, celebrities, streaming, creators, and culture moments.",
-      "queries": [
-        "movie OR music OR celebrity OR Hollywood OR Netflix lang:en min_faves:800",
-        "trailer OR album OR actor OR streaming OR boxoffice lang:en min_faves:800"
-      ],
-      "keywords": [
-        "movie",
-        "music",
-        "celebrity",
-        "hollywood",
-        "netflix",
-        "streaming",
-        "box office",
-        "boxoffice",
-        "trailer",
-        "actor",
-        "album",
-        "film",
-        "song",
-        "artist"
-      ],
-      "items": []
-    },
-    {
-      "key": "sports",
-      "title": "Sports",
-      "deck": "Games, clips, athletes, controversies, and fan conversation.",
-      "queries": [
-        "sports OR NBA OR NFL OR MLB OR soccer OR football lang:en min_faves:800",
-        "UFC OR Formula1 OR tennis OR WorldCup OR \"World Cup\" lang:en min_faves:800"
-      ],
-      "keywords": [
-        "sports",
-        "nba",
-        "nfl",
-        "mlb",
-        "soccer",
-        "football",
-        "ufc",
-        "formula",
-        "f1",
-        "tennis",
-        "world cup",
-        "goal",
-        "player",
-        "team",
-        "coach"
-      ],
-      "items": [
-        {
-          "id": "2073769554573160474",
-          "author": "usmntonly",
-          "bio": "Independent coverage of everything you need to see and know in American and U.S. men’s soccer — with a focus on the USMNT 🇺🇸 | Part of @MenInBlazers",
-          "text": "Mexico fans outside the England hotel in the middle of the night 😭",
-          "created_at": "Sun Jul 05 14:02:45 +0000 2026",
-          "likes": 5803,
-          "retweets": 319,
-          "replies": 268,
-          "views": 694329,
-          "url": "https://x.com/usmntonly/status/2073769554573160474",
-          "has_media": true,
-          "media_posters": [
-            "https://pbs.twimg.com/amplify_video_thumb/2073672457890701312/img/fa_Z82CH1AwyhdJr.jpg"
-          ],
-          "card": null,
-          "section_hint": "viral",
-          "score": 8756.391482568994,
-          "headline": "Sports X is reacting to: Mexico fans outside the England hotel in the middle of the night 😭",
-          "why": "Sports clips and takes often become the day’s mainstream debate once fan emotion compounds. The post includes media, so it is more likely to travel beyond the original audience. Current signal: 5.8K likes, 694.3K views."
-        }
-      ]
+      "velocity": 4813.5,
+      "score": 5535.525
     }
   ]
 }

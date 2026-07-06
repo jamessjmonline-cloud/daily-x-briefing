@@ -1,0 +1,69 @@
+{
+  "timezone": "America/Los_Angeles",
+  "max_stories": 16,
+  "topics": [
+    {
+      "key": "usa",
+      "title": "USA Trending",
+      "deck": "U.S.-relevant viral posts: markets, politics, business, sports, entertainment, and culture.",
+      "search": "USA OR America OR \"United States\" OR Trump OR \"Wall Street\" OR Hollywood OR NFL OR NBA OR MLB OR \"Love Island USA\"",
+      "min_likes": 800,
+      "keywords": ["usa", "u.s.", "united states", "america", "american", "trump", "washington", "new york", "california", "wall street", "hollywood", "nfl", "nba", "mlb", "love island usa", "4th of july", "america first"],
+      "list_ids": []
+    },
+    {
+      "key": "worldwide",
+      "title": "Worldwide Trending",
+      "deck": "Global viral posts: international sports, geopolitics, markets, entertainment, and culture.",
+      "search": "world OR global OR worldwide OR FIFA OR \"World Cup\" OR England OR Mexico OR Norway OR France OR China OR India OR Japan OR Europe",
+      "min_likes": 800,
+      "keywords": ["world", "global", "worldwide", "fifa", "world cup", "england", "mexico", "norway", "france", "china", "india", "japan", "europe", "brazil", "morocco", "argentina", "canada", "uk", "international"],
+      "list_ids": []
+    },
+    {
+      "key": "tech",
+      "title": "Tech & AI",
+      "deck": "AI, startups, big tech, and developer culture.",
+      "search": "AI OR OpenAI OR Anthropic OR startup OR chip OR software",
+      "min_likes": 500,
+      "keywords": ["ai", "openai", "anthropic", "llm", "gpt", "claude", "startup", "chip", "nvidia", "software", "developer", "app", "google", "apple", "tesla", "spacex", "robot", "compute", "datacenter", "data center"],
+      "list_ids": []
+    },
+    {
+      "key": "finance",
+      "title": "Finance",
+      "deck": "Markets, stocks, crypto, macro, and investing chatter.",
+      "search": "stocks OR markets OR crypto OR bitcoin OR Fed",
+      "min_likes": 300,
+      "keywords": ["stock", "market", "invest", "wall street", "crypto", "bitcoin", "ethereum", "fed", "rate", "yield", "nasdaq", "s&p", "dollar", "inflation", "earnings", "$"],
+      "list_ids": []
+    },
+    {
+      "key": "business",
+      "title": "Business",
+      "deck": "Companies, CEOs, deals, and operator narratives.",
+      "search": "CEO OR acquisition OR IPO OR layoffs OR revenue",
+      "min_likes": 300,
+      "keywords": ["business", "founder", "ceo", "company", "acquisition", "ipo", "revenue", "layoff", "deal", "merger", "retail", "brand", "customer"],
+      "list_ids": []
+    },
+    {
+      "key": "entertainment",
+      "title": "Entertainment",
+      "deck": "Movies, music, celebrities, streaming, and culture moments.",
+      "search": "movie OR trailer OR album OR Netflix OR celebrity",
+      "min_likes": 800,
+      "keywords": ["movie", "music", "celebrity", "hollywood", "netflix", "streaming", "box office", "trailer", "actor", "album", "film", "song", "artist", "tour", "show"],
+      "list_ids": []
+    },
+    {
+      "key": "sports",
+      "title": "Sports",
+      "deck": "Games, clips, athletes, and fan conversation.",
+      "search": "NBA OR NFL OR soccer OR \"World Cup\" OR UFC",
+      "min_likes": 800,
+      "keywords": ["sports", "nba", "nfl", "mlb", "soccer", "football", "ufc", "formula", "f1", "tennis", "world cup", "goal", "player", "team", "coach", "match", "game"],
+      "list_ids": []
+    }
+  ]
+}

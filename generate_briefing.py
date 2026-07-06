@@ -1,142 +1,61 @@
 #!/usr/bin/env python3
-"""Generate a useful morning X briefing and publishable HTML artifact.
+"""Daily X briefing generator (V3).
 
-V2 principles:
+Principles:
 - Never fake posts, likes, views, or authors.
-- Keep actual posts separate from trend fallback data.
-- If X search is rate-limited, show a clear degraded-data notice.
-- Write a concise morning-newsletter page: quick read, sections, why it matters,
-  and clickable source links.
+- Acquire via agent-reach's active backend (twitter-cli, opencli fallback):
+  home feeds first (stable), curated lists if configured, then ONE gentle
+  search per topic. Any 429 stops all further searches this run.
+- Rolling 48h pool: a rate-limited run reuses still-fresh posts, never blank.
+- Seen ledger: an item is never shown as "new" twice. Big movers resurface
+  in a "Still climbing" strip with deltas.
+- Velocity ranking: likes/hour beats raw totals for "viral right now".
+- Claude enrichment (claude-haiku-4-5) clusters posts into stories and writes
+  real summaries; rule-based fallback if no API key.
+
+Usage:
+  generate_briefing.py [--no-search] [--retry] [--refresh]
+    --no-search  skip search calls (feeds/lists/cache only)
+    --retry      if searches were rate-limited, wait 25 min and retry once
+    --refresh    midday refresh: regenerate the page, don't mark items seen
 """
 from __future__ import annotations
 
+import argparse
 import json
-import math
-import os
-import re
-import subprocess
 import sys
 import time
-from dataclasses import dataclass
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from html import escape
 from pathlib import Path
 from urllib.parse import quote_plus
 from zoneinfo import ZoneInfo
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import enrich as enrich_mod
+import xcli
+
 ROOT = Path(__file__).resolve().parent
-TZ = ZoneInfo(os.environ.get("BRIEFING_TZ", "America/Los_Angeles"))
+CONFIG = json.loads((ROOT / "config" / "topics.json").read_text())
+TZ = ZoneInfo(CONFIG.get("timezone", "America/Los_Angeles"))
 NOW = datetime.now(TZ)
-SINCE = (NOW.date() - timedelta(days=1)).isoformat()
-TODAY = NOW.strftime("%B %-d, %Y") if sys.platform != "win32" else NOW.strftime("%B %#d, %Y")
 STAMP = NOW.strftime("%Y-%m-%d")
+TODAY = NOW.strftime("%B %-d, %Y")
+SINCE = (NOW.date() - timedelta(days=1)).isoformat()
 
-SECTION_DEFS = [
-    {
-        "key": "finance",
-        "title": "Finance",
-        "deck": "Markets, stocks, crypto, macro, and investing chatter.",
-        "queries": [
-            'stocks OR markets OR investing OR "Wall Street" lang:en min_faves:300',
-            'crypto OR bitcoin OR ethereum OR Fed OR "interest rates" lang:en min_faves:300',
-        ],
-        "keywords": ["stock", "market", "invest", "wall street", "crypto", "bitcoin", "ethereum", "fed", "rate", "yield", "nasdaq", "s&p", "dollar", "$"],
-    },
-    {
-        "key": "business",
-        "title": "Business",
-        "deck": "Companies, CEOs, startups, deals, earnings, and operator narratives.",
-        "queries": [
-            'business OR startup OR founder OR CEO OR SaaS lang:en min_faves:300',
-            'earnings OR acquisition OR IPO OR revenue OR company lang:en min_faves:300',
-        ],
-        "keywords": ["business", "startup", "founder", "ceo", "company", "earnings", "retail", "saas", "acquisition", "ipo", "revenue", "customer"],
-    },
-    {
-        "key": "entertainment",
-        "title": "Entertainment",
-        "deck": "Movies, music, celebrities, streaming, creators, and culture moments.",
-        "queries": [
-            'movie OR music OR celebrity OR Hollywood OR Netflix lang:en min_faves:800',
-            'trailer OR album OR actor OR streaming OR boxoffice lang:en min_faves:800',
-        ],
-        "keywords": ["movie", "music", "celebrity", "hollywood", "netflix", "streaming", "box office", "boxoffice", "trailer", "actor", "album", "film", "song", "artist"],
-    },
-    {
-        "key": "sports",
-        "title": "Sports",
-        "deck": "Games, clips, athletes, controversies, and fan conversation.",
-        "queries": [
-            'sports OR NBA OR NFL OR MLB OR soccer OR football lang:en min_faves:800',
-            'UFC OR Formula1 OR tennis OR WorldCup OR "World Cup" lang:en min_faves:800',
-        ],
-        "keywords": ["sports", "nba", "nfl", "mlb", "soccer", "football", "ufc", "formula", "f1", "tennis", "world cup", "goal", "player", "team", "coach"],
-    },
-]
+POOL_PATH = ROOT / "data" / "pool.json"
+SEEN_PATH = ROOT / "data" / "seen.json"
 
-VIRAL_QUERIES = [
-    'viral OR breaking OR "just in" OR unbelievable OR wow OR announcement lang:en min_faves:2000',
-    'meme OR trend OR insane OR wild OR thread lang:en min_faves:2000',
-]
-
-STOP_HEADLINE_WORDS = {
-    "the", "a", "an", "and", "or", "to", "of", "in", "on", "for", "with", "from", "this", "that", "just", "new", "more", "about",
-    "https", "t", "co", "is", "are", "was", "were", "it", "you", "i", "we", "they", "he", "she", "at", "by", "as", "be",
-}
+POOL_MAX_AGE_H = 48
+SEEN_MAX_AGE_D = 7
+CANDIDATE_LIMIT = 40
 
 
-@dataclass
-class CollectionResult:
-    posts: list[dict]
-    errors: list[str]
-    trends: list[dict]
+def log(msg: str) -> None:
+    print(msg, flush=True)
 
 
-def parse_json_array(output: str) -> list[dict]:
-    start = output.find("[")
-    if start == -1:
-        return []
-    depth = 0
-    in_str = False
-    esc = False
-    for i, ch in enumerate(output[start:], start=start):
-        if in_str:
-            if esc:
-                esc = False
-            elif ch == "\\":
-                esc = True
-            elif ch == '"':
-                in_str = False
-            continue
-        if ch == '"':
-            in_str = True
-        elif ch == "[":
-            depth += 1
-        elif ch == "]":
-            depth -= 1
-            if depth == 0:
-                try:
-                    data = json.loads(output[start : i + 1])
-                    return data if isinstance(data, list) else []
-                except Exception:
-                    return []
-    return []
-
-
-def to_int(value) -> int:
-    if value is None:
-        return 0
-    if isinstance(value, int):
-        return value
-    s = str(value).replace(",", "").strip()
-    try:
-        return int(float(s))
-    except Exception:
-        return 0
-
-
-def compact_num(n: int | None) -> str:
-    n = to_int(n)
+def compact_num(n: int) -> str:
     if n >= 1_000_000:
         return f"{n / 1_000_000:.1f}M"
     if n >= 1_000:
@@ -144,466 +63,528 @@ def compact_num(n: int | None) -> str:
     return str(n)
 
 
-def score(post: dict) -> float:
-    likes = to_int(post.get("likes"))
-    views = to_int(post.get("views"))
-    retweets = to_int(post.get("retweets"))
-    replies = to_int(post.get("replies"))
-    return likes + retweets * 3 + replies * 2 + math.log10(views + 1) * 250
-
-
-def clean_text(text: str) -> str:
-    text = re.sub(r"https?://\S+", "", str(text or ""))
-    text = re.sub(r"\s+", " ", text).strip()
-    return text
-
-
-def normalize(items: list[dict], section_key: str | None = None) -> list[dict]:
-    out = []
-    for t in items:
-        url = t.get("url") or (f"https://x.com/i/status/{t.get('id')}" if t.get("id") else "")
-        if not url or "/search?" in url:
-            continue
-        text = clean_text(t.get("text") or "")
-        if not text:
-            continue
-        p = {
-            "id": str(t.get("id") or ""),
-            "author": str(t.get("author") or "unknown").lstrip("@"),
-            "bio": str(t.get("bio") or ""),
-            "text": text,
-            "created_at": str(t.get("created_at") or ""),
-            "likes": to_int(t.get("likes")),
-            "retweets": to_int(t.get("retweets")),
-            "replies": to_int(t.get("replies")),
-            "views": to_int(t.get("views")),
-            "url": url,
-            "has_media": bool(t.get("has_media")),
-            "media_posters": t.get("media_posters") or [],
-            "card": t.get("card"),
-            "section_hint": section_key,
-        }
-        p["score"] = score(p)
-        p["headline"] = make_headline(p, section_key)
-        p["why"] = make_why(p, section_key)
-        out.append(p)
-    return out
-
-
-def dedupe(posts: list[dict]) -> list[dict]:
-    seen: set[str] = set()
-    unique = []
-    for p in sorted(posts, key=lambda x: x.get("score", 0), reverse=True):
-        key = p.get("id") or p.get("url")
-        if not key or key in seen:
-            continue
-        seen.add(key)
-        unique.append(p)
-    return unique
-
-
-def run_opencli(args: list[str], timeout: int = 150) -> tuple[int, str, str]:
-    cmd = ["opencli", "twitter", *args, "--window", "background", "--site-session", "persistent"]
-    proc = subprocess.run(cmd, cwd=str(ROOT), text=True, capture_output=True, timeout=timeout)
-    return proc.returncode, proc.stdout, proc.stderr
-
-
-def search_x(query: str, section_key: str | None, limit: int = 10, top_n: int = 6) -> tuple[list[dict], str | None]:
-    full_query = f"({query}) since:{SINCE} -filter:replies"
-    args = ["search", full_query, "--product", "top", "--limit", str(limit), "--top-by-engagement", str(top_n), "-f", "json"]
+def parse_iso(s: str) -> datetime | None:
     try:
-        code, stdout, stderr = run_opencli(args)
-    except Exception as e:
-        return [], f"{section_key or 'viral'} search failed: {e}"
-    items = normalize(parse_json_array(stdout), section_key)
-    if code != 0:
-        msg = stderr.strip() or stdout.strip()
-        msg = re.sub(r"\s+", " ", msg)[:240]
-        return items, f"{section_key or 'viral'} search degraded: {msg or 'OpenCLI returned non-zero'}"
-    return items, None
-
-
-def get_timeline() -> tuple[list[dict], str | None]:
-    """Fetch the home For You timeline as a real-post fallback.
-
-    This does not replace targeted search, but it often keeps the morning brief
-    useful when SearchTimeline is rate-limited.
-    """
-    try:
-        code, stdout, stderr = run_opencli(["timeline", "--type", "for-you", "--limit", "30", "--top-by-engagement", "14", "-f", "json"], timeout=180)
-    except Exception as e:
-        return [], f"timeline fallback failed: {e}"
-    posts = normalize(parse_json_array(stdout), "viral")
-    if code != 0:
-        msg = stderr.strip() or stdout.strip()
-        msg = re.sub(r"\s+", " ", msg)[:240]
-        return posts, f"timeline fallback degraded: {msg or 'OpenCLI returned non-zero'}"
-    return posts, None
-
-
-def get_trends() -> list[dict]:
-    try:
-        code, stdout, stderr = run_opencli(["trending", "-f", "json"], timeout=90)
+        dt = datetime.fromisoformat(s.replace("Z", "+00:00"))
+        return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
     except Exception:
-        return []
-    trends = parse_json_array(stdout)
-    cleaned = []
-    for trend in trends[:20]:
-        topic = str(trend.get("topic") or "").strip()
-        if not topic:
-            continue
-        cleaned.append(
-            {
-                "rank": to_int(trend.get("rank")) or len(cleaned) + 1,
-                "topic": topic,
-                "category": str(trend.get("category") or "Trending"),
-                "url": f"https://x.com/search?q={quote_plus(topic)}&src=typed_query&f=top",
-            }
-        )
-    return cleaned
+        return None
 
 
-def collect() -> CollectionResult:
-    all_posts: list[dict] = []
+# ---------------------------------------------------------------------------
+# Acquisition
+# ---------------------------------------------------------------------------
+
+def acquire(no_search: bool) -> tuple[list[dict], list[str]]:
+    posts: list[dict] = []
     errors: list[str] = []
 
-    # Keep this conservative to reduce rate-limit risk: one viral query plus one
-    # query per section. The second query is only attempted if a section is thin.
-    for query in VIRAL_QUERIES[:1]:
-        posts, err = search_x(query, "viral", limit=12, top_n=8)
-        all_posts.extend(posts)
+    for kind in ("for-you", "following"):
+        got, err = xcli.feed(kind, n=40)
+        posts.extend(got)
         if err:
             errors.append(err)
-        time.sleep(4)
+        log(f"feed {kind}: {len(got)} posts")
+        time.sleep(2)
 
-    for section in SECTION_DEFS:
-        section_posts: list[dict] = []
-        for i, query in enumerate(section["queries"]):
-            if i > 0 and len(section_posts) >= 3:
-                break
-            posts, err = search_x(query, section["key"], limit=10, top_n=6)
-            section_posts.extend(posts)
-            all_posts.extend(posts)
+    for topic in CONFIG["topics"]:
+        for list_id in topic.get("list_ids", []):
+            got, err = xcli.list_tweets(str(list_id), n=30)
+            for p in got:
+                p["topic_hint"] = topic["key"]
+            posts.extend(got)
             if err:
                 errors.append(err)
-                # Avoid hammering X after a rate-limit/failed fetch.
-                if "429" in err or "rate" in err.lower() or "Failed to fetch" in err:
-                    break
-            time.sleep(4)
+            time.sleep(2)
 
-    # Timeline is a real-post safety net. Use it when targeted searches are
-    # thin/degraded so the page still has actual posts instead of fake trend cards.
-    if len(dedupe(all_posts)) < 8 or errors:
-        timeline_posts, timeline_err = get_timeline()
-        if timeline_posts:
-            all_posts.extend(timeline_posts)
-        if timeline_err:
-            errors.append(timeline_err)
+    if not no_search:
+        for topic in CONFIG["topics"]:
+            if xcli.search_blocked():
+                errors.append(f"search skipped for {topic['key']} onward: rate-limited earlier this run")
+                break
+            got, err = xcli.search(topic["search"], topic["key"], SINCE, topic["min_likes"], n=15)
+            for p in got:
+                p["topic_hint"] = topic["key"]
+            posts.extend(got)
+            if err:
+                errors.append(err)
+            log(f"search {topic['key']}: {len(got)} posts")
+            time.sleep(5)
 
-    return CollectionResult(posts=dedupe(all_posts), errors=errors, trends=get_trends())
-
-
-def keyword_match(post: dict, keywords: list[str]) -> bool:
-    blob = f"{post.get('text','')} {post.get('bio','')} {post.get('author','')}".lower()
-    return any(k.lower() in blob for k in keywords)
+    return posts, errors
 
 
-def section_posts(posts: list[dict], section: dict) -> list[dict]:
-    direct = [p for p in posts if p.get("section_hint") == section["key"]]
-    matched = [p for p in posts if p not in direct and keyword_match(p, section["keywords"])]
-    sectioned = []
-    for p in dedupe(direct + matched)[:4]:
-        q = dict(p)
-        q["headline"] = make_headline(q, section["key"])
-        q["why"] = make_why(q, section["key"])
-        sectioned.append(q)
-    return sectioned
+def retry_searches(errors: list[str]) -> list[dict]:
+    """Wait out the cooldown (the 429 message says 15-30 min) and retry once."""
+    log("searches were rate-limited; waiting 25 min before one retry...")
+    time.sleep(25 * 60)
+    xcli._search_blocked = False
+    posts: list[dict] = []
+    for topic in CONFIG["topics"]:
+        if xcli.search_blocked():
+            break
+        got, err = xcli.search(topic["search"], topic["key"], SINCE, topic["min_likes"], n=15)
+        for p in got:
+            p["topic_hint"] = topic["key"]
+        posts.extend(got)
+        if err:
+            errors.append(f"(retry) {err}")
+        time.sleep(5)
+    return posts
 
 
-def words(text: str) -> list[str]:
-    return [w for w in re.findall(r"[A-Za-z][A-Za-z0-9$&.+'-]{2,}", text) if w.lower() not in STOP_HEADLINE_WORDS]
+# ---------------------------------------------------------------------------
+# Pool (rolling 48h cache with per-run metric history) and seen ledger
+# ---------------------------------------------------------------------------
+
+def load_json(path: Path, default):
+    try:
+        return json.loads(path.read_text())
+    except Exception:
+        return default
 
 
-def make_headline(post: dict, section_key: str | None) -> str:
-    text = clean_text(post.get("text", ""))
-    author = post.get("author", "unknown")
-    if len(text) <= 82:
-        base = text
-    else:
-        # Prefer the first sentence/phrase; it usually preserves the actual news hook.
-        first = re.split(r"(?<=[.!?])\s+", text)[0]
-        base = first if 25 <= len(first) <= 110 else text[:96].rstrip() + "…"
-    prefix = {
-        "finance": "Markets watch",
-        "business": "Business X is talking about",
-        "entertainment": "Culture watch",
-        "sports": "Sports X is reacting to",
-        "viral": "Viral breakout",
-        None: "Viral breakout",
-    }.get(section_key, "Signal")
-    # Avoid duplicating if the post text is already punchy.
-    return f"{prefix}: {base}"
+def seed_pool_from_legacy(pool: dict) -> None:
+    """One-time: ingest the old data/*.json snapshots so day one has velocity
+    baselines and yesterday's items are already marked seen."""
+    for f in sorted((ROOT / "data").glob("20*.json")):
+        legacy = load_json(f, {})
+        ts = legacy.get("generated_at") or f"{f.stem}T08:00:00-07:00"
+        for p in legacy.get("posts", []):
+            pid = str(p.get("id") or "")
+            if not pid or pid in pool:
+                continue
+            pool[pid] = {
+                "id": pid,
+                "author": str(p.get("author") or "unknown"),
+                "author_name": str(p.get("author") or "unknown"),
+                "text": str(p.get("text") or ""),
+                "created_iso": str(p.get("created_at") or ""),
+                "likes": int(p.get("likes") or 0),
+                "retweets": int(p.get("retweets") or 0),
+                "replies": int(p.get("replies") or 0),
+                "views": int(p.get("views") or 0),
+                "url": p.get("url") or "",
+                "has_media": bool(p.get("has_media")),
+                "media_thumb": (p.get("media_posters") or [""])[0],
+                "lang": "", "is_retweet": False,
+                "sources": ["legacy"],
+                "first_seen": ts,
+                "history": [[ts, int(p.get("likes") or 0), int(p.get("views") or 0)]],
+            }
 
 
-def make_why(post: dict, section_key: str | None) -> str:
-    likes = compact_num(post.get("likes"))
-    views = compact_num(post.get("views"))
-    has_media = post.get("has_media")
-    section_note = {
-        "finance": "It can signal what market participants are emotionally pricing in before formal analysis catches up.",
-        "business": "It highlights the company, founder, or customer narrative likely to spill into operator conversations today.",
-        "entertainment": "Culture posts like this move fast because fandom turns them into repeatable conversation hooks.",
-        "sports": "Sports clips and takes often become the day’s mainstream debate once fan emotion compounds.",
-        "viral": "It has enough social velocity to potentially jump from X into broader conversation.",
-        None: "It has enough social velocity to potentially jump from X into broader conversation.",
-    }.get(section_key, "It is getting attention fast enough to be worth checking early.")
-    media_note = " The post includes media, so it is more likely to travel beyond the original audience." if has_media else ""
-    metric_note = []
-    if to_int(post.get("likes")):
-        metric_note.append(f"{likes} likes")
-    if to_int(post.get("views")):
-        metric_note.append(f"{views} views")
-    metrics = f" Current signal: {', '.join(metric_note)}." if metric_note else ""
-    return f"{section_note}{media_note}{metrics}"
-
-
-def briefing_bullets(sections: list[dict], viral: list[dict], result: CollectionResult) -> list[str]:
-    bullets = []
-    real_count = len(result.posts)
-    if real_count:
-        top = viral[0] if viral else result.posts[0]
-        bullets.append(f"Top viral post: @{top['author']} is driving the strongest engagement with “{trim(top['text'], 115)}”.")
-    else:
-        bullets.append("X post search did not return real posts this run; use the trend watchlist as a directional fallback only.")
-    for section in sections:
-        items = section["items"]
-        if items:
-            bullets.append(f"{section['title']}: {trim(items[0]['headline'], 130)}")
+def merge_pool(pool: dict, fresh: list[dict]) -> dict:
+    now_iso = NOW.isoformat()
+    for p in fresh:
+        entry = pool.get(p["id"])
+        if entry:
+            entry.update({k: p[k] for k in ("likes", "retweets", "replies", "views", "text", "has_media", "media_thumb")})
+            entry["sources"] = sorted(set(entry.get("sources", [])) | set(p["sources"]))
+            if p.get("topic_hint"):
+                entry["topic_hint"] = p["topic_hint"]
+            entry.setdefault("history", []).append([now_iso, p["likes"], p["views"]])
         else:
-            bullets.append(f"{section['title']}: no strong real-post signal found in the latest collection window.")
-    if result.errors:
-        bullets.append("Data quality note: one or more X searches were rate-limited or degraded, so empty sections are intentional rather than padded.")
-    return bullets[:6]
+            p["first_seen"] = now_iso
+            p["history"] = [[now_iso, p["likes"], p["views"]]]
+            pool[p["id"]] = p
+
+    cutoff = NOW - timedelta(hours=POOL_MAX_AGE_H)
+    pruned = {}
+    for pid, e in pool.items():
+        ref = parse_iso(e.get("created_iso") or "") or parse_iso(e.get("first_seen") or "")
+        if ref and ref >= cutoff:
+            e["history"] = e.get("history", [])[-10:]
+            pruned[pid] = e
+    return pruned
 
 
-def trim(text: str, n: int) -> str:
-    text = clean_text(text)
-    return text if len(text) <= n else text[: n - 1].rstrip() + "…"
+def compute_velocity(entry: dict) -> float:
+    """Likes per hour. Prefer observed delta between pool observations;
+    first sighting falls back to likes / post age."""
+    hist = entry.get("history", [])
+    if len(hist) >= 2:
+        t0, likes0, _ = hist[0]
+        t1, likes1, _ = hist[-1]
+        d0, d1 = parse_iso(t0), parse_iso(t1)
+        if d0 and d1 and d1 > d0:
+            hours = max((d1 - d0).total_seconds() / 3600, 0.5)
+            return max((likes1 - likes0) / hours, 0.0)
+    created = parse_iso(entry.get("created_iso") or "")
+    if created:
+        age_h = max((NOW.astimezone(timezone.utc) - created.astimezone(timezone.utc)).total_seconds() / 3600, 2.0)
+        return entry.get("likes", 0) / age_h
+    return entry.get("likes", 0) / 24.0
 
 
-def status_label(result: CollectionResult) -> tuple[str, str]:
-    if result.posts and not result.errors:
-        return "Full post search", "All sections were populated from real X post search results."
-    if result.posts and result.errors:
-        return "Partial post search", "Some real posts were collected, but at least one X search was rate-limited or degraded."
-    return "Trend fallback only", "X post search did not return real posts, so this page is showing trend watchlist context only."
+def source_weight(entry: dict) -> float:
+    sources = entry.get("sources", [])
+    if any(s.startswith("list:") for s in sources):
+        return 1.3
+    if any(s.startswith("feed:") for s in sources):
+        return 1.15
+    return 1.0
 
 
-def post_card(post: dict, idx: int, compact: bool = False) -> str:
-    poster = ""
-    media_posters = post.get("media_posters") or []
-    if media_posters and not compact:
-        poster = f'<a class="thumb" href="{escape(post["url"])}" target="_blank" rel="noopener noreferrer"><img src="{escape(str(media_posters[0]))}" alt="Post media preview" loading="lazy"></a>'
-    metrics = []
-    if to_int(post.get("likes")):
-        metrics.append(f"{compact_num(post.get('likes'))} likes")
-    if to_int(post.get("views")):
-        metrics.append(f"{compact_num(post.get('views'))} views")
-    if to_int(post.get("retweets")):
-        metrics.append(f"{compact_num(post.get('retweets'))} reposts")
-    metric_html = " · ".join(metrics) if metrics else "engagement unavailable"
+def is_junk(entry: dict) -> bool:
+    likes, views = entry.get("likes", 0), entry.get("views", 0)
+    if likes < 50:
+        return True
+    # Promoted-post signature: huge reach, near-zero engagement.
+    if views > 200_000 and likes / views < 0.0005:
+        return True
+    return False
+
+
+# ---------------------------------------------------------------------------
+# Compose
+# ---------------------------------------------------------------------------
+
+def build(pool: dict, seen: dict, errors: list[str]) -> dict:
+    entries = [e for e in pool.values() if not is_junk(e)]
+    for e in entries:
+        e["velocity"] = compute_velocity(e)
+        e["score"] = e["velocity"] * source_weight(e)
+
+    new_entries = sorted((e for e in entries if e["id"] not in seen),
+                         key=lambda e: e["score"], reverse=True)
+    candidates = new_entries[:CANDIDATE_LIMIT]
+
+    topic_keys = [t["key"] for t in CONFIG["topics"]]
+    result, note = enrich_mod.enrich(candidates, topic_keys)
+    if result is None:
+        if note:
+            errors.append(note)
+        result = enrich_mod.fallback(candidates, CONFIG["topics"])
+        result["enriched"] = False
+    else:
+        result["enriched"] = True
+
+    # Still climbing: previously shown items with a big move since shown.
+    climbers = []
+    for pid, meta in seen.items():
+        e = pool.get(pid)
+        if not e or is_junk(e):
+            continue
+        delta = e.get("likes", 0) - int(meta.get("likes", 0))
+        if delta >= 5000 or (meta.get("likes") and delta / max(int(meta["likes"]), 1) >= 0.3):
+            climbers.append({"entry": e, "delta": delta})
+    climbers.sort(key=lambda c: c["delta"], reverse=True)
+    result["climbers"] = climbers[:3]
+    return result
+
+
+# ---------------------------------------------------------------------------
+# Render
+# ---------------------------------------------------------------------------
+
+CSS = """
+    :root { --bg:#f7f2e9; --paper:#fffaf2; --ink:#15120e; --muted:#6e6559; --line:#e2d6c5; --accent:#c75f2a; --blue:#1d3d5c; --green:#617a45; --dark:#15120e; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:linear-gradient(180deg,#fbf6ee,var(--bg)); color:var(--ink); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    a { color:var(--blue); text-decoration:none; } a:hover { text-decoration:underline; }
+    .wrap { width:min(1060px, calc(100% - 32px)); margin:0 auto; }
+    header { padding:44px 0 18px; }
+    .hero { border:1px solid var(--line); border-radius:28px; padding:30px; background:rgba(255,250,242,.82); box-shadow:0 24px 80px rgba(70,45,20,.08); }
+    .kicker,.eyebrow { color:var(--accent); text-transform:uppercase; letter-spacing:.18em; font-weight:850; font-size:12px; }
+    h1 { font-family: Georgia, "Times New Roman", serif; font-size:clamp(38px,5.5vw,64px); line-height:.97; letter-spacing:-.05em; margin:12px 0 14px; max-width:850px; }
+    .pills, nav { display:flex; flex-wrap:wrap; gap:9px; margin-top:20px; }
+    .pill, nav a, .quality { border:1px solid var(--line); border-radius:999px; padding:8px 12px; background:rgba(255,255,255,.48); color:var(--muted); font-size:13px; }
+    nav { margin:18px 0 22px; } nav a { color:var(--ink); }
+    .panel { border:1px solid var(--line); border-radius:24px; padding:24px; background:rgba(255,250,242,.74); margin:18px 0; }
+    .panel.dark { background:var(--dark); color:#fff7ea; border-color:#2b241d; } .panel.dark a { color:#ffd29d; } .panel.dark .eyebrow { color:#f0ad78; }
+    h2 { font-family: Georgia, "Times New Roman", serif; font-size:clamp(24px,3.2vw,38px); line-height:1.04; letter-spacing:-.03em; margin:6px 0 10px; }
+    .quick ul { padding-left:22px; margin:14px 0 0; } .quick li { margin:9px 0; line-height:1.5; }
+    .brief-card { display:grid; grid-template-columns:34px 1fr auto; gap:14px; border:1px solid var(--line); background:rgba(255,255,255,.56); border-radius:20px; padding:16px; margin:12px 0; }
+    .panel.dark .brief-card { background:#211c17; border-color:#40362d; }
+    .num { width:30px; height:30px; border-radius:50%; background:var(--ink); color:#fffaf2; display:grid; place-items:center; font-weight:800; }
+    .panel.dark .num { background:#fff0d8; color:#15120e; }
+    .meta { display:flex; flex-wrap:wrap; gap:8px; color:var(--muted); font-size:13px; align-items:center; } .panel.dark .meta { color:#d7c7b4; }
+    .meta strong { color:var(--ink); } .panel.dark .meta strong { color:#fff7ea; }
+    .velocity { color:var(--green); font-weight:800; } .panel.dark .velocity { color:#a8c67f; }
+    h3 { margin:8px 0; font-size:18px; line-height:1.3; letter-spacing:-.015em; }
+    .excerpt { color:#3f372f; line-height:1.5; margin:0 0 8px; } .panel.dark .excerpt { color:#f2e8dc; }
+    .why { color:#5b5148; line-height:1.5; margin:0 0 10px; } .panel.dark .why { color:#dacabb; }
+    .source { font-weight:800; font-size:14px; }
+    .related { color:var(--muted); font-size:13px; margin-left:10px; }
+    .thumb img { width:128px; height:96px; object-fit:cover; border-radius:14px; border:1px solid rgba(255,255,255,.18); }
+    .section { border:1px solid var(--line); border-radius:26px; background:rgba(255,250,242,.74); margin:18px 0; overflow:hidden; }
+    .section-head { display:flex; justify-content:space-between; gap:18px; align-items:start; padding:24px 24px 8px; }
+    .section-head p { color:var(--muted); line-height:1.55; max-width:720px; margin:0; }
+    .stack { padding:8px 18px 18px; }
+    .empty { border:1px dashed var(--line); border-radius:18px; color:var(--muted); padding:14px 18px; line-height:1.5; margin:0 18px 18px; }
+    .trends { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin-top:12px; }
+    .trend { border:1px solid var(--line); border-radius:16px; padding:13px; background:rgba(255,255,255,.46); display:block; }
+    .trend span { color:var(--accent); font-weight:850; font-size:12px; } .trend strong { display:block; color:var(--ink); margin:3px 0; } .trend em { color:var(--muted); font-size:12px; font-style:normal; }
+    .trend.explained { opacity:.55; }
+    .climb { display:flex; gap:12px; align-items:baseline; border-bottom:1px dashed var(--line); padding:10px 0; }
+    .climb:last-child { border-bottom:none; }
+    .climb .delta { color:var(--green); font-weight:850; white-space:nowrap; }
+    .debug { margin-top:14px; color:var(--muted); font-size:13px; }
+    footer { text-align:center; color:var(--muted); font-size:13px; padding:28px 0 54px; }
+    footer .nav-days { margin-bottom:8px; }
+    @media (max-width:820px) { .brief-card { grid-template-columns:30px 1fr; } .thumb { display:none; } .section-head { display:block; } .trends { grid-template-columns:1fr; } }
+"""
+
+
+def story_card(story: dict, pool: dict, idx: int, compact: bool = False) -> str:
+    e = pool[story["primary_id"]]
+    thumb = ""
+    if e.get("media_thumb") and not compact:
+        thumb = (f'<a class="thumb" href="{escape(e["url"])}" target="_blank" rel="noopener noreferrer">'
+                 f'<img src="{escape(e["media_thumb"])}" alt="Post media" loading="lazy"></a>')
+    metrics = [f"{compact_num(e['likes'])} likes"]
+    if e.get("views"):
+        metrics.append(f"{compact_num(e['views'])} views")
+    vel = e.get("velocity", 0)
+    vel_html = f'<span class="velocity">▲ {compact_num(int(vel))}/hr</span>' if vel >= 100 else ""
+    related = ""
+    if story.get("related_ids"):
+        links = " · ".join(
+            f'<a href="{escape(pool[r]["url"])}" target="_blank" rel="noopener noreferrer">@{escape(pool[r]["author"])}</a>'
+            for r in story["related_ids"] if r in pool
+        )
+        if links:
+            related = f'<span class="related">+ related: {links}</span>'
     return f"""
     <article class="brief-card">
       <div class="num">{idx}</div>
-      <div class="brief-copy">
-        <div class="meta"><strong>@{escape(post['author'])}</strong><span>{escape(metric_html)}</span>{'<span>media</span>' if post.get('has_media') else ''}</div>
-        <h3>{escape(post['headline'])}</h3>
-        <p class="excerpt">{escape(trim(post['text'], 220))}</p>
-        <p class="why"><strong>Why it matters:</strong> {escape(post['why'])}</p>
-        <a class="source" href="{escape(post['url'])}" target="_blank" rel="noopener noreferrer">Open original post →</a>
+      <div>
+        <div class="meta"><strong>@{escape(e['author'])}</strong><span>{escape(' · '.join(metrics))}</span>{vel_html}</div>
+        <h3>{escape(story['headline'])}</h3>
+        <p class="excerpt">{escape(e['text'][:220])}</p>
+        <p class="why"><strong>Why it matters:</strong> {escape(story['why'])}</p>
+        <a class="source" href="{escape(e['url'])}" target="_blank" rel="noopener noreferrer">Open post →</a>{related}
       </div>
-      {poster}
-    </article>
-    """
+      {thumb}
+    </article>"""
 
 
-def trend_card(trend: dict) -> str:
-    return f"""
-    <a class="trend" href="{escape(trend['url'])}" target="_blank" rel="noopener noreferrer">
-      <span>#{trend['rank']}</span>
-      <strong>{escape(trend['topic'])}</strong>
-      <em>{escape(trend['category'])}</em>
-    </a>
-    """
+def render(result: dict, pool: dict, trends: list[dict], errors: list[str], enriched: bool) -> str:
+    stories = result["stories"]
+    by_id = {s["primary_id"]: s for s in stories}
+    top3_ids = result.get("top3_ids", [])[:3]
+    top3 = [by_id[i] for i in top3_ids if i in by_id]
 
+    max_stories = int(CONFIG.get("max_stories", 14))
+    used = set(top3_ids)
+    budget = max_stories - len(top3)
 
-def render(result: CollectionResult) -> str:
-    viral = [p for p in result.posts if p.get("section_hint") == "viral"]
-    if len(viral) < 5:
-        viral = dedupe(viral + result.posts)[:6]
+    sections_html, nav_items = [], []
+    for topic in CONFIG["topics"]:
+        t_stories = [s for s in stories
+                     if s["topic"] == topic["key"] and s["primary_id"] not in used][:3]
+        t_stories = t_stories[:max(budget, 0)]
+        for s in t_stories:
+            used.add(s["primary_id"])
+        budget -= len(t_stories)
+        nav_items.append(f'<a href="#{topic["key"]}">{escape(topic["title"])}</a>')
+        if t_stories:
+            cards = "".join(story_card(s, pool, i + 1, compact=True) for i, s in enumerate(t_stories))
+            body = f'<div class="stack">{cards}</div>'
+        else:
+            body = '<div class="empty">Nothing above the bar today — no padded filler.</div>'
+        sections_html.append(f"""
+      <section id="{topic['key']}" class="section">
+        <div class="section-head">
+          <div><p class="eyebrow">{escape(topic['title'])}</p><p>{escape(topic['deck'])}</p></div>
+          <span class="quality">{'Real posts' if t_stories else 'No strong signal'}</span>
+        </div>
+        {body}
+      </section>""")
+
+    # Viral leftovers fold into a Culture/Viral section if budget remains.
+    viral = [s for s in stories if s["topic"] == "viral" and s["primary_id"] not in used][:max(budget, 0)][:3]
+    if viral:
+        cards = "".join(story_card(s, pool, i + 1, compact=True) for i, s in enumerate(viral))
+        nav_items.append('<a href="#viral">Viral</a>')
+        sections_html.append(f"""
+      <section id="viral" class="section">
+        <div class="section-head">
+          <div><p class="eyebrow">Viral</p><p>Culture moments that fit no box but everyone will mention.</p></div>
+          <span class="quality">Real posts</span>
+        </div>
+        <div class="stack">{cards}</div>
+      </section>""")
+
+    top3_html = "".join(story_card(s, pool, i + 1) for i, s in enumerate(top3)) \
+        or '<p class="empty">No new stories cleared the bar this run.</p>'
+
+    quick_html = "".join(f"<li>{escape(b)}</li>" for b in result.get("quick_read", []))
+
+    climbers_html = ""
+    if result.get("climbers"):
+        rows = ""
+        for c in result["climbers"]:
+            e = c["entry"]
+            rows += (f'<div class="climb"><span class="delta">+{compact_num(c["delta"])} likes</span>'
+                     f'<span><a href="{escape(e["url"])}" target="_blank" rel="noopener noreferrer">@{escape(e["author"])}</a> '
+                     f'{escape(e["text"][:120])}</span></div>')
+        climbers_html = f"""
+      <section class="panel">
+        <p class="eyebrow">Still climbing ↑</p>
+        <h2>Yesterday's stories, still growing</h2>
+        {rows}
+      </section>"""
+
+    story_blob = " ".join(
+        (s["headline"] + " " + pool[s["primary_id"]]["text"]).lower()
+        for s in stories if s["primary_id"] in pool
+    )
+    trend_cards = ""
+    for t in trends[:12]:
+        explained = t["topic"].lower() in story_blob
+        cls = "trend explained" if explained else "trend"
+        tag = "covered above" if explained else t["category"]
+        url = f"https://x.com/search?q={quote_plus(t['topic'])}&src=typed_query&f=top"
+        trend_cards += (f'<a class="{cls}" href="{url}" target="_blank" rel="noopener noreferrer">'
+                        f'<span>#{t["rank"]}</span><strong>{escape(t["topic"])}</strong><em>{escape(tag)}</em></a>')
+    trends_html = f"""
+      <section id="watchlist" class="panel">
+        <p class="eyebrow">Trend watchlist</p>
+        <h2>Trending — dimmed ones are covered above</h2>
+        <div class="trends">{trend_cards or '<p class="empty">No trend data this run.</p>'}</div>
+      </section>""" if trends else ""
+
+    if errors:
+        items = "".join(f"<li>{escape(e)}</li>" for e in errors[:8])
+        error_box = f"<details class='debug'><summary>Collection notes</summary><ul>{items}</ul></details>"
     else:
-        viral = dedupe(viral)[:6]
+        error_box = ""
+    collection_errors = [e for e in errors if "fallback" not in e]
+    status = "Partial collection" if collection_errors else "Full collection"
 
-    sections = []
-    for s in SECTION_DEFS:
-        sections.append({**s, "items": section_posts(result.posts, s)})
+    # prev-day nav from archive
+    prev_link = ""
+    days = sorted(p.stem for p in (ROOT / "archive").glob("20*.html") if p.stem < STAMP)
+    if days:
+        prev_link = f'<div class="nav-days"><a href="archive/{days[-1]}.html">← {days[-1]}</a> · <a href="archive/">all days</a></div>'
 
-    total_real = len(result.posts)
-    status, status_desc = status_label(result)
-    bullets = briefing_bullets(sections, viral, result)
-    nav = "".join(f'<a href="#{s["key"]}">{escape(s["title"])}</a>' for s in sections)
-    nav += '<a href="#viral">Overall Viral</a><a href="#watchlist">Trend Watchlist</a>'
-
-    viral_html = "".join(post_card(p, i + 1) for i, p in enumerate(viral[:5])) or '<p class="empty">No real viral posts were collected this run.</p>'
-
-    section_html = []
-    for s in sections:
-        quality = "Real posts" if s["items"] else "No strong signal"
-        cards = "".join(post_card(p, i + 1, compact=True) for i, p in enumerate(s["items"][:4]))
-        if not cards:
-            cards = '<div class="empty"><strong>No padded filler.</strong><br>X did not return a clean real-post signal for this section. Check the trend watchlist below, or wait for the next run.</div>'
-        lead = f"{s['title']}: {trim(s['items'][0]['headline'], 120)}" if s["items"] else f"{s['title']}: no reliable signal yet"
-        section_html.append(
-            f"""
-            <section id="{escape(s['key'])}" class="section">
-              <div class="section-head">
-                <div><p class="eyebrow">{escape(s['title'])}</p><h2>{escape(lead)}</h2><p>{escape(s['deck'])}</p></div>
-                <span class="quality">{quality}</span>
-              </div>
-              <div class="stack">{cards}</div>
-            </section>
-            """
-        )
-
-    trends = "".join(trend_card(t) for t in result.trends[:12]) or '<p class="empty">No trend data available.</p>'
-    errors = "".join(f"<li>{escape(e)}</li>" for e in result.errors[:6])
-    error_box = f"<details class='debug'><summary>Collection notes</summary><ul>{errors}</ul></details>" if errors else ""
-
-    bullet_html = "".join(f"<li>{escape(b)}</li>" for b in bullets)
-    generated_time = NOW.strftime('%-I:%M %p %Z') if sys.platform != 'win32' else NOW.strftime('%#I:%M %p %Z')
+    generated_time = NOW.strftime('%-I:%M %p %Z')
+    total = len(used)
+    mode = "Claude-enriched" if enriched else "Rule-based (no API key)"
+    nav = "".join(nav_items) + '<a href="#watchlist">Watchlist</a>'
 
     return f"""<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Morning X Briefing — {escape(TODAY)}</title>
-  <meta name="description" content="Useful morning briefing from viral X posts and trend watchlist." />
-  <style>
-    :root {{ --bg:#f7f2e9; --paper:#fffaf2; --ink:#15120e; --muted:#6e6559; --line:#e2d6c5; --accent:#c75f2a; --blue:#1d3d5c; --green:#617a45; --dark:#15120e; }}
-    * {{ box-sizing:border-box; }}
-    body {{ margin:0; background:linear-gradient(180deg,#fbf6ee,var(--bg)); color:var(--ink); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }}
-    a {{ color:var(--blue); text-decoration:none; }} a:hover {{ text-decoration:underline; }}
-    .wrap {{ width:min(1060px, calc(100% - 32px)); margin:0 auto; }}
-    header {{ padding:44px 0 18px; }}
-    .hero {{ border:1px solid var(--line); border-radius:28px; padding:30px; background:rgba(255,250,242,.82); box-shadow:0 24px 80px rgba(70,45,20,.08); }}
-    .kicker,.eyebrow {{ color:var(--accent); text-transform:uppercase; letter-spacing:.18em; font-weight:850; font-size:12px; }}
-    h1 {{ font-family: Georgia, "Times New Roman", serif; font-size:clamp(42px,6vw,72px); line-height:.95; letter-spacing:-.055em; margin:12px 0 14px; max-width:850px; }}
-    .intro {{ color:#50483f; line-height:1.65; max-width:760px; font-size:17px; }}
-    .pills, nav {{ display:flex; flex-wrap:wrap; gap:9px; margin-top:20px; }}
-    .pill, nav a, .quality {{ border:1px solid var(--line); border-radius:999px; padding:8px 12px; background:rgba(255,255,255,.48); color:var(--muted); font-size:13px; }}
-    nav {{ margin:18px 0 22px; }} nav a {{ color:var(--ink); }}
-    .grid-top {{ display:grid; grid-template-columns:1.1fr .9fr; gap:16px; margin:20px 0; }}
-    .panel {{ border:1px solid var(--line); border-radius:24px; padding:24px; background:rgba(255,250,242,.74); }}
-    .panel.dark {{ background:var(--dark); color:#fff7ea; border-color:#2b241d; }} .panel.dark a {{ color:#ffd29d; }} .panel.dark .eyebrow {{ color:#f0ad78; }}
-    h2 {{ font-family: Georgia, "Times New Roman", serif; font-size:clamp(26px,3.5vw,42px); line-height:1.04; letter-spacing:-.035em; margin:6px 0 10px; }}
-    .quick ul {{ padding-left:22px; margin:14px 0 0; }} .quick li {{ margin:10px 0; line-height:1.5; }}
-    .brief-card {{ display:grid; grid-template-columns:34px 1fr auto; gap:14px; border:1px solid var(--line); background:rgba(255,255,255,.56); border-radius:20px; padding:16px; margin:12px 0; }}
-    .panel.dark .brief-card {{ background:#211c17; border-color:#40362d; }}
-    .num {{ width:30px; height:30px; border-radius:50%; background:var(--ink); color:#fffaf2; display:grid; place-items:center; font-weight:800; }}
-    .panel.dark .num {{ background:#fff0d8; color:#15120e; }}
-    .meta {{ display:flex; flex-wrap:wrap; gap:8px; color:var(--muted); font-size:13px; align-items:center; }} .panel.dark .meta {{ color:#d7c7b4; }}
-    .meta strong {{ color:var(--ink); }} .panel.dark .meta strong {{ color:#fff7ea; }}
-    h3 {{ margin:8px 0; font-size:18px; line-height:1.25; letter-spacing:-.015em; }}
-    .excerpt {{ color:#3f372f; line-height:1.5; margin:0 0 8px; }} .panel.dark .excerpt {{ color:#f2e8dc; }}
-    .why {{ color:#5b5148; line-height:1.5; margin:0 0 10px; }} .panel.dark .why {{ color:#dacabb; }}
-    .source {{ font-weight:800; font-size:14px; }}
-    .thumb img {{ width:128px; height:96px; object-fit:cover; border-radius:14px; border:1px solid rgba(255,255,255,.18); }}
-    .section {{ border:1px solid var(--line); border-radius:26px; background:rgba(255,250,242,.74); margin:18px 0; overflow:hidden; }}
-    .section-head {{ display:flex; justify-content:space-between; gap:18px; align-items:start; padding:24px 24px 8px; }}
-    .section-head p {{ color:var(--muted); line-height:1.55; max-width:720px; margin:0; }}
-    .stack {{ padding:8px 18px 18px; }}
-    .empty {{ border:1px dashed var(--line); border-radius:18px; color:var(--muted); padding:18px; line-height:1.55; }}
-    .trends {{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; }}
-    .trend {{ border:1px solid var(--line); border-radius:16px; padding:13px; background:rgba(255,255,255,.46); display:block; }}
-    .trend span {{ color:var(--accent); font-weight:850; font-size:12px; }} .trend strong {{ display:block; color:var(--ink); margin:3px 0; }} .trend em {{ color:var(--muted); font-size:12px; font-style:normal; }}
-    .debug {{ margin-top:14px; color:var(--muted); font-size:13px; }}
-    footer {{ text-align:center; color:var(--muted); font-size:13px; padding:28px 0 54px; }}
-    @media (max-width:820px) {{ .grid-top {{ grid-template-columns:1fr; }} .brief-card {{ grid-template-columns:30px 1fr; }} .thumb {{ display:none; }} .section-head {{ display:block; }} .trends {{ grid-template-columns:1fr; }} }}
-  </style>
+  <title>Daily X Briefing — {escape(TODAY)}</title>
+  <meta name="description" content="Velocity-ranked daily briefing of real viral X posts." />
+  <style>{CSS}</style>
 </head>
 <body>
   <div class="wrap">
     <header>
       <div class="hero">
-        <div class="kicker">Morning X Briefing · {escape(TODAY)}</div>
-        <h1>What’s worth knowing before the day gets loud.</h1>
-        <p class="intro">A clean morning scan of real viral X posts across finance, business, entertainment, and sports. When post search is degraded, the page says so instead of padding sections with fake signals.</p>
-        <div class="pills"><span class="pill">Generated {escape(generated_time)}</span><span class="pill">{total_real} real posts collected</span><span class="pill">Status: {escape(status)}</span><span class="pill">Source: Agent-Reach / OpenCLI X</span></div>
+        <div class="kicker">Daily X Briefing · {escape(TODAY)}</div>
+        <h1>What's worth knowing before the day gets loud.</h1>
+        <div class="pills"><span class="pill">Generated {escape(generated_time)}</span><span class="pill">{total} stories</span><span class="pill">{escape(status)}</span><span class="pill">{escape(mode)}</span></div>
       </div>
       <nav>{nav}</nav>
     </header>
 
-    <div class="grid-top">
-      <section class="panel quick">
-        <p class="eyebrow">5-minute read</p>
-        <h2>Today’s quick read</h2>
-        <p>{escape(status_desc)}</p>
-        <ul>{bullet_html}</ul>
-        {error_box}
-      </section>
-      <section class="panel" id="watchlist">
-        <p class="eyebrow">Trend watchlist</p>
-        <h2>Topics to check manually</h2>
-        <p class="intro">These are X trending topics, not posts. Use them as leads when search is rate-limited.</p>
-        <div class="trends">{trends}</div>
-      </section>
-    </div>
-
-    <section id="viral" class="panel dark">
-      <p class="eyebrow">Overall viral</p>
-      <h2>The posts with the most breakout potential</h2>
-      <p class="why">Open-topic signals first — useful for spotting stories that may cross from X into broader conversation.</p>
-      {viral_html}
+    <section class="panel dark">
+      <p class="eyebrow">Top 3 today</p>
+      <h2>The whole briefing in 30 seconds</h2>
+      {top3_html}
     </section>
 
-    {''.join(section_html)}
-    <footer>Updated daily by Hermes Agent. Real posts and trends are clearly separated.</footer>
+    <section class="panel quick">
+      <p class="eyebrow">Quick read</p>
+      <ul>{quick_html}</ul>
+      {error_box}
+    </section>
+
+    {''.join(sections_html)}
+    {climbers_html}
+    {trends_html}
+
+    <footer>
+      {prev_link}
+      Updated daily by Hermes Agent via agent-reach. Real posts only — never padded, never faked.
+    </footer>
   </div>
 </body>
 </html>
 """
 
 
-def main() -> int:
-    result = collect()
-    generated_sections = []
-    for s in SECTION_DEFS:
-        generated_sections.append({**s, "items": section_posts(result.posts, s)})
-        print(f"{s['title']}: {len(generated_sections[-1]['items'])} real posts")
-    print(f"Overall real posts: {len(result.posts)}")
-    if result.errors:
-        print("Collection degraded:")
-        for e in result.errors:
-            print(f"- {e}")
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
 
-    data_dir = ROOT / "data"
-    archive_dir = ROOT / "archive"
-    data_dir.mkdir(exist_ok=True)
-    archive_dir.mkdir(exist_ok=True)
-    payload = {
-        "generated_at": NOW.isoformat(),
-        "since": SINCE,
-        "posts": result.posts,
-        "trends": result.trends,
-        "errors": result.errors,
-        "sections": generated_sections,
-    }
-    (data_dir / f"{STAMP}.json").write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
-    html = render(result)
+def main() -> int:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--no-search", action="store_true")
+    ap.add_argument("--retry", action="store_true")
+    ap.add_argument("--refresh", action="store_true")
+    args = ap.parse_args()
+
+    (ROOT / "data").mkdir(exist_ok=True)
+    (ROOT / "archive").mkdir(exist_ok=True)
+
+    posts, errors = acquire(args.no_search)
+    if args.retry and xcli.search_blocked():
+        posts.extend(retry_searches(errors))
+
+    trends, trend_err = xcli.trending()
+    if trend_err:
+        errors.append(trend_err)
+
+    pool = load_json(POOL_PATH, {})
+    if not pool:
+        seed_pool_from_legacy(pool)
+    pool = merge_pool(pool, posts)
+    log(f"pool: {len(pool)} posts within {POOL_MAX_AGE_H}h window")
+
+    seen = load_json(SEEN_PATH, {})
+    seen_cutoff = (NOW.date() - timedelta(days=SEEN_MAX_AGE_D)).isoformat()
+    seen = {k: v for k, v in seen.items() if v.get("date", "") >= seen_cutoff}
+    # First run: everything already published in old briefings counts as seen.
+    if not seen:
+        for pid, e in pool.items():
+            if "legacy" in e.get("sources", []):
+                seen[pid] = {"date": e.get("first_seen", STAMP)[:10], "likes": e.get("likes", 0)}
+
+    result = build(pool, seen, errors)
+    html = render(result, pool, trends, errors, result.get("enriched", False))
+
     (ROOT / "index.html").write_text(html, encoding="utf-8")
-    (archive_dir / f"{STAMP}.html").write_text(html, encoding="utf-8")
-    print(f"Wrote {ROOT / 'index.html'}")
+    (ROOT / "archive" / f"{STAMP}.html").write_text(html, encoding="utf-8")
+
+    shown_ids = set(result.get("top3_ids", []))
+    for s in result["stories"]:
+        shown_ids.add(s["primary_id"])
+    snapshot = {
+        "generated_at": NOW.isoformat(),
+        "stories": result["stories"],
+        "top3_ids": result.get("top3_ids", []),
+        "quick_read": result.get("quick_read", []),
+        "enriched": result.get("enriched", False),
+        "trends": trends,
+        "errors": errors,
+        "posts": [pool[i] for i in shown_ids if i in pool],
+    }
+    (ROOT / "data" / f"{STAMP}.json").write_text(
+        json.dumps(snapshot, indent=2, ensure_ascii=False), encoding="utf-8")
+
+    if not args.refresh:
+        for pid in shown_ids:
+            if pid in pool:
+                seen[pid] = {"date": STAMP, "likes": pool[pid].get("likes", 0)}
+        SEEN_PATH.write_text(json.dumps(seen, indent=2), encoding="utf-8")
+
+    POOL_PATH.write_text(json.dumps(pool, indent=2, ensure_ascii=False), encoding="utf-8")
+
+    log(f"stories: {len(result['stories'])} | top3: {len(result.get('top3_ids', []))} | "
+        f"climbers: {len(result.get('climbers', []))} | enriched: {result.get('enriched')}")
+    if errors:
+        log("collection notes:")
+        for e in errors:
+            log(f"- {e}")
+    log(f"wrote {ROOT / 'index.html'}")
     return 0
 
 
