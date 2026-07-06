@@ -52,8 +52,8 @@ def contains(p: dict, terms: list[str]) -> bool:
     blob = f"{p.get('text','')} {p.get('author','')}".lower()
     for term in terms:
         t = term.lower()
-        if t == "ai":
-            if re.search(r"\bai\b", blob):
+        if t in {"ai", "repo", "llm"}:
+            if re.search(rf"\b{re.escape(t)}\b", blob):
                 return True
         elif t in blob:
             return True
